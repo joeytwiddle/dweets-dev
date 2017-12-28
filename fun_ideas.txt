@@ -1,0 +1,9 @@
+x.filter='blur' // from https://www.dwitter.net/d/3210
+
+Game Engine: Listen for Up/Down/Left/Right https://www.dwitter.net/d/3449
+c.width|=onkeydown=e=>(e=e.which-36)>0&&e<5?e&1?X+=e-2:Y+=e-3:0;x.fillRect(X*9,Y*9,60,60)};{X=Y=70
+
+
+Inspiration for BBC Micro demo?  (Simple black and white stretching plasma)
+https://www.dwitter.net/d/3711
+
