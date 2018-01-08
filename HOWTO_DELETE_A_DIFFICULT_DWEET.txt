@@ -1,0 +1,11 @@
+OK, I have managed to delete it. #4780 by LU22BR1GHTY3AR
+
+It was difficult because the page kept crashing!
+
+In the end this worked:
+1. Make my browser window 300px high, so the dweet won't start auto-playing.
+2. Jump to the bottom of the page using browser console: window.scroll(0, 9999)
+3. Scroll up until I can see the dweet code, and edit it to not crash.
+4. Scroll up some more and click the 'delete' button.
+
+Happy New Year!
