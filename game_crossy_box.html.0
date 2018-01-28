@@ -1,0 +1,14 @@
+<canvas id=c>
+<script>
+x=c.getContext`2d`
+t=P=Z=0
+onclick=e=>Z--
+setInterval(()=>{
+c.width=c.height=600
+x.scale(3,3)
+for(i=36;i--;j==Z&&(X-99)**2<60?Z=9:Z||P++)
+j=i>>2,
+x.fillText(j?'🚌':'🐢',j?X=j%5*t/i*P/23/30%200:99,9*(j||Z))
+t++
+},33)
+</script>
