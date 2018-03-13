@@ -1,0 +1,3 @@
+// https://www.dwitter.net/d/7105
+for(A=c.width=99;A--;)for(B=57;B--;x.fillRect(A,B,s,s))X=A-50,Y=B-27,q=X*X+Y*Y,z=(2200+C(t)*2e3-q)**-.3,s=S((t*9+X*z^C(t)*9+Y*z)/9)
+for(A=c.width=99;A--;)for(B=57;B--;x.fillRect(A,B,s,s))X=A-50,Y=B-27,q=X*X+Y*Y,z=(2200+C(t)*2e3-q)**-.3,s=S((t*9+X*z^C(t)*9+Y*z)/9&1)
