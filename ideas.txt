@@ -1,0 +1,132 @@
+<!-- vim: ft=markdown
+-->
+
+<!-- Useful setup for Vim
+let g:NoSwapSuck_Enabled = 0
+let g:syntastic_javascript_checkers = []
+ALEDisable
+au BufEnter * set noswapfile nowrap nolinebreak colorcolumn=141 indentkeys= formatoptions-=ro
+-->
+OLD: BufDo set noswapfile nowrap colorcolumn=141 indentkeys= formatoptions-=ro
+
+
+## Dweet Wishlist
+magna's Dweet Wishlist: https://www.dwitter.net/d/2447
+
+## Randomly walk down a path from window
+Then display on the canvas what you found
+E.g.
+
+    window.document.sctollTop: 0
+    window.querySelectorAll.length: 1
+    window.history.back: [Function]
+
+Maybe use .sort() as a cheap/uneven random?
+
+
+Remix this to plot solid rays, with continual fade to white: https://www.dwitter.net/d/3345
+Here is a start:
+    with(x){r=Math.random;a=r();b=.2+1*r();beginPath();x.lineWidth=3e3;x.arc(0,0,1e3,b,b+.1);strokeStyle=R(200+55*b,200+50*(a-b),0,.2/(a*a+b*b));x.stroke()}
+    with(x){r=Math.random;a=r();b=.2+1*r();beginPath();x.lineWidth=3e3;x.arc(0,0,1e3,b,b+.1);strokeStyle=R(200+55*b,200+50*(a-b),0,.2/(a*a+b*b));x.stroke();fillStyle='hsla(0,99%,99%,0.1';fillRect(0,0,2e3,2e3)}
+
+
+## Cube
+- Either 12 edges
+- or 6 faces, like the first canvas code you wrote
+
+
+## DONE: Could we make the 16 squares game?
+
+Remix this green matrix: Give it even spread and perspective?
+https://www.dwitter.net/d/2158
+
+## DONE: Revision Demoparty Logo
+## A smiling face (blinking eyes, changing mood?)
+## A dancing stick man
+## Sheep jumping over a fence?  Jumping deer?
+## A shaded sphere
+Like we used to draw on the Beeb.  Dithered or shaded can.
+Ah GabrielSroka did some nice shaded spheres already: https://www.dwitter.net/d/1468
+If that's too easy, how about a bouncing cylinder / drink can?
+## Spike blob
+## Car racing game
+Can it be gamified?  Donkey.BAS was dead simple: only two positions for the donkey and two for the car.
+## Visualise a prime seive
+## Visualise a simple neural network
+## Joy of Unix
+Glowing green console display.  Show `cd /` then `ls` then `/usr /etc /home` etc.
+## Eval is evil
+A dweet that starts with `eval(btoa(...))` and produces something say "EVIL" :)
+## Text with a halftone fade
+Horizontal stripes over the text (like 100)
+## Retro text
+Remember that reflective text style which showed the blue sky above the earth/desert?
+## Retro purple tron scene with glow
+## Sun with lens flares
+Maybe rip it from Stellar Coral?
+## DONE: Clouds generator
+## I like the 3d grid here https://www.youtube.com/watch?v=fg3h-fzjxjQ&vq=small
+## 3d fractal mountain
+## Can we replicate this in 140 bytes? https://codegolf.tk/a/61
+Can we sample 3 overlaid sine waves in jumps?
+## Dice.  Apparently lionleaf loves dice (esp. D20 and D100 === D10 x 2).  Could do him something dice-related for his ... birthday?
+## Waterfall
+
+    // Experiment using sin() and cos(): poor results
+    r=Math.random;p=(X,Y,R,D,k)=>D&&(x.globalAlpha=.01,x.fillRect(X,Y,R,R),k=_=>p(X+2*R*S(Y),Y+R*S(X)/4,R*.8,D-1),k(),k());t||p(900,0,500,15)
+    // An experiment using sin() and cos() for reproducability, but varying with t.  May experience some chaos.
+    r=Math.random;p=(X,Y,R,D,k)=>D&&(x.globalAlpha=.01,x.fillRect(X,Y,R,R),k=(U,V)=>p(X+2*R*S(U),Y+R*C(V)/4,R*.8,D-1),k(Y+t/9913,X-t/9911),k(Y+t/9997,X+t/9917));c.width|=0;p(900,500,500,15)
+
+## Random showcase
+For the revision logo I used a lot of % to produce pseudo-random results.
+But of course if we use %3 and %6 then the results do not appear so random.
+Can we visualise the use of % with different values, to show where it is good and where it is bad?
+Should we also include `2*PI`, since that was part of our use?
+
+
+# Games
+Space invaders?  Perhaps starting with the original boxes!
+Someone made a start: https://www.dwitter.net/d/331
+Space invaders of dwitter: https://www.dwitter.net/d/6153 https://www.dwitter.net/d/6157 https://www.dwitter.net/d/6159
+Snake
+DONE: Frogger
+Chess? https://www.dwitter.net/d/1150
+1-block tetris
+Mini version of the JS1k game which lets you fire planets and sees if they will orbit the sun or fly away
+## Car race/dodging game  https://www.dwitter.net/d/2201
+    t?c.width=w=270:X=0;for(i=8;i--;)h=54*(3*t+i)%w,a=i<5,b=i>6,x.fillRect(w/2+(a?0:b?-6-X:w*(i-5.5)/2),a?h:b?99:0,b?20:4,9*(a?2:(b?5:9*w)));onkeyup=e=>e.keyCode==65?X--:X++
+    t?c.width=w=270:X=0;for(i=8;i--;)h=54*(3*t+i)%w,a=i<5,b=i>6,x.fillText('|',w/2+(a?0:b?-6-X:w*(i-5.5)/2),a?h:b?99:0);onkeyup=e=>e.keyCode==65?X--:X++
+Pong: almost https://www.dwitter.net/d/3453 trying https://www.dwitter.net/d/5897
+elrod did breakout without interactivity or progression: https://www.dwitter.net/d/321
+Snake with no goal, by Jenky: https://www.dwitter.net/d/2333
+That game where you have to type the falling letters to make them disappear.  https://www.dwitter.net/d/6325
+Oh that has almost already been done: https://www.dwitter.net/d/1925
+
+TODO: Not too hard: Emoji fruit machine!
+Ah damnit, nystrand got there already! https://www.dwitter.net/d/6232
+
+TODO: Not too hard? Dodge the falling meteors game
+
+Anything from https://twitter.com/beesandbombs
+
+# Site improvements
+Mock canvas functions and other API functions, to detect infloops.
+
+# Port to BBC Micro?
+## https://www.dwitter.net/d/5978
+c.width=1080;for(i=240;i--;)for(j=135;j--;)((j*C(t))&i*S(t))?x.fillRect(i*8,j*8,8,8):0
+
+# Pulling in external images (Anan's image server)
+https://www.dwitter.net/d/6871
+
+Something with the "deal with it" sunglasses.
+E.g. remix the falling dominoes, except domino number 13 doesn't fall.  He stands straight and all the others after do too.  Then the "deal with it" sunglasses fall and land on that domino.
+Perhaps easier, do something similar with the default 9 rectangles.
+Or any other dweet where we expect something to happen, and then it doesn't.
+This would be a good domino dweet to start from: https://www.dwitter.net/d/7447
+
+# For Halloween
+A white moon on a black background.  Every now and then, something flies across the surface of the moon.
+It could be a witch shape which flies over.  Or it could be a bat shape (just two flapping triangles might do it).
+For extra affect, on the fourth pass, the bat (two triangles) could grow very large and flap towards you (blotting out the moon).  Can probably manage unexpected sudden growth with something like `T(t/2)**20`
+For super bonus, make the second and third passes get smaller, to draw the viewer in, before the terrifying fourth attack!
