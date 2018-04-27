@@ -1,0 +1,18 @@
+#effect_i_see_often_but_cant_really_describe
+#dwitterologist #taxonomy
+
+There are a few effects (dwitter idioms?) that seem to crop up very often:
+
+1. Sine waves (henceforth forever knows as "swine waves")
+
+2. Spirals
+
+3. Moire (interference patterns on a 2d grid)
+
+4. 1d interference patterns resulting from sampled sine waves or spirals (https://www.dwitter.net/d/739)
+
+5. The binary boxy one I can't describe which might be related to Sierpinski (https://www.dwitter.net/d/7815)
+
+6. The circles fractal (which is a specific type of Moire I guess)
+
+Did I miss any? Would you categorise them differently?(edited)
