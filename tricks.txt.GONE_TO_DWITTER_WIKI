@@ -1,0 +1,203 @@
+# General Javascript golfing
+
+You can use just about any existing Javascript object as a dictionary if you need to, to avoid initialising your own.
+
+    onclick=e=>{a=[],a[9]=9}
+    onclick=e=>{e[9]=9,a=e}
+
+A dictionary can be used as a cheap array, but it won't give you `.length` or any Array methods.
+
+Need to call a function multiple times, but it's a member of another object?
+You can't do `F=x.fillRect;F();F()` because `F` won't see its context object `x`.
+But you can do:
+
+    x.F=x.fillRect;x.F(X,Y+7,3,3);x.F(187,Y+C(X/39)*29,5,20);x.F(0,Y-S(X/29)*22,5,20)
+
+Alternatively, or additionally, try using the `with` operator.
+
+    with(x)F(),F(),F(),F()
+
+You can even use multiple contexts:
+
+    with(Math,x)F(),F(),F(min(a,b))
+
+Need to ping-pong?  Try `(t % 100 - 50)`  No don't, that's nonsense!
+
+A for loop can use a `,` instead of `{}` to do multiple things inside the body:
+
+    for(i=10;i--;){thing1();thing2()}   // before
+    for(i=10;i--;)thing1(),thing2()
+
+You can save a further char by moving the last thing (or more) inside the for:
+
+    for(i=10;i--;thing2())thing1()
+
+Note that this trick works inside `if`s too, but it does not work in the "body" of an arrow funciton, because that is an expression, not a statement.
+
+***Experiment!***  Some of the Javascript API functions have really long names.  If you are using more than ~5 of these, then these functions might help.  They let us search for properties using a regexp.
+
+    /** p(object, regexp) = find key in object */
+    p=(o,r)=>{for(k in o)if(k.match(r))return ok}
+    /** P(object, regexp) = get property from object */
+    P=(o,r)=>o[p(r)]
+
+    f=(o,r)=>p(o,r).bind(o)
+
+If I am using the same `o` repeatedly, then I might remove the `o` argument from those functions, and instead set it as a global before calling `p` or `P`.
+
+So now, instead of `XMLHttpRequest` ......................... ?
+
+
+# Tricks and tips
+
+You can not do `foo&&bar=1` but you can do `foo?bar=1:0`
+
+Remember that `|` is greedy but `%` is not.  Other bitwise operations are also greedy (`&`, `<<`, `>>`, `^`).
+
+If you need to floor and then modulus, instead of `(x|0)%y` you can use `~~x%y`
+
+## With
+
+Four times `x.` can be shortened using `with(x)...`
+
+## Tiny loops
+
+Do you need to loop from 0 to 3 or less?  You can use `for ... in`
+
+    for(i=0;i<3;i++)...
+    // becomes
+    for(i in 'abc')...
+    // unless you could have looped backwards (sometimes you can't)
+    for(i=3;i--;)...
+
+# Emojis
+
+You can access most unicode chars directly from a string: `"abc"[k]`
+
+But that doesn't work so well with emojis, because emojis are two characters each, so you only get half the code!
+
+However, you can copy emojis into an array, and extract from that: `[...'🐸🌷☁️️'][k]`
+
+This only saves space if you are using 3 or more emojis.
+
+
+# Canvas specific
+
+Clear canvas: `c.width|=0`
+
+In fact you can `|` with various numbers with no or little consequence, so this clearing can be combined with other variable setup: `c.width|=N=600`
+
+Set canvas width to 300: `c.width=-1`
+
+You can get hsl using a template string, and you can omit the final ')' because browsers are lenient when parsing it:
+
+    x.fillStyle=`hsl(${X},80%,${i}%`
+
+It is shorter to draw text than to fill a rectangle (if your `w` and `h` are more than 1 char each).  So instead of little dots, you could consider little unicodes.
+
+    x.fillRect(x,y,w,h);
+    x.fillText('O',x,y);
+
+`x.fill('evenodd')` is significantly shorter than `x.globalCompositeOperation='xor';x.fill()`
+
+Are you put off using `x.transform()` because it doesn't reset.  Try `x.setTransform()` instead!  But it is different: it takes a matrix rather than a string of transforms.
+
+## Setting font size
+
+    // Long ways:
+    x.font='99px sans'
+    x.font='99px sa'
+
+    // Short way
+    x.font='9em"'
+    x.font="9em'"
+
+## Canvas effects
+
+    x.shadowBlur=20;x.shadowColor="#000"
+
+"There's a difference there too, clearRect only clears the pixels, while setting the width of height of the canvas clears all the other state too, like fillStyle, transforms, etc" - sigveseb
+
+
+# Dwitter specific
+
+If you need to use a variable and want to avoid 'undefined' errors before it has been set, consider using T.  (It's the tan function provided)
+
+There appears to be vars `o` and `O` but I don't know what they are.  "output"?
+
+Don't use the `R()` function for static colors.  Just use:
+
+    x.fillStyle='#f0f'
+
+Is this an efficient way to set the background black?
+
+    c.style.background='#000'
+
+## Stats
+
+Magna showed a way to get more stats out of Chrome:
+
+```
+c.width|=0;for(i=3;i--;x.drawImage(stats.dom.children[i],0,0,T=160,80,i%2*960,(i>>1)*540,960,540))x.fillRect(S(t+i)*T+1440,C(t-i)*T+810,9,9)
+```
+
+## Framerate
+
+For slow machines, add these lines to reduce the number of frames drawn, and to keep t time-based.
+
+```
+if((60*t|0)%4>0)return
+t==0&&(start=Date.now())
+t=(Date.now()-start)/1000
+```
+
+## Execute a dweet more quickly
+
+Sometime a Dweet executes slowly because each frame only does a small thing.  We can run more frames per second like this:
+
+```
+SPEED=9;for(t=t*SPEED,END=t+SPEED/60;t<END;t+=1/60){
+...
+}
+```
+
+## Initialisation
+
+Magna [found](https://www.dwitter.net/d/3232) that we can close the render function and open a separate block to define init.
+
+```
+x.globalAlpha=.03;x.fillRect(r(),r()/2,r()/4,r()/8)}
+{r=()=>Math.random()*2e3
+```
+
+## Keyboard input
+
+    onkeydown=e=>this["YXYX"[g=e.which%4]]-="0220"[g]-1
+
+from Bálint
+
+
+# Shorter ways to call functions
+
+Using a template string
+
+    x=c.getContext`2d`
+
+is the same as calling
+
+    x=c.getContext(['2d'])
+
+Using a setter, useful if you will call the function very many times in the code (by AnnanFay):
+
+    with({set x(v)function_body})
+        x={a:1,b:2}
+
+You could add multiple setters in that object, for multiple functions.
+
+Returning the function, for function chaining (by AnnanFay):
+
+    x=v=>(function_body,x)
+    x({a:1,b:2})({a:1,b:2})({a:1,b:2})
+
+
+vim: ft=markdown
