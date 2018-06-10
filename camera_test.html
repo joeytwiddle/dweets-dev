@@ -1,0 +1,46 @@
+<!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video -->
+
+<canvas id="c" width="1920" height="1080" style="width: 100%">
+
+<script>
+
+var t = 0;
+
+var x = c.getContext`2d`;
+var C = Math.cos;
+var S = Math.sin;
+var T = Math.tan;
+
+var u = () => {
+  // Original, tweaked to work with new API
+  //t?x.drawImage(c,50*S(t*2),g=t*100%600,h=600,h,0,g,h,h):navigator.mediaDevices.getUserMedia({video:1}).then(e=>(c=document.createElement`video`).srcObject=e)
+  //t?x.drawImage(c,0,0):navigator.mediaDevices.getUserMedia({video:1}).then(e=>(c=document.createElement`video`).srcObject=e)
+  //t?x.drawImage(c,50*S(t),t*99%600):navigator.mediaDevices.getUserMedia({video:1}).then(e=>(c=document.createElement`video`).srcObject=e)
+  // OK --- RELEASED --- https://www.dwitter.net/d/8504
+  //t?x.drawImage(c,9*S(t),t*60%600,999,1):navigator.mediaDevices.getUserMedia({video:1}).then(e=>(c=document.createElement`video`).srcObject=e)
+  //t||navigator.mediaDevices.getUserMedia({video:1}).then(e=>(c=document.createElement`video`).srcObject=e);x.drawImage(c,50*S(t),t*60%600,999,1)
+  //t?x.drawImage(c,50*S(t),t*60%600,999,1):(async ()=>(c=document.createElement`video`).srcObject=await navigator.mediaDevices.getUserMedia({video:1}))()
+  //t?x.drawImage(c,0,g=t*60%400,h=999,h,0,g,h,h):navigator.mediaDevices.getUserMedia({video:1}).then(e=>(c=document.createElement`video`).srcObject=e)
+  // WORKS
+  //t?x.drawImage(c,0,k=t*60%1e3,2e3,1e3,0,k,1e3,2):navigator.mediaDevices.getUserMedia({video:1}).then(e=>(c=document.createElement`video`).srcObject=e)
+  //t?x.drawImage(c,0,g=t*100%600,h=600,h,0,g,h,h):navigator.mediaDevices.getUserMedia({video:1}).then(e=>(c=document.createElement`video`).srcObject=e)
+  // OK
+  t?x.drawImage(c,0,t*60%600,999,1):navigator.mediaDevices.getUserMedia({video:1}).then(e=>(c=document.createElement`video`).srcObject=e)
+  // Problem is, it takes too many arguments to copy only part of the source to part of the dest
+  // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
+  //t?x.drawImage(c,0,k=t*60%1e3,2e3,1e3,0,k,1e3,2):navigator.mediaDevices.getUserMedia({video:1}).then(e=>(c=document.createElement`video`).srcObject=e)
+  //t?x.drawImage(c,0,0,999,t*60%600):navigator.mediaDevices.getUserMedia({video:1}).then(e=>(c=document.createElement`video`).srcObject=e)
+  //t?x.drawImage(c,0,0,999,(9e9-t*60)%600):navigator.mediaDevices.getUserMedia({video:1}).then(e=>(c=document.createElement`video`).srcObject=e)
+  //t?x.drawImage(c,0,0,999,k=t*60%600,0,k,999,9):navigator.mediaDevices.getUserMedia({video:1}).then(e=>(c=document.createElement`video`).srcObject=e)
+};
+
+setInterval(update, 1000 / 60);
+
+function update () {
+  u();
+  t += 1 / 60;
+}
+
+update();
+
+</script>
