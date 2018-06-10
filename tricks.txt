@@ -1,0 +1,88 @@
+# Encoding and decoding binary data
+
+By hand:
+
+    > 0b1100110000011000
+    52248
+    > (52248).toString(16)
+    'cc18'
+    > '\ucc18'
+    '찘'
+
+Or all in one go:
+
+    > eval('console.log("-->' + "\\u" + (0b1100110000011000).toString(16) + '<--");')
+    -->찘<--
+
+I read somewhere that we can encode up to 21 bytes into Unicode.  But my experiments have only reached as high as "\uffff"
+
+    // This can only handle 0x0000 - 0xffff
+    // All of these count as 1 char in the output string
+    p=c&&c.parentNode||p
+    d=0b1010101010101010
+    s=String.fromCharCode(d)
+    C=s.charCodeAt(0)
+    p.textContent=s+` ${s.length} ${C==d} `+C.toString(2)
+
+    // This can handle all possible unicode chars (0x000000 - 0x10ffff)
+    //eval("s='\\u{"+(d&0x1fffff).toString(16)+"}'")
+    // But it will produce strings of length 2, so no real advantage and not much use for encoding binary data
+
+    // '\u{...}' and String.fromCharCode() give the same result only up to 0xffff
+    if(t)return
+    p=c&&c.parentNode||p
+    for(d=0;d<0x110000;d++){
+    eval("s='\\u{"+d.toString(16)+"}'")
+    q=String.fromCharCode(d)
+    if(s!==q){p.textContent=d.toString(16);return}
+    }
+    p.textContent="all same"
+
+## Colours
+
+From /d/4868:
+
+    x.fillStyle=R(...[S,C,T].map(_=>127*(_(t)+1))); // such a clever way to do colors
+
+However, this is 13 chars shorter:
+
+    x.fillStyle=`hsl(${99*t},99%,50%`
+
+
+# Absolute value
+
+```js
+Math.abs(n)
+(n**2)**.5
+n**.5?n:-n
+n<0?-n:n
+```
+
+
+# WTFJS
+
+- Bitwise | is greedy on the left but not the right?  (Surely that depends what is on the left and the right...)
+- Bitwise >> is greedy on both sides
+- What about % ?
+
+
+# Compression
+
+Use `atob()` and `btoa()` to compress/decompress some strings:
+
+    alert('adifonoiewnfqowinfiodnasfoinqeiwnfqoiwnfoiansdfoinqowfe') //before
+    alert(btoa('iØ¢z"{ ßª"ø¨vv¬~§©è°ú¨    ß¢&§±×èz¨Á÷')) //after
+
+But it doesn't work on general strings.  Only on base64 strings.  [a-zA-Z0-9+/]
+
+Alternatively, MrM@_S produced [this escape compressor](https://www.dwitter.net/d/7858) which later evolved into [this](https://www.dwitter.net/d/8186) (Dwitter specific).
+
+
+# Embed Dwitter Dweets in your own site
+
+Like this:
+
+    <iframe src="https://dweet.dwitter.net/id/123?autoplay=1"></iframe>
+
+
+vim: ft=markdown
