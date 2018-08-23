@@ -126,7 +126,32 @@ Or any other dweet where we expect something to happen, and then it doesn't.
 This would be a good domino dweet to start from: https://www.dwitter.net/d/7447
 
 # For Halloween
+DONE!
 A white moon on a black background.  Every now and then, something flies across the surface of the moon.
 It could be a witch shape which flies over.  Or it could be a bat shape (just two flapping triangles might do it).
 For extra affect, on the fourth pass, the bat (two triangles) could grow very large and flap towards you (blotting out the moon).  Can probably manage unexpected sudden growth with something like `T(t/2)**20`
 For super bonus, make the second and third passes get smaller, to draw the viewer in, before the terrifying fourth attack!
+
+# OEIS challenge
+Donbright, amusingly, requested an `OEIS()` shortcut function for dwitter.  https://github.com/lionleaf/dwitter/issues/95#issuecomment-282178926
+I like Donbright.  Perhaps we can write such a function, and then load it into a dweet using `fetch()` (or `<script>` or `import`?)
+Note that `await import` can work in any script, but `import` only works inside `<script type="module">`
+Apparently `await import` can work cross-domain, if CORS is enabled.
+https://jakearchibald.com/2017/es-modules-in-browsers/
+Here is a start:
+```js
+if(!t){
+fetch('https://code.jquery.com/jquery-3.3.1.min.js').then(async r=>{
+console.log(await r.text());
+}).catch(e=>console.error(e))
+}
+```
+
+# Flip table
+Take this bad boy: (╯°□°）╯︵ ┻━┻
+Split it up, and animate it.
+If there is space, put 141/140 on top of it.
+
+# Bokeh car lights
+Would it be possible to add some z-axis to this?  Perhaps even a snaking road?
+magna's car lights at night: https://www.dwitter.net/d/8745

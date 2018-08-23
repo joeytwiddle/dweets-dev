@@ -85,4 +85,12 @@ Like this:
     <iframe src="https://dweet.dwitter.net/id/123?autoplay=1"></iframe>
 
 
+# SVG might be shorter than moveTo-lineTo
+
+jylikangas's tree in the wind https://www.dwitter.net/d/8788
+```js
+c.width|=P=(i,j,a,d)=>d&&x.stroke(new Path2D('M'+[i,j,i+=S(a)*99,j+=C(a)*99]))&P(i,j,a+C(d/2+t)/3,d-1)&P(i,j,a-C(t/2)/3,d-1);P(960,999,66,9)
+```
+
+
 vim: ft=markdown

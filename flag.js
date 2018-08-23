@@ -156,6 +156,8 @@ c.width|=k=130;for(i=p=0;i++<252;x.fillRect(320+i*5,260-i/2+o,5,700),p=o)o=(S(i*
 c.width|=0;for(i=p=0;i++<252;x.fillRect(370+i*5,70+i/2+o,5,700),p=o)o=(S(i**1.3/180-t*11)+C(i**1.4/600-t*8))*i**.6,x.globalAlpha=.5+(o-p)/9
 // Red flag (142)
 c.width|=0;for(i=p=0;i++<252;x.fillRect(370+i*5,70+i/2+o,5,700),p=o)o=(S(i**1.3/180-t*11)+C(i**1.4/600-t*8))*i**.6,x.fillStyle=R(195+(o-p)*30)
+// 20180717: Balint used derivatives for the lighting, saving two chars (mainly because it could avoid initialising p, and reverse the loop)
+c.width|=0;for(i=252;i--;x.fillRect(370+i*5,70+i/2+(S(R=i**1.3/180-t*11)+C(T=i**1.4/600-t*8))*i**.6,5,700))x.globalAlpha=.5+(C(R)-S(T))/9
 
 // Splitting away from the first "rainbow flag" and using exponentials for realism
 h=800;c.width*=1;for(i=64;i--;x.fillRect(h+i*6,y=200+o,6,i>2?y:h),p=o)o=S(t*2-i**1.5/69)*i**.4*2,x.fillStyle=`hsl(${i>>3<<5},90%,${i>2?50+(o-p)*7:0}%`
@@ -166,3 +168,18 @@ c.width|=k=130;for(b=6;b--;)for(i=p=0;i++<252;x.fillRect(320+i*5-i/9*C(b/5+8*t),
 
 // aemkei's JS dots flag: https://www.dwitter.net/d/2023
 
+// James W. Cadle's Flag of Earth, with help from mycurvefit.com #flag
+X=[700,0,-1400,0],Y=[300,0,0,0],R=[150,480,1200,1100],C=['#fff','#39f','#ff0','#000']
+for(i=4;i--;)x.beginPath(),x.arc(960+X[i],540+Y[i],R[i],0,7),x.fillStyle=C[i],x.fill()
+// 153, with thanks to https://mycurvefit.com/
+X=[700,0,-1400,0],C=['#fff','#39f','#ff0','#000']
+for(i=4;i--;)x.beginPath(),x.arc(960+X[i],540+(i||300),150+135*i+200*i*i,0,7),x.fillStyle=C[i],x.fill()
+// 146
+C=['#fff','#39f','#ff0','#000']
+for(i=4;i--;)x.beginPath(),x.arc(i%2?960:1660-1050*i,540+(i||300),150+135*i+200*i*i,0,7),x.fillStyle=C[i],x.fill()
+// 150
+['#000','#ff0','#39f','#fff'].map((C,i)=>{x.beginPath(),x.arc(i%2?1050*i-1490:960,i<3?540:840,150+135*(3-i)+200*(3-i)**2,0,7),x.fillStyle=C,x.fill()})
+// 143
+['#000','#ff0','#39f','#fff'].map((C,i)=>{x.beginPath(),x.arc(i%2?1050*i-1490:960,i<3?540:840,2310-1305*i+195*i*i,0,7),x.fillStyle=C,x.fill()})
+// --- RELEASED --- https://www.dwitter.net/d/9116
+['#000','#ff0','#39f','#fff'].map((C,i)=>x.beginPath(x.fillStyle=C)|x.arc(i%2?1050*i-1490:960,i<3?540:840,2310-1305*i+195*i*i,0,7)|x.fill())

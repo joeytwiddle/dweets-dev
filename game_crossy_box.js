@@ -173,6 +173,8 @@ t?c.width|=0:P=Z=0;for(i=45;i--;Z>0&&j==Z&&(X-1e3)**2<8e3?Z=0:Z<9?onclick=e=>Z++
 // Oh, there is a much easier way to do that:
 t?c.width|=0:P=Z=5;for(i=36;i--;j==Z&&(X-1e3)**2<8e3?Z=9:Z?onclick=e=>Z--:P++)j=i>>2,x.fillRect(j?X=(10-j)%5*(t/19+i)*P%2e3:1e3,99*(j||Z),99,50)
 // TODO: What if we reduce the width?
+// MrM@_S
+W=c.width=255;for(i=96;i--;j=i>>2,x.fillText((u+u)[t&W],j?X=(3*j%8*33*t+i*W)%W:W/2,j?Y=j*9:Z*9))!t||j==Z&&(X-W/2)**2<W*4?Z=0:onclick=e=>Z++
 // MrM@_S's inspiration to shrink the canvas shaves off 6 chars!
 t?c.width=200:P=Z=0;for(i=36;i--;j==Z&&(X-99)**2<80?Z=9:Z?onclick=e=>Z--:P++)j=i>>2,x.fillRect(j?X=j%5*(t/19+i)*P%200:99,9*(j||Z),9,5)
 
@@ -195,13 +197,11 @@ t?c.width=W=200:P=Z=0;for(i=36;i--;j==Z&&(X-99)**2<60?Z=9:Z?onclick=e=>Z--:P++)j
 t?c.width=W=200:P=Z=0;for(i=36;i--;j==Z&&(X-99)**2<60?Z=9:Z?onclick=e=>Z--:P++)j=i>>2,x.fillText(j?'🚌':'🐢',j?X=j%5*t/9*P+i%W:99,9*(j||Z))
 // This is what I really wanted to release (it doesn't get tooo fast, if we use t/W instead of t/99)
 t?c.width=W=200:P=Z=0;for(i=36;i--;j==Z&&(X-99)**2<60?Z=9:Z?onclick=e=>Z--:P++)j=i>>2,x.fillText(j?'🚌':'🐢',j?X=j%5*(t/W+i)*P%W:99,9*(j||Z)) 
-
-// MrM@_S
-W=c.width=255;for(i=96;i--;j=i>>2,x.fillText((u+u)[t&W],j?X=(3*j%8*33*t+i*W)%W:W/2,j?Y=j*9:Z*9))!t||j==Z&&(X-W/2)**2<W*4?Z=0:onclick=e=>Z++
+// I published a higher-resolution version on itty.bitty.site:
+// https://itty.bitty.site/#/?XQAAAAIDAQAAAAAAAAAeGMgnEVrNjm+9V9MsYHN3URvwN3JAWn4zVL44L3t5GLXCGIW9nGBgas79xztG9EA9nEohemlfs8FM8867yuQ/ReRcoOGLutc9WW6gZSjaKdBGuBk6sEzvFQGnWg7CSLgOQ0241VTeIzYhjH8xeHJzSCjm6rZr7MrnRFk/Xe4PLR84ZYSjWwNrv5GH4HO3seuskc11Oh/nJUxDdJyrdl+99pgVTwA5hP1qE8bh8GHkyKnq68Gk6l5nNA6eY6xUXeb11xP0vxh+3Co94qMBdhRWXwW4kOkT/y6KZXWYpAcKOYVIIbj+9l3LcQ==
 
 // "We do P++ on every iteration of the loop, until Boxy gets hit by an invisible car on row 0."
 // This is not true.  Because we don't assign X when we are on row 0, the collision is with the last car on row 1.
-
 
 // There is a spare char available in the wink of the for loop
 

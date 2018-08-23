@@ -157,6 +157,60 @@ x.shadowColor=R(255,260-b**1.1,255)
 x.fillStyle='white'
 for(i=9;i--;)x.fillRect(400+i*100+S(t)*300,400,50,200)
 }
+//
+x.fillStyle=R()
+x.fillRect(0,0,2e3,2e3)
+for(b=880;b-=80;){
+x.shadowBlur=b/4
+x.shadowColor=`hsl(300,99%,${100-b/12}%`
+x.fillStyle='white'
+for(i=9;i--;)x.fillRect(400+i*100+S(t)*300,400,50,200)
+}
+//
+x.fillStyle=R()
+x.fillRect(0,0,2e3,2e3)
+for(b=1280;b-=160;){
+x.shadowBlur=b/4
+x.shadowColor=`hsl(300,99%,${100-b/16}%`
+x.fillStyle='#fff'
+for(i=9;i--;)x.fillRect(400+i*100+S(t)*300,400,50,200)
+}
+//
+x.fillStyle=R()
+x.fillRect(0,0,2e3,2e3)
+for(b=8;b--;){
+x.shadowBlur=b*40
+x.shadowColor=`hsl(300,99%,${100-2*b**2}%`
+x.fillStyle='#fff'
+for(i=9;i--;)x.fillRect(400+i*100+S(t)*300,400,50,200)
+}
+//
+x.fillStyle=R()
+x.fillRect(0,0,2e3,2e3)
+for(b=8;b--;){
+x.shadowBlur=b*20
+x.shadowColor=`hsl(300,99%,${100-b*8}%`
+x.fillStyle='#fff'
+for(i=9;i--;)x.fillRect(400+i*100+S(t)*300,400,50,200)
+}
+// Trying to golf now
+x.fillStyle=R()
+x.fillRect(0,0,2e3,2e3)
+for(j=72;j--;){
+x.shadowBlur=2*j
+x.fillStyle=x.shadowColor=`hsl(300,99%,${110-j}%`
+x.fillRect(400+(j%9)*100+S(t)*300,400,50,200)
+}
+//
+x.fillRect(0,0,c.width=500,300)
+for(j=72;j--;){
+x.shadowBlur=j/2
+x.fillStyle=x.shadowColor=`hsl(300,99%,${110-j}%`
+x.fillRect(99+(j%9)*25+S(t)*75,99,11,50)
+}
+// 149
+x.fillRect(0,0,c.width=500,300)
+for(j=72;x.shadowBlur=j--/2;)x.fillStyle=x.shadowColor=`hsl(300 99%${110-j}%`,x.fillRect(140+j%9*25+S(t)*75,99,11,50)
 
 // Black and white circle by PeCaN ("anti-pattern") https://www.dwitter.net/d/1699
 // The original could be directed by mouse, but I was experimenting with automatic patterns
@@ -674,6 +728,9 @@ for(i=d=60,c.width=16*d;i--;x.beginPath(),x.arc(8*d+(j-.5)*C(t)*d*8,4*d+S(3*j)*d
 for(i=d=60,c.width=16*d;i--;x.beginPath(),x.arc(8*d+(j-.5)*C(t)*d*8,4*d+S(3*j)*d*2,M,2,8),x.fillStyle=`hsl(${300*(j+t)},99%,50%`,x.fill())P=2*Math.PI,j=i/d,M=(8*d*Math.max(0,S(2.8*j+.4)/6-.06)+12)*(1+S(j/(1+C(t*.7))-7*S(t))**10)
 // Add some simple translations with tan
 for(i=d=60,c.width=16*d;i--;x.beginPath(),x.arc(8*d+(j-.5)*C(t)*d*8+7*T(t/3.1),4*d+S(3*j)*d*2-5*T(t/5.3),M,2,8),x.fillStyle=`hsl(${300*(j+t)},99%,50%`,x.fill())P=2*Math.PI,j=i/d,M=(8*d*Math.max(0,S(2.8*j+.4)/6-.06)+12)*(1+S(j/(1+C(t*.7))-7*S(t))**10)
+// --- TO RELEASE --- Yonatan's 175 compressed https://codegolf.tk/a/265
+// BUG: For some reason this one does not decompress like the other ones did!
+eval(unescape(escape`挮睩摴栽㈰〻景爨搽椽ㄷ〰㭪㵩ⴭ⽤㭸⹦楬汒散琨㤹⬨椭ㅥ㌩⩓⡴⤯㤫匨椩⨨爭愯㐩ⱓ⠳⩪⤪㜵⭃⡩⤪爬㘬㘩⥲㵪㸮㤿㈺㌰⩓⠳⩪⬮㌩ⱸ⹦楬汓瑹汥㵒⡢㴷⨨愽爭匨椪㈩⨪㠪ㄵ⤭匨椪⨸⤪⨸⨳〬截⸸⤀`.replace(/u(..)/g,"$1%")))
 
 // alien's wireframe https://www.dwitter.net/d/7375
 w=c.width=401
@@ -922,3 +979,80 @@ with(x)for(i=30;i--;t>4?fillText("debian",640,1e3):fillRect((r=70+80*t)*S(m=5*t*
 with(x)for(i=30;i--;t>4?fillText("debian",640,1e3):fillRect((r=70+80*t)*S(m=5*t**.6+t*i%1)*.93+1e3,C(m)*r+390,i,i))font="14em'"
 // Neatish
 with(x)for(i=40;i--;t>4?fillText("debian",640,1e3):fillRect((r=70+80*t)*S(m=5*t**.6+t*i%1)+1e3,C(m)*r+390,9,9))fillStyle='#d15',font="14em'"
+
+// Knifa's red wall https://www.dwitter.net/d/6344 
+// I wanted it to feel like a 3d wall, perhaps inside the Tron universe, so:
+c.style.background='black'
+for(i=0;i<192;i++)for(j=0;j<32;j++){q=i-96;r=j-16
+x.fillStyle=R(S(t*q*r/10)*255)
+x.fillRect(i*8+200,600-(j-5)*Math.abs(i-96)/5,8,8)}
+//
+c.style.background=R();for(i=192;i--;)for(j=32;j--;)q=i-96,x.fillStyle=R(S(t*j/q*99)*255),x.fillRect(i*8+200,800-(j-3)*Math.abs(q)/4,8,8)
+// Heavier
+c.style.background=R()
+for(i=192;i--;)for(j=96;j--;)q=i-96,x.fillStyle=R(S(t*j/q*99)*255),x.fillRect(i*9+90,800-(j-9)*Math.abs(q)/9,8,8)
+// Rather heavy
+c.style.background=R();for(i=384;i--;)for(j=96;j--;)q=i-192,x.fillStyle=R(S(t*j/q*99)*255),x.fillRect(i*4+192,800-(j-9)*Math.abs(q)/30,4,4)
+// Very heavy
+c.style.background=R();for(i=768;i--;)for(j=96;j--;)q=i-384,x.fillStyle=R(S(t*j/q*99)*255),x.fillRect(i*2+192,800-(j-9)*Math.abs(q)/40,2,2)
+
+// Remixing trancor and Xen's plasma: https://www.dwitter.net/d/9071
+for(c.width=i=69;i--;)for(k=39;k--;x.fillRect(i,k,1,1))x.fillStyle=`hsl(${(C(i/5-t/.9)+S(k/6+S(t))*S(i/20+t/.7))*150},90%,50%`
+for(c.width=i=69;i--;)for(k=39;k--;x.fillRect(i,k,1,1))x.fillStyle=`hsl(${(C(i/5-t/.9)+S(k/6+S(t))*S(i/20+t/.7)-t)*99},80%,75%`
+// That old alpha trick again.  Interesting where the patterns form
+t||(c.width=69);t*=9;for(i=69;i--;)for(k=39;k--;x.fillRect(i,k,1,1))x.fillStyle=`hsl(${(C(i/5-t/.9)+S(k/6+S(t))*S(i/20+t/.7)-t)*99},99%,66%,.01`
+// Revert; spice it up a bit
+for(c.width=i=69;i--;)for(k=39;k--;x.fillRect(i,k,1,1))x.fillStyle=`hsl(${(C(i/5-t/.9)+C(C(i/9)+k/5+S(t))*S(i/20+t/.7)-t)*99},80%,75%`
+// Greyscale version
+for(c.width=i=69;i--;)for(k=39;k--;x.fillRect(i,k,1,1))x.fillStyle=`hsl(0,0%,${50+S(3*(C(i/5+t/.9)+C(C(i/9)+k/5+S(t))*S(i/20+t/.7)+t))*30}%`
+for(c.width=i=69;i--;)for(k=39;k--;x.fillRect(i,k,1,1))x.fillStyle=`hsl(0,0%,${50+S(2*(C(i/5+t*2)+C(C(i/9)+k/5+S(t))*S(i/20+t/.9)+t))*30}%`
+// Color redux (don't stray too far from a central colour which slowly changes over time)
+for(c.width=i=69;i--;)for(k=39;k--;x.fillRect(i,k,1,1))x.fillStyle=`hsl(${(8*C(2*(C(i/5-t/.9)+C(C(i/9)+k/5+S(t))*S(i/20+t/.7)))-t)*9},80%,75%`
+for(c.width=i=69;i--;)for(k=39;k--;x.fillRect(i,k,1,1))x.fillStyle=`hsl(${(6*C(3*(C(i/5-t/.9)+C(C(i/9)+k/5+S(t))*S(i/20+t/.7)))+t)*9},80%,75%`
+for(c.width=i=69;i--;)for(k=39;k--;x.fillRect(i,k,1,1))x.fillStyle=`hsl(${36*C(2*(C(i/5-t/.7)+C(C(i/8)+k/5+S(t))*S(i/9+t/.9)))+t*9},90%,75%`
+// Revert; colour redux
+for(c.width=i=69;i--;)for(k=39;k--;x.fillRect(i,k,1,1))x.fillStyle=`hsl(${(C(i/5-t/.9)+C(C(i/9)+k/5+S(t))*S(i/20+t/.7)-t)*60+t},80%,75%`
+
+// A nice spiral
+for(c.width|=0,i=3300;i--;x.beginPath())x.arc(S(i/9-t)*i/3+960,C(i/9-t)*i/3+540,i/2e2+2,0,7),x.fill()
+// Animated
+k=9+S(t)/50;for(c.width|=0,i=3300;i--;x.beginPath())x.arc(S(i/k)*i/3+960,C(i/k)*i/3+540,i/2e2+2,0,7),x.fill()
+
+// iverjo's android spinner: https://www.dwitter.net/d/620
+c.width|=0;x.beginPath();x.arc(960,500,199,t*9+2*C(t*3),t*9+3.2+2*S(t*3));x.lineWidth=40;x.strokeStyle=`hsl(${(t|0%4)*90} 99%50%`;x.stroke();
+
+// kipkat's matrix https://www.dwitter.net/d/9220
+x.font='3em x';r=Math.random;for(i=166;i--;x.fillText('mtrx'[r()*4|0],y*32,z*32*z/t))y=r()*66,z=r()*33,x.fillStyle=C(t*i)<0?'#0f0':'#000';x.drawImage(c,0,9)
+x.font=`3em'`,r=Math.random;for(i=1e3;i--;x.fillText('mtrc'[r()*4|0],r()*2e3,(r()*1e3)**2/t))x.fillStyle=R(0,(C(t*i)>.9)*255);x.drawImage(c,0,9)
+x.font=`3em'`,r=Math.random;for(i=1e3;i--;x.fillText('mtrc'[i%4],r()*2e3,(r()*1e3)**2/t))x.fillStyle=R(0,C(t*i)*9e3-8e3);x.drawImage(c,0,9)
+// Good (like original)
+x.font=`3em'`,r=Math.random;for(i=400;i--;x.fillText('mtrc'[i%4],r()*2e3,(r()*1e3)**2/t))x.fillStyle=R(0,C(t*i)*9e3-8e3);x.drawImage(c,0,9)
+x.font=`3em'`,r=Math.random;for(i=50;i--;x.fillText('matricsxz'[i%9],r()*2e3,900*r()**9))x.fillStyle=R(0,C(t*i)*9e3-8e3);x.drawImage(c,0,9)
+x.font=`3em'`,r=Math.random;for(i=50;i--;x.fillText('matwicsxz'[i%9],r()*2e3,900*r()**9))x.fillStyle=R(0,C(t*i)*1e3-745);x.drawImage(c,0,9)
+// --- RELEASED --- https://www.dwitter.net/d/9227
+x.font=`3em'`,r=Math.random;for(i=50;i--;x.fillText('makwicths'[i%9],r()*2e3,900*r()**9))x.fillStyle=R(0,C(t*i)*1e3-745);x.drawImage(c,0,9)
+// Good (fine)
+x.font=`25px'`,r=Math.random;for(i=50;i--;x.fillText('matricths'[i%9],r()*2e3,900*r()**9))x.fillStyle=R(0,C(t*i)*1e3-745);x.drawImage(c,0,9)
+r=Math.random;for(i=1e3;i--;x.fillText('mtrc'[r()*4|0],y*32,z*32*z/t))y=r()*66,z=r()*33,x.fillStyle=R(0,(C(t*i)>.9)*255);x.drawImage(c,0,9)
+// --- RELEASED --- https://www.dwitter.net/d/9228
+r=Math.random;for(i=1e3;i--;x.fillText('mtrc'[r()*4|0],y*32,z*32*z/t))y=r()*66,z=r()*33,x.fillStyle=R(0,C(t*i)*1e3-745);x.drawImage(c,0,9)
+r=Math.random;for(i=600;i--;x.fillText('mtrc'[r()*4|0],y*32,1e3*r()**9))y=r()*66,z=r()*33,x.fillStyle=R(0,C(t*i)*1e3-745);x.drawImage(c,0,9)
+// Purer version (not as good)
+r=Math.random;for(i=20;i--;x.fillText('mtrc'[r()*4|0],2e3*r(),9))x.fillStyle=R(0,C(t*i)*1e3-745);x.drawImage(c,0,6)
+// Moving columns at different speeds:
+r=Math.random;for(i=20;i--;x.fillText('mtrc'[r()*4|0],2e3*r(),9))x.fillStyle=R(0,C(t*i)*1e3-745),p=2e3*i/20,x.drawImage(c,p,0,99,h=1e3,p,9+6*C(i*p),99,h)
+
+// kipkat's sun and sea https://www.dwitter.net/d/9298
+x.fillStyle='cyan';x.fillRect(0,0,y=2e3,y)
+x.fillStyle='blue';x.fillRect(0,540,y,y)
+x.fillStyle='yellow'
+for(j=-400;j++<400;)W=j>0?(1.6e5-j*j)**.5:(400+Math.random()*j),x.fillRect(960-W,540-j,W*2,1)
+// for(j=-400;j++<400;)W=j>0?(1.6e5-j*j)**.5:(400+j*((40*t^-j)%9)/9),x.fillRect(960-W,540-j,W*2,1)
+// for(j=-400;j++<400;)W=j>0?(1.6e5-j*j)**.5:(400+j*(1+S(j/6+t*6))/3),x.fillRect(960-W,540-j,W*2,1) 
+// for(j=-600;j++<400;)W=j>0?(1.6e5-j*j)**.5:(400+j/3+2*j*(S(j/6+t*6))/5),x.fillRect(960-W,540-j,W*2,1)
+
+// cantelope's soft rainbow spiral https://www.dwitter.net/d/9324
+for(w=i=c.width=1e3;i--;x.fillStyle=`hsl(${99*t+i*S(t)},50%,93%)`,x.fillRect(w/2+i*S(T=i/.955+i/w*S(t)-t)-s/2,w/3+i*C(T)-s/2,s,s))s=5+i/6
+for(w=i=c.width=1e3;i--;x.fillStyle=`hsl(${i/3-99*t},50%,93%)`,x.fillRect(w/2+d*S(T=i/.955+i/w*S(t)-t),w/3+d*C(T),s,s))d=i*i/w,s=4+d/6
+for(w=i=c.width=2e3;i--;x.fillStyle=`hsl(${i/3-99*t},50%,93%)`,x.fillRect(w/2+d*S(T=i/.955+i/w*C(i/4e2-5*t)-t),w/3+d*C(T),s,s))d=i*i/w,s=d/6
+for(w=i=c.width=1e3;i--;x.fillStyle=`hsl(${i/3-99*t},50%,93%)`,x.fillRect(w/2+d*S(T=i/.955+i/500*C(i/4e2-5*t)-t),w/3+d*C(T),s,s))d=i,s=9+d/8

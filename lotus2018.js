@@ -150,6 +150,8 @@ for(c.width=k=768;k--;x.fillRect(384-W-9*j*C(a=t+i*8),280-j*4*S(a)+j*(k>>8?-i:i)
 for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t+i*8),360-j*4*S(a)+j*(k>128?-i:i),2*W,6))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
 // Optional, for +4, raise the bottommost petals, so none are resting on the water
 for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t+i*8),360-j*4*S(a)+j*(k>128?-i:i),2*W,6))i=1+(k/16&7),j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
+// Alternatively, speed up the rotation
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=2*t+i*8),360-j*4*S(a)+j*(k>128?-i:i),2*W,6))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
 // TODO: I think these look better with height 9 instead of 6; the petals are more separate from their reflection
 // Same shape but stronger (higher res, more overwrites)
 for(c.width=k=2e3;k--;x.fillRect(1e3-W-18*j*C(a=t+i*8),720-j*8*S(a)+j*2*(k>128?-i:i),2*W,12))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=60*S(j/5)

@@ -1,0 +1,108 @@
+# Notes
+
+We can build standalone dweets using this: https://dweet.net/265/7393
+
+Code highlighting:
+- http://codemirror.net/ (actually an editor, does it have a static mode?)
+- https://squidfunk.github.io/mkdocs-material/extensions/codehilite/ (python)
+
+
+# Presentation
+
+What do you think can be done with 140 characters of Javascript?  This?  This?  THIS?!
+
+# Starters / Appetizers
+https://www.dwitter.net/d/395 iverjo's jeweled egg
+https://www.dwitter.net/d/2837 New_Core's colorshock
+https://www.dwitter.net/d/739 donbright's spiral
+https://www.dwitter.net/d/5716 magna's untuned TV set
+https://www.dwitter.net/d/5165 hoplite's starfield
+https://www.dwitter.net/d/1899 tomkh's metaballs
+https://www.dwitter.net/d/1232 iverjo's twister
+https://www.dwitter.net/d/2462 magna's octobuffer (see New_Core's link for how it works)
+https://www.dwitter.net/d/6724 jonathan_b's weird coloured balls
+https://www.dwitter.net/d/6498 yonatan's robot eyes #interactive
+https://www.dwitter.net/d/2108 mxfh's Joy Division album cover
+https://www.dwitter.net/d/3161 joeytwiddle's flag
+https://www.dwitter.net/d/6714 Paisley's cute bouncing emoji face
+https://www.dwitter.net/d/135 icecuber's pong tribute
+https://www.dwitter.net/d/1231 iverjo's tunnel
+https://www.dwitter.net/d/1829 New_Core's 3d fish
+https://www.dwitter.net/d/4665 ben's fractal tree
+https://www.dwitter.net/d/8675 Xen's colourful golden-ratio wobbler
+https://www.dwitter.net/d/9134 yonatan's rainbow lights projection
+
+# Hall of Fame
+
+https://www.dwitter.net/d/410 sigveseb's frosted glass
+https://www.dwitter.net/d/7535 jylikangas's mining tunnel
+https://www.dwitter.net/d/1892 p01's Space Harrier
+-- lotus final? --
+https://www.dwitter.net/d/7702 jylikangas's trains
+https://www.dwitter.net/d/3078 FireFly's alien sprites
+https://www.dwitter.net/d/2298 keithclark's sphere of dots
+https://www.dwitter.net/d/2249 aemkei's sphere
+https://www.dwitter.net/d/5600 p01's globe
+https://www.dwitter.net/d/5747 corruptio's coloured globe
+https://www.dwitter.net/d/672 aeimkei's game of life
+https://www.dwitter.net/d/1875 FireFly's U/V mapped sphere
+https://www.dwitter.net/d/2738 Nystrand's animation of my clouds
+https://www.dwitter.net/d/5321 hoplite's plasma with beautiful orange/blue shading
+https://www.dwitter.net/d/7495 jylikangas's reflective white room
+https://www.dwitter.net/d/1112 sigveseb/3bl3gamer's raytraced wobbly sphere
+
+## Landscapes
+https://www.dwitter.net/d/8595 robbyg's dunes
+https://www.dwitter.net/d/7755 jylikangas's neon city over water
+https://www.dwitter.net/d/7662 jylikangas's minecraft landscape
+https://www.dwitter.net/d/7215 jylikangas's minecraft with perspective
+https://www.dwitter.net/d/7430 nystrand's palm trees
+https://www.dwitter.net/d/2357 Jenky's parallax trees
+
+## Seascapes
+https://www.dwitter.net/d/63 sigveseb's sun and sea
+https://www.dwitter.net/d/6450 yonatan's water fountain
+https://www.dwitter.net/d/1976 recursive's green waves
+https://www.dwitter.net/d/7242 yonatan's sunset at sea
+https://www.dwitter.net/d/2015 New_Core's moody rain over sea
+
+## Second level landscapes
+https://www.dwitter.net/d/6962 New_Core's sun behind buildings
+https://www.dwitter.net/d/6940 Erazed's sun and coloured sky
+https://www.dwitter.net/d/1911 veubeke's grassy hills (2)
+https://www.dwitter.net/d/1901 veubeke's grassy hills (1)
+
+## The great banana frenzy of 2018
+https://www.dwitter.net/h/banana
+https://www.dwitter.net/d/7333 Batrachus's original banana
+https://www.dwitter.net/d/7371 joeytwiddle's wireframe banana
+https://www.dwitter.net/d/7372 joeytwiddle's smooth banana
+https://codegolf.tk/a/264 joeytwiddle's yellow banana (shaded and spinning)
+https://codegolf.tk/a/263 joeytwiddle's party banana
+https://www.dwitter.net/d/7384 nystrand's bright yellow banana
+https://www.dwitter.net/d/7429 p01 and yonatan's shaded yellow banana
+https://codegolf.tk/a/265 yonatan's shaded and mottled banana
+
+## Using APIs
+... add more here ...
+... piano or theramin ...
+... speech ...
+https://www.dwitter.net/d/3427 corruptio's original camera dweet (this API got deprecated)
+https://dweet.dwitter.net/id/8504?autoplay=1 Using the camera!
+
+## Games
+https://www.dwitter.net/d/8645 fruit machine
+... add more here ...
+https://www.dwitter.net/d/2612 joeytwiddle's original frog game
+
+## CodeGolf.tk
+https://codegolf.tk/a/68 yonatan's rays of sunlight over mountains
+
+Xen
+
+- It gets easier quite quickly
+- Forget about elegant code
+- Forget about efficiency
+If it's cheaper to test inside the code, then it's fine to draw 100 circles of radius 0
+`x.fillRect` is powerful, because no `x.begin();...;x.fill()`
+

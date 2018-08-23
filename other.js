@@ -148,3 +148,24 @@ for(c.width=i=600;i--;)x.beginPath(),k=250*t-i*C(t)/9|i/5,k%150<50?x.ellipse(300
 for(c.width=i=600;i--;)x.beginPath(),k=250*t-i*C(t)/9|i/5,k%150<50?x.ellipse(300,160-100*C(a=i/191),r=160*S(a),r/4*(1-C(t/4)),0,0,7):0,x.stroke()
 // Using angle, back to the "Faster" above --- SECOND FAVOURITE ---
 for(c.width=i=600;i--;)x.beginPath(),k=250*t-i|i/5,k%150<50?x.ellipse(300,160-100*C(a=i/191),r=160*S(a),r/4*(1-C(t/4)),0,0,7):0,x.stroke()
+
+// Emoji downtown
+c.width=420;x.scale(25,25),i=0;for(j of '🏩🏡🏣💒🏤🏫🏥⛪🏨🏦🏢🏠🏬🏪')x.fillText(j,(10*i+++4*t)%140-70,9)
+c.width=420;x.scale(25,25),i=0;for(j of '🏡🏣💒🏤🏫🏥⛪🏨🏦🗿🏢🏠🏬🏪')x.fillText(j,(10*i+++4*t)%140-70,9)
+// Parallax?
+c.width=520;i=0;for(k in 'abcdefg'){x.scale(1.5,1.5);for(j of '🏩🏡🏣💒🏤🏫🏥⛪🏨🏦🏢🏠🏬🏪')x.fillText(j,(12*i+++4*t)%140-70,16)}
+// Still a gap on the right, but now hidden :-P
+c.width=520;x.translate(0,250);i=0;for(k in 'abcdefg'){x.scale(1.5,1.5);for(j of '🏩🏡🏣💒🏤🏫🏥⛪🏨🏦🏢🏠🏬🏪')x.fillText(j,(12*i+++4*t)%140-70,1)}
+// TODO: Every other layer could be vehicles, moving faster
+
+// Birthday ballons for Sophie
+c.width|=0;for(i=9;i--;x.fill())s=90+i*9,x.beginPath(),x.arc((375*i%2e3)+S(t+i)*s,1500-(3*s*t%2000),s,0,7),x.fillStyle=`hsl(${40*i} 99%60%`
+c.width|=0;for(i=0;i++<20;x.fill())s=i*9,x.beginPath(),x.arc((9377*i%2e3)+S(t+i)*s,1500-(3*s*t%2000),s,0,7),x.fillStyle=`hsl(${97*i} 99%60%`
+for(c.width|=i=0;i++<30;x.fill())x.beginPath(s=9+i*6),x.arc((9377*i%2e3)+S(t+i)*s,1500-(3*s*t%2000),s,0,7),x.fillStyle=`hsl(${97*i} 99%60%`
+for(c.width|=i=0;i++<30;x.fill())x.beginPath(s=i*6),x.arc((9377*i%2e3)+S(t+i)*s,1500-(3*s*t%2000),s,0,7),x.fillStyle=`hsl(${97*i},99%,60%)`
+// --- RELEASED ---
+for(c.width|=i=0;i++<30;x.fill())x.beginPath(s=20+i*6),x.arc((23**i%2e3)+S(t+i)*s,1500-(3*s*t%2e3),s,0,7),x.fillStyle=`hsl(${79*i},90%,65%)`
+// More and smaller
+for(c.width|=i=0;i++<90;x.fill())x.beginPath(s=i**1.1),x.arc((19**i%2e3)+S(t+i)*s,1500-(3*s*t%2e3),s,0,7),x.fillStyle=`hsl(${79*i},90%,65%)`
+// Experimenting with FRNG
+for(c.width|=i=0;i++<80;x.fill())x.beginPath(s=9+i*2),x.arc((19**i%2e3)+S(t+i)*s,1500-(i*i+3*s*t)%2e3,s,0,7),x.fillStyle=`hsl(${57*i+t},90%,65%)`

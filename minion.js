@@ -59,3 +59,5 @@ m='ŐߴོߴՔનᚥ᪩ȠԔ';for(i=99;i--;Y=i/9|0,c=(m.charCodeAt(Y)>>2*X-2)&3,r
 // --- PUBLISHED ---
 m='ŐߴོߴՔનᚥ᪩ȠԔ';for(i=99,s=i*T(t);i--;Y=i/9|0,c=m.charCodeAt(Y)>>2*X-2&3,r=(c&1)<<8,x.fillStyle=R(r,r,(c&2)<<7),x.fillRect(s*X,s*Y,s,s))X=i%9
 
+// Golfing a bit
+for(i=99,s=i*T(t);i--;Y=i/9|0,c='ŐߴོߴՔનᚥ᪩ȠԔ'.charCodeAt(Y)>>2*X-2&3,r=c%2<<8,x.fillStyle=R(r,r,(c&2)<<7),x.fillRect(s*X,s*Y,s,s))X=i%9

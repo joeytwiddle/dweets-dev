@@ -265,3 +265,6 @@ for(r=Math.random,i=w=700;i--;x.fillRect(i%9?960+a/2*C(p=3.14*r()):960+99*C(p),i
 // Messing about: What if we used sine instead of random?
 w=1e3,r=i=>.5+.5*S(i*t),s=r(3)<.6,k=s?-1:.4,d=r(5),D=(s?-.7:1.3)*w/2*d,T=9+D*k,x.fillRect(700+D,T+r(7*t)*(w-D*k/4-T),l=1/(1+t/8),l),t<w&&u(t+.2)
 
+// TODO: Fire random rays onto a plane (which is a chessboard).  From the plane coordinate decide if the point is on a black or white square.  Either plot it or don't plot it.
+// TODO: We can extend this idea to render all kinds of surfaces.  Fire random rays and then decide (with probability) whether to plot the dot or not.
+// Oh silly, that's what you already wrote above.

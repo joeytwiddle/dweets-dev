@@ -138,7 +138,18 @@ for(c.width=m=i=99;i--;x.fillRect(48+9*s-l*k,25+9*k+l*s,5,5))k=C(a=5*(S(t)-t)+i%
 // Shrinking >11
 for(c.width=m=i=99;i--;x.fillRect(48+9*s-l*k,25+9*k+l*s,5,5))k=C(a=3*(S(t)-t)+i%4*1.57-1),s=S(a),x.fillStyle=`hsl(${i%4*66},99%,65%`,l=16-i*C(t/2)**8/3
 // Shrinking >10
+// --- THIS WAS THE SMALLEST WE GOT ---
 for(c.width=m=i=99;i--;x.fillRect(48+9*s-l*k,25+9*k+l*s,5,5))k=C(a=3*(S(t)-t)+i%4*1.57-1),s=S(a),x.fillStyle=`hsl(${i%4*66},99%,70%`,l=20-i*(1+C(t))/5
 
 // Going back to large version, trying to make it nice for codegolf.tk ?
 for(c.width|=m=i=99;i--;x.fillRect(960+55*s-l*k,540+55*k+l*s,25,25))a=3*(S(t)-t)-1+i%4*1.57,k=C(a),s=S(a),x.fillStyle=`hsla(${i%4*m},99%,50%,0.2`,l=m-2*i*C(t/2)**8
+
+// Starting from the small version, trying to make it a nice 180
+for(c.width=m=i=200;i--;x.fillRect(96+20*s-l*k,50+20*k+l*s,9,9))k=C(a=4*(S(t)-t)+i%4*1.57-1),s=S(a),x.fillStyle=`hsla(${i%4*66},99%,70%,.3`,l=40-i*(1+C(t))/5
+for(c.width=m=i=200;i--;x.fillRect(96+20*s-l*k,50+20*k+l*s,14,14))k=C(a=4*(S(t)-t)+i%4*1.57-1),s=S(a),x.fillStyle=`hsla(${i%4*66-12},99%,42%,.2`,l=41-i*(1+C(t))/5
+for(c.width=m=i=200;i--;x.fillRect(96+20*s-l*k,50+20*k+l*s,14,14))k=C(a=4*(S(t)-t)+i%4*1.57-9),s=S(a),x.fillStyle=`hsla(${i%4*66-9},90%,43%,.2`,l=41-i*(1+C(t))/5
+// There are four things going on in the motion:
+// - First the lines contract and a fast spin happens
+// - Then as the spin slows, the radius briefly drops and rises again, producing a "crossover" effect
+// - When the radius returns back to normal, the spinning stops, and the dots expand back into lines.
+// - There is a brief pause with the finished logo

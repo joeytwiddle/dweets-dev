@@ -173,3 +173,9 @@ r=m=>Math.random()*m;
 x.fillStyle = R(r(256),r(256),r(256),r(t**-.4))
 x.fillRect(r(2120)-99,r(1280)-99,r(500/t**.3),r(500/t**.3));
 }
+
+// Remixing: https://www.dwitter.net/d/2734
+w=1680;r=Math.random;for(i=99;i--;)x.fillStyle=`hsla(${4*i+t*25},99%,66%,.01`,x.fillRect(r()*w,r()*w/2,k=r()*300,k)
+
+// Remixing: https://www.dwitter.net/d/5836
+for(t?i=Z:Z=c.width=255;i--;x.fill(x.arc(129-i*C(t+i),69+55*S(t+i/(S(t)+6)),i/9,0,9)))x.fillStyle=`hsla(${i+t*i},99%,65%,.01)`,x.beginPath()

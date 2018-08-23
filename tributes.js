@@ -13,7 +13,7 @@ c.width|=0;for(p=0;p++<800;)r=p**.5*9,k=2*t+r/40,x.clearRect(X=960+400*S(k)+r*C(
 for(c.width|=p=0;p++<1e3;x.fillRect(X+4,Y+4,w-8,w-8))r=p/4,k=2*t+r/50,x.clearRect(X=960+600*S(k)+r*C(p),Y=510+250*S(k/.5)+r*S(p),w=19+r/5,w)
 // With peristalsis
 for(c.width|=p=0;p++<1e3;x.fillRect(X+4,Y+4,w-8,w-8))r=p/4,k=2*t+r/50,r*=1-.2*C(2*k),x.clearRect(X=960+600*S(k)+r*C(p),Y=510+250*S(k/.5)+r*S(p),w=19+r/5,w)
-// Swalloing you
+// Swallowing you
 for(c.width|=p=0;p++<1e3;x.fillRect(X+4,Y+4,w-8,w-8))r=p/4,k=2*t+r/50,r*=9/(9-t),x.clearRect(X=960+600*S(k)+r*C(p),Y=510+250*S(k/.5)+r*S(p),w=19+r/5,w)
 // With circles
 for(c.width|=p=0;p++<1e3;)r=p/4,k=2*t+r/50,x.beginPath(),x.arc(X=960+600*S(k)+r*C(p),Y=510+250*S(k/.5)+r*S(p),w=9+r/9,0,7),x.fillStyle='#fff',x.fill(),x.beginPath(),x.fillStyle='#000',x.arc(X,Y,w-8,0,7),x.fill()
