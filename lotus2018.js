@@ -79,12 +79,17 @@ for(c.width|=k=1024;k--;)i=k>>6,j=k%64,x.fillStyle='#f7f'+j/9,W=120*S(j/20)*S(a=
 // --- RELEASED --- https://www.dwitter.net/d/8288
 for(c.width|=k=511;k--;x.fillRect(960-W-500*S(j/41)*C(a),960-j*(i+S(a)),2*W,9))i=k>>5,j=k%32,x.fillStyle='#f7f'+j/5,W=99*S(j/10)*S(a=t+i*17)
 // Although the `+j/5` does very little.  We could have focused on other things instead!
+// Make solid
+for(c.width|=k=511;k--;x.fillRect(960-W-500*S(j/41)*C(a),960-j*(p=i+S(a)),2*W,p))i=k>>5,j=k%32,x.fillStyle='#f7f'+j/5,W=99*S(j/10)*S(a=t+i*17)
 // Improved: made a bit more 3d, no need to change opacity, no need to shrink width
 for(c.width|=k=511;k--;x.fillRect(960-W-500*S(j/41)*C(a),960-j*(i+4*S(a)),2*W,9))i=k>>5,j=k%32,x.fillStyle='#f7f3',W=99*S(j/10),a=t+i*17
 // No need for S(j/41), inline a
 // Improved --- TO RELEASE NEXT YEAR? ---
 for(c.width|=k=511;k--;x.fillRect(960-W-12*j*C(a=t+i*17),960-j*(i+4*S(a)),2*W,9))i=k>>5,j=k%32,x.fillStyle='#f7f3',W=99*S(j/10)
 for(c.width|=k=511;k--;x.fillRect(960-W-12*j*C(a=t+i*8)*C(E=i/15),900-j*(9*S(E)+5*S(a)),2*W,9))i=k>>5,j=k%32,x.fillStyle='#f7f3',W=60*S(j/10)
+// The previous two made solid
+for(c.width|=k=511;k--;x.fillRect(960-W-12*j*C(a=t+i*17),960-j*(p=i+4*S(a)),2*W,p))i=k>>5,j=k%32,x.fillStyle='#f7f3',W=99*S(j/10)
+for(c.width|=k=511;k--;x.fillRect(960-W-12*j*C(a=t+i*8)*C(E=i/15),900-j*(p=9*S(E)+5*S(a)),2*W,p))i=k>>5,j=k%32,x.fillStyle='#f7f3',W=60*S(j/10)
 // Further improvements:
 // - FIX BUG: 511 leaves one petal missing, use 544 instead
 // - Make the petals shorter and fatter
@@ -92,11 +97,11 @@ for(c.width|=k=511;k--;x.fillRect(960-W-12*j*C(a=t+i*8)*C(E=i/15),900-j*(9*S(E)+
 
 // Experimenting
 for(c.width|=k=511;k--;x.fillRect(960-W-800*S(j/41)*C(a)*S(E),960-j*(12*C(E)+S(a)),2*W,9))i=k>>5,j=k%32,E=1.5*(i/16)**.5,x.fillStyle='#f7f4',W=99*S(j/10)*S(a=t+i*17)
-for(c.width|=k=511;k--;x.fillRect(960-W-800*S(j/41)*C(a)*S(E),960-j*(12*C(E)+S(a)),2*W,9))i=k>>5,j=k%32,E=1.5*(i/16)**.5,x.fillStyle='#f7f'+(5-4*S(a)|0),W=99*S(j/10)*S(a=t+i*17)
-for(c.width|=k=511;k--;x.fillRect(960-W-800*S(j/41)*C(a)*S(E),960-j*(12*C(E)+3*S(a)),2*W,9))i=k>>5,j=k%32,E=1.5*(i/16)**.5,x.fillStyle='#f7f'+(6-3*S(a)|0),W=99*S(j/10)*S(a=t+i*17)
+a=1;for(c.width|=k=511;k--;x.fillRect(960-W-800*S(j/41)*C(a)*S(E),960-j*(12*C(E)+S(a)),2*W,9))i=k>>5,j=k%32,E=1.5*(i/16)**.5,x.fillStyle='#f7f'+(5-4*S(a)|0),W=99*S(j/10)*S(a=t+i*17)
+a=1;for(c.width|=k=511;k--;x.fillRect(960-W-800*S(j/41)*C(a)*S(E),960-j*(12*C(E)+3*S(a)),2*W,9))i=k>>5,j=k%32,E=1.5*(i/16)**.5,x.fillStyle='#f7f'+(6-3*S(a)|0),W=99*S(j/10)*S(a=t+i*17)
 for(c.width|=k=511;k--;x.fillRect(960-W-800*S(j/41)*C(a)*S(E),960-j*(12*C(E)+5*S(a)*S(E)),2*W,9))i=k>>5,j=k%32,E=1.5*(i/16)**.5,x.fillStyle='#f7f4',W=99*S(j/10)*S(a=t+i*17)
-for(c.width|=k=511;k--;x.fillRect(960-W-800*S(j/41)*C(a)*S(E),960-j*(12*C(E)+9*S(a)*S(E)),2*W,9))i=k>>5,j=k%32,E=1.5*(i/16)**.5,x.fillStyle='#f7f'+(6-2*S(a)|0),W=99*S(j/10)*S(a=t+i*17)
-for(c.width|=k=511;k--;x.fillRect(960-W-800*S(j/41)*C(a)*S(E),860-j*(12*C(E)+9*S(a)*S(E)),2*W,9))i=k>>5,j=k%32,E=.5+(i/16)**.5,x.fillStyle='#f7f'+(6-2*S(a)|0),W=99*S(j/10)*S(a=t+i*17)
+a=1;for(c.width|=k=511;k--;x.fillRect(960-W-800*S(j/41)*C(a)*S(E),960-j*(12*C(E)+9*S(a)*S(E)),2*W,9))i=k>>5,j=k%32,E=1.5*(i/16)**.5,x.fillStyle='#f7f'+(6-2*S(a)|0),W=99*S(j/10)*S(a=t+i*17)
+a=1;for(c.width|=k=511;k--;x.fillRect(960-W-800*S(j/41)*C(a)*S(E),860-j*(12*C(E)+9*S(a)*S(E)),2*W,9))i=k>>5,j=k%32,E=.5+(i/16)**.5,x.fillStyle='#f7f'+(6-2*S(a)|0),W=99*S(j/10)*S(a=t+i*17)
 
 // Experimenting 2
 for(c.width|=k=511;k--;x.fillRect(960-W-500*j/41*C(a),960-j*(4*S(i/5)+4*S(a)),2*W,9))i=k>>5,j=k%32,x.fillStyle='#f7f3',W=99*S(j/10),a=t+i*17
@@ -131,8 +136,6 @@ for(c.width=k=768;k--;x.fillRect(384-W-9*j*C(a=t+i*8),280-j*((k>>8?i:-i)+4*S(a))
 for(c.width=k=768;k--;x.fillRect(384-W-9*j*C(a=t+i*8),280-j*4*S(a)+j*(k>>8?-i:i),2*W,6))i=k>>4&7,j=k%16,x.fillStyle='#f7f'+(k>>7),W=30*S(j/5)
 for(c.width=k=512;k--;x.fillRect(256-W-9*j*C(a=t+i*8),180-j*4*S(a)+j*i-2*j*i*(k>>8),2*W,6))i=k>>4&7,j=k%16,x.fillStyle='#f7f'+(k>>7),W=30*S(j/5)
 for(c.width=k=512;k--;x.fillRect(256-W-9*j*C(a=t+i*8),180+j*(i-2*i*(k>>8)-4*S(a)),2*W,6))i=k>>4&7,j=k%16,x.fillStyle='#f7f'+(k>>7),W=30*S(j/5)
-// Rather sad, but if things get desperate, just put is higher up the screen, with the top cut off
-for(c.width=k=768;k--;x.fillRect(384-W-9*j*C(a=t+i*8),99-j*4*S(a)+j*(k>>8?-i:i),2*W,6))i=k>>4&7,j=k%16,x.fillStyle='#f7f'+(k>>7),W=30*S(j/5)
 // Make the bottoms thin instead of lighter colour
 for(c.width=k=768;k--;x.fillRect(384-W-9*j*C(a=t+i*8),300-j*(i*(2*l-1)+4*S(a)),2*W,1+5*l))i=k>>4&7,j=k%16,l=k<512,x.fillStyle='#f7f1',W=30*S(j/5)
 // Make the lines get thinner at the ends
@@ -146,18 +149,40 @@ for(c.width=k=768;k--;x.fillRect(384-W-9*j*C(a=t+i*8),280-j*4*S(a)+j*(k>>8?-i:i)
 for(c.width=k=768;k--;x.fillRect(384-W-9*j*C(a=t+i*8),280-j*4*S(a)+j*(k>>8?-i:i),2*W,6))i=k/16&7,j=k%16,x.fillStyle='#f7f'+k/153,W=30*S(j/5)
 // --- GREAT --- Oh we can use a number larger than 768, and write the top half many times
 // QUOTE: Vesak day - a time for reflection
-// --- FAVOURITE --- Small and cute
-for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t+i*8),360-j*4*S(a)+j*(k>128?-i:i),2*W,6))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
-// Optional, for +4, raise the bottommost petals, so none are resting on the water
-for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t+i*8),360-j*4*S(a)+j*(k>128?-i:i),2*W,6))i=1+(k/16&7),j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
-// Alternatively, speed up the rotation
-for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=2*t+i*8),360-j*4*S(a)+j*(k>128?-i:i),2*W,6))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
-// TODO: I think these look better with height 9 instead of 6; the petals are more separate from their reflection
-// Same shape but stronger (higher res, more overwrites)
-for(c.width=k=2e3;k--;x.fillRect(1e3-W-18*j*C(a=t+i*8),720-j*8*S(a)+j*2*(k>128?-i:i),2*W,12))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=60*S(j/5)
-for(c.width=k=2e3;k--;x.fillRect(999-W-15*j*C(a=t+i*8),760-j*8*S(a)+2*j*(k>128?-i:i),2*W,9))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=50*S(j/5)
-for(c.width=k=2e3;k--;x.fillRect(999-W-25*j*C(a=t+i*8),760-j*15*S(a)+3*j*(k>128?-i:i),2*W,9))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=80*S(j/5)
+
+// --- FAVOURITE --- Small and cute (switch to -i*8 to start with some taller petals)
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),420-j*4*S(a)+j*(k>>7?-i:i),2*W,6))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
+// Small and cute and solid (+2)
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),420-j*(p=4*S(a)-(k>>7?-i:i)),2*W,p))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
+// Raise the bottommost petals, so none are resting on the water (+4)
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),420-j*4*S(a)+j*(k>>7?-i:i),2*W,6))i=1+(k/16&7),j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
+// Speed up the rotation (+2)
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=2*t-i*8),420-j*4*S(a)+j*(k>>7?-i:i),2*W,6))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
+// Combined: solid, raised and faster, and golfed the raise by moving k--
+for(c.width=k=1e3;k;x.fillRect(500-W-9*j*C(a=2*t-i*8),420-j*(p=4*S(a)-(k>>7?-i:i)),2*W,p))i=k--/16&7,j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
+// TODO: Consider using height 9 instead of 6; it makes the petals stronger, more distinct from the reflection
+// TODO :Or even cooler, replace 6 with t!
+// If we want to avoid the complete flatness, we must never let p===0
+for(c.width=k=1e3;k;x.fillRect(500-W-9*j*C(a=3*t-8*i),420-j*(p=4*S(a)-(k>>7?-i:i)|3),2*W,p))i=k--/16&7,j=k%16,x.fillStyle='#fb31',W=30*S(j/5)
+// This hack patches that with a fake, but it goes over the limit
+for(c.width=k=1e3;k;x.fillRect(500-W-9*j*C(a=2*t-i*8),420-j*(4*S(a)-(k>>7?-i:i)),2*W,6+6*C(a)**2))i=k--/16&7,j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
+
+// Just for fun, petals move at different speeds
+for(c.width=k=1e3;k;x.fillRect(500-W-9*j*C(a=i*t),420-j*(p=4*S(a)-(k>>7?-i:i)),2*W,p))i=k--/16&7,j=k%16,x.fillStyle='#fb31',W=30*S(j/5)
+
+// === PRETTY GOOD === Same shape but stronger (higher res, more overwrites)
+for(c.width=k=2e3;k--;x.fillRect(1e3-W-18*j*C(a=t+i*8),720-j*8*S(a)+j*2*(k>>7?-i:i),2*W,12))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=60*S(j/5)
+for(c.width=k=2e3;k--;x.fillRect(999-W-15*j*C(a=t+i*8),760-j*8*S(a)+2*j*(k>>7?-i:i),2*W,9))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=50*S(j/5)
+for(c.width=k=2e3;k--;x.fillRect(999-W-25*j*C(a=t+i*8),760-j*15*S(a)+3*j*(k>>7?-i:i),2*W,9))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=80*S(j/5)
+
 // Large and detailed
 for(c.width=k=2e3;k--;x.fillRect(999-W-15*j*C(a=t+i*8),680-j*8*S(a)+j*(k>512?-i:i),2*W,9))i=k/32&15,j=k%32,x.fillStyle='#f7f1',W=90*S(j/10)
+// Large and detailed and solid
+for(c.width=k=2e3;k--;x.fillRect(999-W-15*j*C(a=t+i*8),680-j*(p=8*S(a)-(k>>9?-i:i)),2*W,p))i=k/32&15,j=k%32,x.fillStyle='#f7f1',W=90*S(j/10)
 // Large and cute
-for(c.width=k=1e3;k--;x.fillRect(500-W-15*j*C(a=t+i*8),360-j*8*S(a)+2*j*(k>128?-i:i),2*W,9))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=50*S(j/5)
+for(c.width=k=1e3;k--;x.fillRect(500-W-15*j*C(a=t+i*8),360-j*8*S(a)+2*j*(k>>7?-i:i),2*W,9))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=50*S(j/5)
+// === GREAT === Large and cute and solid
+for(c.width=k=1e3;k--;x.fillRect(500-W-15*j*C(a=t+i*8),360-j*(p=8*S(a)-2*(k>>7?-i:i)),2*W,p))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=50*S(j/5)
+
+// Medium cuteness (Solid top, faint bottom, from above)
+for(c.width=k=768;k--;x.fillRect(384-W-9*j*C(a=t+i*8),300-j*(i*(2*l-1)+4*S(a)),2*W,6))i=k>>4&7,j=k%16,l=k<512,x.fillStyle=l?'#f9f':'#fef',W=30*S(j/5)

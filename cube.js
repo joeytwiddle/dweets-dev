@@ -158,3 +158,28 @@ d(n&1,(n/2)&1),(n&3)||x.stroke()}
 
 // Cantelope's wireframe cube in 170
 for(w=(c.width|=i=17)/2;i--;x.lineTo(w+S(p=Math.atan2(X=S(q=1.57*i-t+(i/4|0)*4.71)/1.4,Y=((i/4|0)%2)-.5)+t)*(d=(X*X+Y*Y)**.5)/(Z=2+C(q)/1.4)*w,540+C(p)*d/Z*w));x.stroke()
+
+// Alien's rotating cube
+W=c.width=800;f=frame
+po=k=>[
+{X:-50,Y:-50,Z:-50},
+{X:+50,Y:-50,Z:-50},
+{X:+50,Y:+50,Z:-50},
+{X:-50,Y:+50,Z:-50},
+{X:-50,Y:-50,Z:+50},
+{X:+50,Y:-50,Z:+50},
+{X:+50,Y:+50,Z:+50},
+{X:-50,Y:+50,Z:+50},
+]
+t?1:(p=po())
+depth = 100
+scale = 100
+for(i=0;i<p.length;i++){
+// Rotate x and z about y axis
+wx = p[i].X*C(t) - p[i].Z*S(t)
+wy = p[i].Y
+wz = p[i].X*S(t) + p[i].Z*C(t) + depth
+sx = scale * wx / wz + W / 2
+sy = scale * wy / wz + W*.26
+x.fillRect(sx,sy,5,5)
+}

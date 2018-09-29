@@ -104,7 +104,7 @@ with(x)for(c.width|=i=9;i--;i==7&&fillText('⌐••',-13,-30-8e4/t**6))setTran
 with(x)for(c.width|=i=9;i--;i==7&&fillText('⌐••',-13,-22-8e4/t**6))setTransform(9,0,0,9,500+i*120,640),a=t-i/3,l=i<3?1.5:i<8?2.8-.4*i:0,rotate(a>0&&S(a<l?a:l)),fillRect(0,0,-6,-22)
 // On Mac though these lenses appear too small.  Here are some medium sized lenses:
 // (Either way, on Mac, the lenses appear lower than the handle)
-// How do these look on Linux?  If it looks bad, then we can just go with the previous one.
+// Looks good on Mac, but on Linux, the glasses appear offset to the right
 with(x)for(c.width|=i=9;i--;i==7&&fillText('⌐●●',-14,-22-9e4/t**6))setTransform(9,0,0,9,500+i*120,640),a=t-i/3,l=i<3?1.5:i<8?2.8-.4*i:0,rotate(a>0&&S(a<l?a:l)),fillRect(0,0,-6,-22)
 // It looks fine on Linux.  Although the glasses land a bit to the right.  -15 or ideally -16 looks better.  Also -23 for Y stops them from touching.
 // Another option, square glasses: (•_•) ( •_•)>⌐■-■ (⌐■_■)
@@ -132,6 +132,12 @@ t*=9;with(x)for(c.width|=i=12;i--;fillRect(-4.5*i*q,0,-6,q?i>9?4:2:-22))setTrans
 t*=9;with(x)for(c.width|=i=12;i--;fillRect(-4.5*i*q,0,i==9?12:-6,q?i>9?4:1:-22))setTransform(9,0,0,9,500+i*120,(q=i>8)?390-8e5/t**6:640),a=t-i/3,l=i<3?1.5:i<8?2.8-.4*i:0,rotate(a>0&&S(a<l?a:l))
 // Sunglasses from a cos wave (too long)
 t*=9;with(x)for(c.width|=i=40;i--;fillRect(0,0,5*q-6,q?5*C(i/5)**2:-22))setTransform(9,0,q=i>8,9,q?1200+i*5:500+i*120,q?385-8e5/t**6:640),a=t-i/3,l=i<3?1.5:i<8?2.8-.4*i:0,rotate(a>0&&S(a<l?a:l))
+// Slanted glasses, 2 to golf
+t*=9;with(x)for(c.width|=i=12;i--;fillRect(0,0,i==9?14:-6,q?i>9?4:1:-22))setTransform(9,0,q=i>8,9,500+i*(120-40*q),q?390-8e5/t**6:640),a=t-i/3,l=i<3?1.5:i<8?2.8-.4*i:0,rotate(a>0&&S(a<l?a:l))
+// === TO RELEASE ===
+t*=9;with(x)for(c.width|=i=12;i--;fillRect(0,0,i==9?12:-6,q?i>9?4:1:-22))setTransform(9,0,q=i>8,9,500+40*i*(3-q),q?390-8e5/t**6:640),a=t-i/3,l=i<3?1.5:i<8?2.8-.4*i:0,rotate(a>0&&S(a<l?a:l))
+// Compressed
+eval(unescape(escape`睩瑨⡸⥦潲⡣⹷楤瑨簽椽ㄲ㭩ⴭ㭦楬汒散琨〬〬椽㴹㼱㈺ⴶⱱ㽩㸹㼴㨱㨭㈲⤩獥瑔牡湳景牭⠹ⰰⱱ㵩㸸ⰹⰵ〰⬴〪椪⠳⵱⤬焿㌹〭㡥㔯琪⨶㨶㐰⤬愽琭椯㌬氽椼㌿ㄮ㔺椼㠿㈮㠭⸴⩩㨰Ⱳ潴慴攨愾〦♓⡡㱬㽡㩬⤩`.replace(/u(..)/g,"$1%")))
 
 // #dominoes #dominoesnt #dealwithit #thuglife
 

@@ -6,6 +6,7 @@ let g:NoSwapSuck_Enabled = 0
 let g:syntastic_javascript_checkers = []
 ALEDisable
 au BufEnter * set noswapfile nowrap nolinebreak colorcolumn=141 indentkeys= formatoptions-=ro
+syn sync minlines=1 maxlines=1
 -->
 OLD: BufDo set noswapfile nowrap colorcolumn=141 indentkeys= formatoptions-=ro
 
@@ -148,10 +149,16 @@ console.log(await r.text());
 ```
 
 # Flip table
-Take this bad boy: (╯°□°）╯︵ ┻━┻
+Take this bad boy: （╯°□°）╯︵ ┻━┻
 Split it up, and animate it.
 If there is space, put 141/140 on top of it.
 
 # Bokeh car lights
 Would it be possible to add some z-axis to this?  Perhaps even a snaking road?
 magna's car lights at night: https://www.dwitter.net/d/8745
+
+# Infinite default
+The 9 default bars rotate 90 degrees and then combine together into 1 big bar.
+The big bar zooms out, and is joined by 8 others, to return to the default.
+Animation loops.
+

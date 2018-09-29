@@ -169,3 +169,77 @@ for(c.width|=i=0;i++<30;x.fill())x.beginPath(s=20+i*6),x.arc((23**i%2e3)+S(t+i)*
 for(c.width|=i=0;i++<90;x.fill())x.beginPath(s=i**1.1),x.arc((19**i%2e3)+S(t+i)*s,1500-(3*s*t%2e3),s,0,7),x.fillStyle=`hsl(${79*i},90%,65%)`
 // Experimenting with FRNG
 for(c.width|=i=0;i++<80;x.fill())x.beginPath(s=9+i*2),x.arc((19**i%2e3)+S(t+i)*s,1500-(i*i+3*s*t)%2e3,s,0,7),x.fillStyle=`hsl(${57*i+t},90%,65%)`
+
+// Pineapple
+c.width|=0;x.rotate(.78);for(i=300;i--;)X=200*S(i)*S(.3+i/134),Y=i*1.3,U=X+Y,V=Y-X,x.fillRect(900+U,-500+V,20,20)
+c.width|=0;x.rotate(.78);for(i=0;i++<100;)X=200*S(i*.6)*S(.6+i/64),Y=i*4,U=X+Y,V=Y-X,x.clearRect(900+U-2,-500+V-2,98,98),x.fillRect(900+U,-500+V,94,94)
+// TODO Only print when C(angle) > 0
+
+// Throwing waves (but we really need _^_ instead of /"\)
+a='¸„.-•~¹°”ˆ˜¨',a+=[...a].reverse().join('')
+throw [1,2,3,4].map(i=>[...a].map((c,j)=>a[(3*j/i+3*t*i|0)%a.length]).join('')).join('\n')
+// More like hills from a train
+a='¸„.-•~¹°”ˆ˜¨',a+=[...a].reverse().join('')
+throw [3,4,6,8].map(i=>[...a].map((c,j)=>a[(3*j/i+3*t*i|0)%a.length]).join('')).join('\n')
+//
+a='¸„.-•~¹°”ˆ˜¨˜ˆ”°¹~•-.„',a+=[...a].join('')
+throw [3,4,6,8].map(i=>[...a].map((c,j)=>a[(3*j/i+3*t*i|0)%a.length]).join('')).join('\n')
+//
+a='¸„.-•~¹°”ˆ˜¨˜ˆ”°¹~•-.„',a+=a+a
+throw [3,4,6,8].map(i=>[...a].map((c,j)=>a[(3*j/i+3*t*i|0)%a.length]).join('')).join('\n')
+// Tweak palette
+a='¸_„.-•¹°”ˆ˜ˆ”°¹•-.„_¸',a+=a+a
+throw [3,4,6,9].map(i=>[...a].map((c,j)=>a[(3*j/i+3*t*i|0)%a.length]).join('')).join('\n')
+// --- RELEASED --- Waves: https://www.dwitter.net/d/9630
+a='¸„.-”-.„¸',a+=a+a+a+a,a+=a
+throw [3,4.5,6,9].map(i=>[...a].map((c,j)=>a[(3*j/i+6*t*i|0)%a.length]).join('')).join('\n')
+// Add a little boat
+a='¸„.-”-.„¸',a+=a+a+a+a,a+=a
+e=[3,4.5,6,9].map(i=>[...a].map((c,j)=>a[(3*j/i+6*t*i|0)%a.length]).join(''))
+e[0]=e[0].slice(0,63)+'⛵'+e[0].slice(63,-4)
+throw e.join('\n')
+
+// Tribute to https://twitter.com/beesandbombs/status/1037429260833746945 (176)
+// Original source code: https://gist.github.com/beesandbombs/d1c009425a6ed52f62227905a1f7e585
+x.fillRect(0,0,c.width=W=300,W);x.fillStyle='#fff'
+for(k=W;k-=1;)T=6.3*k/W-t/9,a=5*T,d=20*S(T*4),R=t,r=40+20*S(T*2),X=r*S(a),Y=r*C(a),x.fillText('+',W/2+X*C(R)+d*S(R),W/3.5+Y)
+// yonatan's golf (148)
+x.fillRect(0,0,c.width=k=W=314,W)
+for(x.fillStyle='#fff';k--;x.fillText('+',W/2+r*S(5*T)*C(t)+20*S(T*4)*S(t),86+r*C(5*T)))T=k/50-t/9,r=40+20*S(T*2)
+// I dropped black background and added some greyscale (162)
+for(c.width=k=W=314;k--;x.fillText('+',W/2+X*C(t)+d*S(t),86+r*C(5*T)))T=k/50-t/9,r=40+20*S(T*2),d=20*S(T*4),X=r*S(5*T),x.fillStyle=R(0,0,0,.7+(X*S(t)-d*C(t))/40)
+// Tweak the numbers closer to the original (164)
+for(c.width=k=W=314;k-=2;x.fillText('+',W/2+X*C(t)+d*S(t),86+r*C(4*T)))T=k/50-t/9,r=40+20*S(T*3),d=20*S(2+T*3),X=r*S(4*T),x.fillStyle=R(0,0,0,.8+(X*S(t)-d*C(t))/40)
+// yonatan uses invert filter, to avoid fillRect and fillStyle! (133)
+c.style.filter='invert(1)'
+for(c.width=k=314;k--;x.fillText(7,157+r*S(5*T)*C(t)+20*S(T*4)*S(t),86+r*C(5*T)))T=k/50-t/9,r=40+20*S(T*2)
+// Add the greyscale (187)
+c.style.filter='invert(1)'
+for(c.width=k=314;k-=2;x.fillText('+',157+X*C(t)+d*S(t),86+r*C(5*T)))T=k/50-t/9,r=40+20*S(T*2),X=r*S(5*T),d=20*S(T*4),x.fillStyle=R(0,0,0,.7+(X*S(t)-d*C(t))/40)
+// Tweak the numbers closer to the original (189)
+c.style.filter='invert(1)'
+for(c.width=k=314;k-=2;x.fillText('+',157+X*C(t)+d*S(t),86+r*C(4*T)))T=k/50-t/9,r=40+20*S(T*3),X=r*S(4*T),d=20*S(2+T*3),x.fillStyle=R(0,0,0,.7+(X*S(t)-d*C(t))/40)
+// Inline T (192)
+//c.style.filter='invert(1)'
+//for(c.width=k=316;k-=2;x.fillText('+',157+X*C(t)+d*S(t),86+r*C(k/12.5)))r=40+20*S(k/16.7),X=r*S(k/12.5),d=20*S(2+k/16.7),x.fillStyle=R(0,0,0,.7+(X*S(t)-d*C(t))/40)
+// Golf by moving into variables inside R(), and use C() instead of S() for d (181)
+c.style.filter='invert(1)';for(c.width=k=316;k-=2;x.fillText('+',157+X*C(t)+d*S(t),86+r*C(4*T)))T=k/50-t/9,x.fillStyle=R(r=40+20*S(T*3),X=r*S(4*T),d=20*C(T*3),.7+(X*S(t)-d*C(t))/50)
+// yonatan's improved release: https://www.dwitter.net/d/9734
+c.style.filter='invert(1';for(c.width=k=360;k-=2;x.fillText('+',180+U,99+S(p)/P))X=C(p=k/10+t),Y=C(q=k*.06)/2,U=Y*S(t)+X*C(t),V=X*S(t)-Y*C(t),U/=P=(1-V/3)/(2+S(q))/25,x.globalAlpha=++V
+// Hue
+c.style.filter='invert(1)';for(c.width=k=314;k--;x.fillRect(157+X*C(t)+d*S(t),86+r*C(4*T),9,9))T=k/50,x.fillStyle=`hsl(${k},99%,50%,.2)`,R(r=40+20*S(T*3),X=r*S(4*T),d=60*C(T*3))
+// Try to emphasise depth with shading
+c.style.filter='invert(1)';for(c.width=k=316;k--;x.fillRect(157+X*C(t)+d*S(t),86+r*C(4*T),4,4))T=k*t/200,x.fillStyle=R(r=40+20*S(T*3),X=r*S(4*T),d=40*C(T*3),.2+(X*S(t)-d*C(t))/400)
+// Watch it draw itself
+c.style.filter='invert(1)';for(c.width=k=316;k--;x.fillRect(157+X*C(t)+d*S(t),86+r*C(4*T),k/99,k/99))T=k/40+t,x.fillStyle=R(r=40+20*S(T*3),X=r*S(4*T),d=40*C(T*3),1+(X*S(t)-d*C(t))/80)
+// --- RELEASED ---
+c.style.filter='invert(1)';for(c.width=k=316;k--;x.fillRect(157+X*C(t)+d*S(t),86+r*C(4*T),s=k/50,s))T=k/40+t,x.fillStyle=R(r=40+20*S(T*3),X=r*S(4*T),d=60*C(T*3),.7+(X*S(t)-d*C(t))/99)
+c.style.filter='invert(1)';for(c.width=k=316;k--;x.fillRect(157+X*C(t)+d*S(t),86+r*C(4*T),4,4))T=k*t/200,x.fillStyle=R(r=40+20*S(T*3),X=r*S(4*T),d=60*C(T*3),.7+(X*S(t)-d*C(t))/99)
+c.style.filter='invert(1)';for(c.width=k=316;k--;x.fillText(0,157+1.2*X*C(t)+d*S(t),86+r*C(4*T)))T=k*t/200,x.fillStyle=R(r=40+20*S(T*3),X=r*S(4*T),d=60*C(T*3),.3+(X*S(t)-d*C(t))/200)
+c.style.filter='invert(1)';for(c.width=k=316;k--;x.fillRect(157+1.5*X*C(t)+d*S(t),86+r*C(4*T),4,4))T=k*t/200,x.fillStyle=R(r=40+20*S(T*3),X=r*S(4*T),d=80*C(T*3),.3+(X*S(t)-d*C(t))/300)
+
+// Zoom in on a sine wave, find out it's made of tiny sine waves.  Recurse.
+// Really bad initial attempt:
+c.width|=0
+t=1+t%2
+for(I=2e3;I--;)X=(I-960)/100,x.fillRect(I,480-300*C(X/t**3)-100*(t-1)*3/2*(C(X*9/t**2)-t),5,5)

@@ -7,3 +7,5 @@ c.width|=onkeydown=e=>(e=e.which-36)>0&&e<5?e&1?X+=e-2:Y+=e-3:0;x.fillRect(X*9,Y
 Inspiration for BBC Micro demo?  (Simple black and white stretching plasma)
 https://www.dwitter.net/d/3711
 
+
+Escher's waterfall

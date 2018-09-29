@@ -43,6 +43,39 @@ Note that this trick works inside `if`s too, but it does not work in the "body" 
 
     f=(o,r)=>p(o,r).bind(o)
 
+    /* Find key in canvas */
+    F=r=>{for(k in x)if(k.match(r))return k}
+
+    // Example
+    x.fillStyle='blue'
+    x[F(/lS/)]='blue'
+
+    // Let's try it on this code
+    x.fillRect(0,0,W=c.width=99,W);for(H=j=288;x.shadowBlur=j--/4;x.fillRect(9*T(j%9+t),7*T(t-j%9),5,5))x.fillStyle=x.shadowColor=R(H-j,H,H)
+
+    // Example with no saving
+    p=r=>{for(k in x)if(k.match(r))return k}
+    x[p(/lR/)](0,0,W=c.width=99,W);for(H=j=288;x[p(/wB/)]=j--/4;x[p(/lR/)](9*T(j%9+t),7*T(t-j%9),5,5))x.fillStyle=x[p(/wC/)]=R(H-j,H,H)
+
+    // Improvement using template strings
+    p=r=>{for(k in x)if(k.match(r))return k}
+    x[p`lR`](0,0,W=c.width=99,W);for(H=j=288;x[p`wB`]=j--/4;x[p`lR`](9*T(j%9+t),7*T(t-j%9),5,5))x.fillStyle=x[p`wC`]=R(H-j,H,H)
+
+    // Use two functions, to avoid the return, but that becomes larger!
+    q=r=>{for(k in x)k.match(r)?O=k:0}
+    p=r=>q(r)||O
+    x[p`lR`](0,0,W=c.width=99,W);for(H=j=288;x[p`wB`]=j--/4;x[p`lR`](9*T(j%9+t),7*T(t-j%9),5,5))x.fillStyle=x[p`wC`]=R(H-j,H,H)
+
+    // Golf the functions, but still longer than the templates
+    p=r=>(_=>{for(k in x)k.match(r)?O=k:0})()||O
+    x[p`lR`](0,0,W=c.width=99,W);for(H=j=288;x[p`wB`]=j--/4;x[p`lR`](9*T(j%9+t),7*T(t-j%9),5,5))x.fillStyle=x[p`wC`]=R(H-j,H,H)
+
+    // Yonatan demonstrated up with a better way.  Build a set of global variables in window (this) out of the first and seventh character of each canvas property keystring:
+    for(p in x)this[p[0]+p[6]]=p
+    // Usage:
+    x.fillRect                            x.shadowBlur                                 x.fillStyle and x.shadowColor
+    x[fc](0,0,W=c.width=99,W);for(H=j=288;x[sB]=j--/4;x[fc](9*T(j%9+t),7*T(t-j%9),5,5))x[fy]=x[sC]=R(H-j,H,H)
+
 If I am using the same `o` repeatedly, then I might remove the `o` argument from those functions, and instead set it as a global before calling `p` or `P`.
 
 So now, instead of `XMLHttpRequest` ......................... ?

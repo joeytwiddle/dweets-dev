@@ -52,7 +52,7 @@ r=()=>Math.random()*2520;for(i=999;i--;)x.fillStyle=`hsla(${r()},99%,50%,.01`,x.
 r=()=>Math.random()*2520;for(i=999;i--;)x.fillStyle=`hsla(${r()},99%,50%,.01`,x.beginPath(),x.arc(r()-99,r()/2-99,r()**4/1e11,0,7),x.fill()
 // Extending the same idea
 r=()=>Math.random()*2520;for(i=999;i--;)x.fillStyle=`hsla(${r()},99%,50%,.01`,x.beginPath(),x.arc(r()-99,r()/2-99,r()**6/5e17,0,7),x.fill()
-// --- RELEASED ---
+// --- RELEASED --- d/3239
 r=()=>Math.random()*2520;for(i=99;i--;)x.fillStyle=`hsla(${r()},99%,50%,.01`,x.beginPath(),x.arc(r()-99,r()/2-99,r()**3/4e7,0,7),x.fill()
 // Although maybe the exponents aren't doing much.  Here is one without:
 r=()=>Math.random()*2520;for(i=99;i--;)x.fillStyle=`hsla(${r()},99%,50%,.01`,x.beginPath(),x.arc(r()-99,r()/2-99,r()/5,0,7),x.fill()
@@ -179,3 +179,10 @@ w=1680;r=Math.random;for(i=99;i--;)x.fillStyle=`hsla(${4*i+t*25},99%,66%,.01`,x.
 
 // Remixing: https://www.dwitter.net/d/5836
 for(t?i=Z:Z=c.width=255;i--;x.fill(x.arc(129-i*C(t+i),69+55*S(t+i/(S(t)+6)),i/9,0,9)))x.fillStyle=`hsla(${i+t*i},99%,65%,.01)`,x.beginPath()
+
+// Remixing d/3239 cross-browser cross-platform and working
+// Do we really need `r()**3`?  Let's just use `r()/5`.
+// Tested on Chrome on Linux.  62% greys out.  65% almost whites out.
+// Consider 63% instead of 64%
+// --- TO RELEASE ---
+r=()=>Math.random()*2520;for(i=99;i--;)x.fillStyle=`hsla(${r()},99%,64%,.01`,x.beginPath(),x.arc(r()-99,r()/2-99,r()/5,0,7),x.fill()

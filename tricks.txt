@@ -93,4 +93,12 @@ c.width|=P=(i,j,a,d)=>d&&x.stroke(new Path2D('M'+[i,j,i+=S(a)*99,j+=C(a)*99]))&P
 ```
 
 
+# Changing the background
+
+katkip:
+```js
+c.style.background="#000" instead of x.fillStyle='#000';x.fillRect(0,0,2e3,2e3)
+```
+
+
 vim: ft=markdown
