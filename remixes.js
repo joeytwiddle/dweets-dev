@@ -1231,3 +1231,22 @@ for(c.width|=i=h=1e3;i-=2;x.fill())x.beginPath(w=9*S(k=i**3+t/8)*S(t/.7-i)+1),w>
 // --- Published this remix --- https://www.dwitter.net/d/9835
 for(c.width|=i=h=1e3;i--;x.fill())x.beginPath(w=12*S(k=i**3+t/8)*S(t-i)-2),w>0&&x.arc(h+h*(2e5-(i-500)**2)**.5*S(i)**.3/h*S(k*2),i,w,0,7)
 for(c.width|=i=h=1e3;i--;x.fill())x.beginPath(w=14*S(k=i**3+t/8)*S(t-i)-4),w>0&&x.arc(h+h*(2e5-(i-500)**2)**.5*S(i)**.3/h*S(k*2),i,w,0,7)
+
+// f8f82804's nested cubes https://www.dwitter.net/d/10480
+for(w=c.width=594;w-=99;x.beginPath(x.stroke()))for(i=17;i--;)x.lineTo(297+w*S(p=1.57*(i-(i>>2))+t)/(Z=4+C(p)),150-w/5+.4*w*((i&4))/Z-9*T(t-w/7e2))
+
+// tomxor's saturn
+x.fillRect(0,0,i=1e4,i)
+for(t+=160;p=i&1,m=t/C(t/i)+p*(t/2+i%t),i--;)
+(i/7%1<.7-C(n=t/9+i*i))&&
+x.clearRect(960+m*S(n)*C(!p*i/t),540+m*C(n+p*2),2,2)
+// Alt: ((i/7%1)**.25<(1-C(n=t/9+i*i))/2)&&
+// Why is it the the bottom of the sphere still has dots?
+// I think the bottom of the sphere must have C(n)>0 but not C(n)==1
+
+// anotherkitten's rainbow tunnel https://www.dwitter.net/d/10601
+for(i=17;i--;x.beginPath(x.fill()))q=6*S(t/2),p=i+t%1,r=p*p,x.fillStyle=`hsl(${(p-t)*9} 50%${i-t&1?40:60}%`,x.arc(960+C(a=p/5+q)*r,540+S(a)*r,5*p*p,0,7)
+
+// Impossible triangle by pavelb and anotherkitten https://www.dwitter.net/d/10655
+// Lighting
+ϕ=t;with(x)for(c.width=-1,translate(150,84),i=3;i--;rotate(t),t=2.1,fill(new Path2D('M67 28 9-72-9-72 37 11-19 11-28 25')))fillStyle=R(a=120+80*C((ϕ-i*Math.PI*2/3)),a,a)

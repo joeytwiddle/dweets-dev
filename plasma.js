@@ -186,3 +186,49 @@ for(t?i=Z:Z=c.width=255;i--;x.fill(x.arc(129-i*C(t+i),69+55*S(t+i/(S(t)+6)),i/9,
 // Consider 63% instead of 64%
 // --- TO RELEASE ---
 r=()=>Math.random()*2520;for(i=99;i--;)x.fillStyle=`hsla(${r()},99%,64%,.01`,x.beginPath(),x.arc(r()-99,r()/2-99,r()/5,0,7),x.fill()
+
+
+
+// Fractal plasma
+F=S=>S*(.5+Math.random()),p=(X,Y,S,I)=>S?(H=S>>1,p(X,Y,H,F(S)),p(X+S,Y,H,F(S)),p(X,Y+S,H,F(S)),p(X+S,Y+S,H,F(S))):x.fillRect(X,Y,I,I),p(0,0,R=32,R)
+F=S=>S*(.5+Math.random()),p=(X,Y,S,I)=>S?(H=S>>1,p(X,Y,H,F(S)),p(X+S,Y,H,F(S)),p(X,Y+S,H,F(S)),p(X+S,Y+S,H,F(S))):x.fillRect(X*8,Y*8,I,I);p(0,0,R=32,R)
+F=I=>I*(.5+Math.random()),p=(X,Y,H,I)=>H?(Q=H>>1,p(X,Y,Q,F(I)),p(X+H,Y,Q,F(I)),p(X,Y+H,Q,F(I)),p(X+H,Y+H,Q,F(I))):x.fillRect(X*8,Y*8,I,I);p(0,0,R=32,R)
+F=I=>I*(.5+Math.random()),p=(X,Y,H,I)=>H?(Q=H>>1,p(X,Y,Q,F(I)),p(X+H,Y,Q,F(I)),p(X,Y+H,Q,F(I)),p(X+H,Y+H,Q,F(I))):(x.globalAlpha=I/32,x.fillRect(X*8,Y*8,8,8)),p(0,0,R=64,R)
+F=I=>I*(.5+Math.random()),p=(X,Y,H,I)=>H?(Q=H>>1,p(X,Y,Q,F(I)),p(X+H,Y,Q,F(I)),p(X,Y+H,Q,F(I)),p(X+H,Y+H,Q,F(I))):(x.globalAlpha=I/32,x.fillRect((X+H)*8,(Y+H)*8,8,8)),p(0,0,R=64,R)
+F=I=>I*(.5+Math.random()),p=(X,Y,H,I)=>{if(H){Q=H>>1;p(X,Y,Q,F(I));p(X+H,Y,Q,F(I));p(X,Y+H,Q,F(I));p(X+H,Y+H,Q,F(I))}else{x.globalAlpha=I/32,x.fillRect(X*8,Y*8,8,8)}};p(0,0,R=64,R)
+F=I=>I*(.5+Math.random()),p=(X,Y,W,I)=>(H=W>>1,H?(p(X,Y,H,F(I)),p(X+H,Y,H,F(I)),p(X,Y+H,H,F(I)),p(X+H,Y+H,H,F(I))):(x.globalAlpha=I/32,x.fillRect((X+H)*8,(Y+H)*8,8,8))),p(0,0,R=64,R)
+F=I=>32,p=(X,Y,W,I)=>(H=W>>1,H?(p(X,Y,H,F(I)),p(X+H,Y,H,F(I)),p(X,Y+H,H,F(I)),p(X+H,Y+H,H,F(I))):(x.fillRect((X+H)*8,(Y+H)*8,8,8))),p(0,0,R=64,R)
+// Well damn, I finally worked out what is wrong.  The args are fine, but the "local variables" H or Q are actually globals!
+F=I=>I*Math.random(),p=(X,Y,W,I,H=W>>1)=>H?(p(X,Y,H,F(I)),p(X+H,Y,H,F(I)),p(X,Y+H,H,F(I)),p(X+H,Y+H,H,F(I))):(x.fillRect((X+H)*8,(Y+H)*8,I,I)),t||p(0,0,R=64,R)
+F=I=>I*Math.random(),p=(X,Y,W,I,H=W>>1)=>H?(p(X,Y,H,F(I)),p(X+H,Y,H,F(I)),p(X,Y+H,H,F(I)),p(X+H,Y+H,H,F(I))):(x.fillRect((X+H)*8,(Y+H)*8,I,I)),t||p(0,0,R=256,R)
+c.width|=0;p=(X,Y,W,I,H=W>>1)=>H?(I*=Math.random(),p(X,Y,H,I),p(X+H,Y,H,I),p(X,Y+H,H,I),p(X+H,Y+H,H,I)):(x.fillRect((X+H)*8,(Y+H)*8,I,I)),p(0,0,R=256,R)
+p=(X,Y,W,I,H=W>>1)=>H?(I*=Math.random(),p(X,Y,H,I),p(X+H,Y,H,I),p(X,Y+H,H,I),p(X+H,Y+H,H,I)):(x.fillRect(X*8,Y*8,I,I)),p(0,0,R=64,R)
+c.width|=0;p=(X,Y,W,I,H=W>>1)=>H?(p(X,Y,H,I*=(t++*t%1)),p(X+H,Y,H,I),p(X,Y+H,H,I),p(X+H,Y+H,H,I)):(x.fillRect(X*8,Y*8,I,I)),p(0,0,R=128,R)
+c.width|=0;p=(X,Y,W,I,H=W>>1)=>H?(p(X,Y,H,I*=(t++*t%1)),p(X+H,Y,H,I),p(X,Y+H,H,I),p(X+H,Y+H,H,I)):(x.fillRect(X,Y,I,I)),p(0,0,R=512,R)
+c.width|=0;p=(X,Y,W,I,H=W>>1)=>H?(p(X,Y,H,I*=Math.random()),p(X+H,Y,H,I),p(X,Y+H,H,I),p(X+H,Y+H,H,I)):(x.fillRect(X,Y,I,I)),p(0,0,R=512,R)
+// Best so far
+c.width|=p=(X,Y,W,I,H=W/2)=>H>2?(p(X,Y,H,I*=Math.random()),p(X+H,Y,H,I),p(X,Y+H,H,I),p(X+H,Y+H,H,I)):x.fillRect(X,Y,I,I),p(0,0,R=1024,R)
+c.width|=0;p=(X,Y,W,I,H=W>>1)=>H>2?(p(X,Y,H,I*=Math.random()),p(X+H,Y,H,I),p(X,Y+H,H,I),p(X+H,Y+H,H,I)):(x.globalAlpha=I/32,x.fillRect(X,Y,8,8)),p(0,0,R=1024,R)
+// Interesting texture
+c.width|=0;p=(X,Y,W,I,H=W>>1)=>H>2?(p(X,Y,H,I=I+Math.random()-.5),p(X+H,Y,H,I),p(X,Y+H,H,I),p(X+H,Y+H,H,I)):(x.globalAlpha=I/4,x.fillRect(X,Y,8,8)),p(0,0,R=1024,.5)
+// Refinement
+c.width|=p=(X,Y,W,I,H=W/2)=>H>2?(p(X,Y,H,I*=Math.random()**.2),p(X+H,Y,H,I),p(X,Y+H,H,I),p(X+H,Y+H,H,I)):x.fillRect(X,Y,I,I),p(0,0,R=1024,9)
+// With a radial (XOR?) pattern
+c.width|=p=(X,Y,W,I,H=W/2)=>H>2?(p(X,Y,H,I*=((X*Y*t+t)%1)**.2),p(X+H,Y,H,I),p(X,Y+H,H,I),p(X+H,Y+H,H,I)):x.fillRect(X,Y,I,I),p(0,0,R=1024,9)
+// --- RELEASED --- https://www.dwitter.net/d/11709
+c.width|=p=(X,Y,W,I,H=W/2)=>H>2?(p(X,Y,H,I*=Math.random()),p(X+H,Y,H,I),p(X,Y+H,H,I),p(X+H,Y+H,H,I)):x.fillRect(X,Y,I,I),p(0,0,R=1024,R)
+// Trying (but failing) to reduce with map
+c.width|=p=(X,Y,W,I,H=W/2)=>H>2?[[X,Y,I*=Math.random()**.2],[X+H,Y],[X,Y+H],[X+H,Y+H]].map(c=>p(c[0],c[1],H,I)):x.fillRect(X,Y,I,I),p(0,0,R=1024,9)
+// Successfully staying the same size with map
+c.width|=p=(X,Y,W,I,H=W/2)=>(I*=Math.random()**.2,H>2?[0,1,2,3].map(i=>p(X+H*(i%2),Y+H*(i>>1),H,I)):x.fillRect(X,Y,I,I)),p(0,0,R=1024,9)
+c.width|=p=(X,Y,W,I,H=W/2)=>H>2?[0,1,2,3].map(i=>p(X+H*(i%2),Y+H*(i>>1),H,I*Math.random()**.2)):x.fillRect(X,Y,I,I);p(0,0,R=1024,9)
+(p=(X,Y,W,I,H=W/2)=>H>1?[0,1,2,3].map(i=>p(X+i%2*H,Y+H*(i>1),H,I*Math.random()**.2)):x.fillRect(X,Y,I,I))(0,0,c.width=R=512,5)
+
+// Smooth
+(p=(X,Y,W,I,H=W/2)=>H>1?[0,1,2,3].map(i=>p(X+i%2*H,Y+H*(i>1),H,I*(.5+S(t*t++/2e4)/2)**.1)):x.fillRect(X,Y,3-I,3-I))(0,0,c.width=R=512,5)
+// Clean
+(p=(X,Y,W,I,H=W/2)=>H>1?[0,1,2,3].map(i=>p(X+i%2*H,Y+H*(i>1),H,I+W*S(t*t++/2e4)/5e2)):x.fillRect(X,Y,I<0?I=0:I,I))(0,0,c.width=R=512,1)
+(p=(X,Y,W,I,H=W/2)=>H>1?[0,1,2,3].map(i=>p(X+i%2*H,Y+H*(i>1),H,I+S(t*t++/2e4)/5)):x.fillRect(X,Y,I<0?I=0:I,I))(0,0,c.width=R=512,1)
+// Multicolour
+(p=(X,Y,W,I,H=W/2)=>H>1?[0,1,2,3].map(i=>p(X+i%2*H,Y+H*(i>1),H,I+S(t*t++/2e4)*90)):(x.fillStyle=`hsl(${I},99%,50%)`,x.fillRect(X,Y,2,2)))(0,0,c.width=R=512,0)
+(p=(X,Y,W,I,H=W/2)=>H>1?[0,1,2,3].map(i=>p(X+i%2*H,Y+H*(i>1),H,I+S(t*t++/W/99)*W)):(x.fillStyle=`hsl(${I},99%,50%)`,x.fillRect(X,Y,2,2)))(0,0,c.width=R=512,0)

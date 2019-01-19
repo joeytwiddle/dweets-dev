@@ -162,3 +162,5 @@ The 9 default bars rotate 90 degrees and then combine together into 1 big bar.
 The big bar zooms out, and is joined by 8 others, to return to the default.
 Animation loops.
 
+# Cable
+A thick black curve with cyan squares moving along it.

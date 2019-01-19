@@ -83,6 +83,10 @@ https://www.dwitter.net/d/7384 nystrand's bright yellow banana
 https://www.dwitter.net/d/7429 p01 and yonatan's shaded yellow banana
 https://codegolf.tk/a/265 yonatan's shaded and mottled banana
 
+# Defaults
+https://www.dwitter.net/d/10312 yonatan's black/white switcher
+https://www.dwitter.net/d/10342 yonatan's long shadows
+
 ## Using APIs
 ... add more here ...
 ... piano or theramin ...

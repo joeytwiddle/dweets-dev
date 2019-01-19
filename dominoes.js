@@ -138,6 +138,8 @@ t*=9;with(x)for(c.width|=i=12;i--;fillRect(0,0,i==9?14:-6,q?i>9?4:1:-22))setTran
 t*=9;with(x)for(c.width|=i=12;i--;fillRect(0,0,i==9?12:-6,q?i>9?4:1:-22))setTransform(9,0,q=i>8,9,500+40*i*(3-q),q?390-8e5/t**6:640),a=t-i/3,l=i<3?1.5:i<8?2.8-.4*i:0,rotate(a>0&&S(a<l?a:l))
 // Compressed
 eval(unescape(escape`睩瑨⡸⥦潲⡣⹷楤瑨簽椽ㄲ㭩ⴭ㭦楬汒散琨〬〬椽㴹㼱㈺ⴶⱱ㽩㸹㼴㨱㨭㈲⤩獥瑔牡湳景牭⠹ⰰⱱ㵩㸸ⰹⰵ〰⬴〪椪⠳⵱⤬焿㌹〭㡥㔯琪⨶㨶㐰⤬愽琭椯㌬氽椼㌿ㄮ㔺椼㠿㈮㠭⸴⩩㨰Ⱳ潴慴攨愾〦♓⡡㱬㽡㩬⤩`.replace(/u(..)/g,"$1%")))
+// TODO: t*=.6 or .7 would be ideal for machines running at 60 FPS
+// TODO: Failing that, at least use 2e6 instead of 8e5
 
 // #dominoes #dominoesnt #dealwithit #thuglife
 

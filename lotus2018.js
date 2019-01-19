@@ -94,6 +94,10 @@ for(c.width|=k=511;k--;x.fillRect(960-W-12*j*C(a=t+i*8)*C(E=i/15),900-j*(p=9*S(E
 // - FIX BUG: 511 leaves one petal missing, use 544 instead
 // - Make the petals shorter and fatter
 // - Group the petals in pairs (symmetry)
+// --- RELEASED --- https://www.dwitter.net/d/10878
+for(c.width|=k=512;k--;x.fillRect(960-W-12*j*C(a=t+i*17),960-j*(p=i+4*S(a)),2*W,p))i=k>>5,j=k%32,x.fillStyle='#fc74',W=99*S(j/10)
+// Colour each petal differently
+for(c.width|=k=512;k--;x.fillRect(960-W-12*j*C(a=t+i*17),960-j*(p=i+4*S(a)),2*W,p))i=k>>5,j=k%32,x.fillStyle=`hsla(${60-k/5},99%,45%,20%)`,W=99*S(j/10)
 
 // Experimenting
 for(c.width|=k=511;k--;x.fillRect(960-W-800*S(j/41)*C(a)*S(E),960-j*(12*C(E)+S(a)),2*W,9))i=k>>5,j=k%32,E=1.5*(i/16)**.5,x.fillStyle='#f7f4',W=99*S(j/10)*S(a=t+i*17)
@@ -160,6 +164,7 @@ for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),420-j*4*S(a)+j*(k>>7?-i:i)
 for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=2*t-i*8),420-j*4*S(a)+j*(k>>7?-i:i),2*W,6))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
 // Combined: solid, raised and faster, and golfed the raise by moving k--
 for(c.width=k=1e3;k;x.fillRect(500-W-9*j*C(a=2*t-i*8),420-j*(p=4*S(a)-(k>>7?-i:i)),2*W,p))i=k--/16&7,j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
+
 // TODO: Consider using height 9 instead of 6; it makes the petals stronger, more distinct from the reflection
 // TODO :Or even cooler, replace 6 with t!
 // If we want to avoid the complete flatness, we must never let p===0
@@ -179,7 +184,7 @@ for(c.width=k=2e3;k--;x.fillRect(999-W-25*j*C(a=t+i*8),760-j*15*S(a)+3*j*(k>>7?-
 for(c.width=k=2e3;k--;x.fillRect(999-W-15*j*C(a=t+i*8),680-j*8*S(a)+j*(k>512?-i:i),2*W,9))i=k/32&15,j=k%32,x.fillStyle='#f7f1',W=90*S(j/10)
 // Large and detailed and solid
 for(c.width=k=2e3;k--;x.fillRect(999-W-15*j*C(a=t+i*8),680-j*(p=8*S(a)-(k>>9?-i:i)),2*W,p))i=k/32&15,j=k%32,x.fillStyle='#f7f1',W=90*S(j/10)
-// Large and cute
+// === NICE === Large and cute
 for(c.width=k=1e3;k--;x.fillRect(500-W-15*j*C(a=t+i*8),360-j*8*S(a)+2*j*(k>>7?-i:i),2*W,9))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=50*S(j/5)
 // === GREAT === Large and cute and solid
 for(c.width=k=1e3;k--;x.fillRect(500-W-15*j*C(a=t+i*8),360-j*(p=8*S(a)-2*(k>>7?-i:i)),2*W,p))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=50*S(j/5)

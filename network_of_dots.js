@@ -1,4 +1,4 @@
-// Network of dots (Voronotsomuch)
+// Network of dots (Voronotsomuch) similar to particles.js
 c.width|=0
 for(i=99;i--;)r=17*i%1e3,a=t*(i/9%5),T[i]=[960+r*C(a),540+r*S(a)]
 for(i=99;i--;)x.fillRect(T[i][0],T[i][1],5,5)
@@ -66,3 +66,5 @@ C[i]=C[i]||r()
 T[i]=(S[i]*t&2047)-64,T[i+1]=(C[i]*t&2047)-484
 x.beginPath(),x.arc(T[i],T[i+1],9,0,7),x.fill()
 for(j=i;j-=2;)d=((T[i]-T[j])**2+(T[i+1]-T[j+1])**2)/4e4,d<5?(x.lineWidth=5-d)|x.beginPath()|x.moveTo(T[i],T[i+1])|x.lineTo(T[j],T[j+1])|x.stroke():0}
+
+// Too late, yonatan did it!  https://www.dwitter.net/d/9105

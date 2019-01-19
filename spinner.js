@@ -147,6 +147,8 @@ for(c.width|=m=i=99;i--;x.fillRect(960+55*s-l*k,540+55*k+l*s,25,25))a=3*(S(t)-t)
 // Starting from the small version, trying to make it a nice 180
 for(c.width=m=i=200;i--;x.fillRect(96+20*s-l*k,50+20*k+l*s,9,9))k=C(a=4*(S(t)-t)+i%4*1.57-1),s=S(a),x.fillStyle=`hsla(${i%4*66},99%,70%,.3`,l=40-i*(1+C(t))/5
 for(c.width=m=i=200;i--;x.fillRect(96+20*s-l*k,50+20*k+l*s,14,14))k=C(a=4*(S(t)-t)+i%4*1.57-1),s=S(a),x.fillStyle=`hsla(${i%4*66-12},99%,42%,.2`,l=41-i*(1+C(t))/5
+// --- Finally RELEASED in https://www.dwitter.net/d/11870 almost a year after we started it ---
+// I don't feel it's finished, but today we noticed that Slack has changed their logo, making this redundant.
 for(c.width=m=i=200;i--;x.fillRect(96+20*s-l*k,50+20*k+l*s,14,14))k=C(a=4*(S(t)-t)+i%4*1.57-9),s=S(a),x.fillStyle=`hsla(${i%4*66-9},90%,43%,.2`,l=41-i*(1+C(t))/5
 // There are four things going on in the motion:
 // - First the lines contract and a fast spin happens

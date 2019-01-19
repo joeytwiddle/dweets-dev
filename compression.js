@@ -5,8 +5,9 @@
 // https://codegolf.tk/a/165
 //eval(String.fromCharCode(...[...`ŀḀǨ̠͸̘Ψ̨ͨͰΠňŲ̠̋̀̈Ű̈΀΀̨Ͱ̠Ș͈̠̀͠ŀ˸ǨḀŰ̘ΐ̨̈Π̨Ȩ̨̨ͨ͠ͰΠ̀Θ̘ΐ͈΀Π̀ňŠ˸ŰΘΐ̘Ǩ̀ŸŸϐπͰͨŰ̘̰ŸƐ̀`].map(v=>v.charCodeAt()>>3)))
 
-// --- BEST TECHNIQUE afaik ---
-// Claims 184
+// --- POPULAR TECHNIQUE ---
+// (Scroll down for the best known technique)
+// The popular technique can compress 184 chars into 140 bytes.  Here is an example output:
 //eval(unescape(escape`挮睩摴桼㵰㴰㭸⹦潮琽❢潬搠㘰灸⁭潮潳灡捥✻景爨愠潦≌潯欠䵡Ⱐ䤠捡渠晩琠ㄸ㐠批瑥猠潦⁣潤攠楮瑯⁡⁳楮杬攠摷敥琡∩砮晩汬呥硴⡡Ⱳ㴨瀫㴳㈩⭓⡴ⴽ⸲⤪ㄸⱱ㴴〰⭓⡴⨲⤪㤩ⱸ⹦楬汔數琨✮✬爬焫㐰⤻`.replace(/u(..)/g,"$1%")))
 
 // An implementation by MrM@_S https://www.dwitter.net/d/9094
@@ -14,6 +15,8 @@
 // Improved (can deal with odd char counts): https://www.dwitter.net/d/9207
 // Max 184!
 //eval(unescape(escape`瑼簨挮潵瑥版呍䰽⊻㱩湰畴⁩搽漾ꬢⱯ⹯湢汵爽昽㹯⹶慬略㴨甫〩⹳灬楴恜湠嬱崮牥灬慣攨⽛帡⵾崫⼬却物湧⹦牯浃桡牃潤攨⸮⸨漮癡汵攫∻∩⹭慴捨⠯⸮⽧⤮浡瀨攽㹥学㴢捨慲䍯摥䅴≝⠩㰼㡼敛晝⠱⤩⤩⤻`.replace(/u(..)/g,"$1%")))
+
+// My implementation:
 
 var src = 'for(i=600;i--;x.clearRect(960-W,99+i,2*W,1))W=(600*i-i*i)**.5\nfor(j=9;j--;x.fillRect(960-500*C(2*t)-s*(j-4)/3,400-s*S(80*t)*((j-4)**2)**.5/2.9-s/2+80*S(4*t),s,s))s=9+T(t/5||8)**8';
 var src = `with(x)for(c.width|=i=0;i<9;i++)x.F=fillText,setTransform(25,0,0,25,500+i*110,720),a=t-i/3,l=i<3?1.5:i<8?2.8-.4*i:0,rotate(a<0?0:S(a<l?a:l)),F('            ',-3,-1);x.F('____________',-11,-7-2e4/t**6)`;
@@ -23,6 +26,8 @@ var src = `with(x)for(c.width|=i=9;i--;i==7&&fillText('^oooooooooooooo',-14,-23-
 var src = `with(x)for(c.width|=i=12;i--;fillRect(0,0,i==9?12:-6,q?i>9?4:1:-22))setTransform(9,0,q=i>8,9,500+40*i*(3-q),q?390-8e5/t**6:640),a=t-i/3,l=i<3?1.5:i<8?2.8-.4*i:0,rotate(a>0&&S(a<l?a:l))`;
 // Knot
 var src = `c.style.filter='invert(1)';for(c.width=k=316;k--;x.fillRect(157+X*C(t)+d*S(t),86+r*C(4*T),s=k/50,s))T=k/40+t,x.fillStyle=R(r=40+20*S(T*3),X=r*S(4*T),d=60*C(T*3),.7+(X*S(t)-d*C(t))/99)`;
+var src = 'for(i=600;i--;x.clearRect(960-W,99+i,2*W,1))W=(600*i-i*i)**.5;for(j=9;j--;x.fillRect(960-500*C(2*t)-s*(j-4)/3,400-s*S(80*t)*((j-4)**2)**.5/2.9-s/2+80*S(4*t),s,s))s=9+T(t/5||8)**8';
+var src = 't*=.7;for(i=600;i--;x.clearRect(960-W,99+i,2*W,1))W=(600*i-i*i)**.5;for(j=9;j--;x.fillRect(960-500*C(2*t)-s*(j-4)/3,400-s*S(80*t)*((j-4)**2)**.5/2.9-s/2+80*S(4*t),s,s))s=9+T(t/5||8)**8';
 
 var out = '';
 for (var i = 0; i < src.length; i += 2) {
@@ -41,5 +46,13 @@ console.log('eval(unescape(escape`' + out + '`.replace(/u(..)/g,"$1%")))');
 
 // Compress a dweet online: https://prplz.github.io/dwitpack/
 
+// --- BETTER COMPRESSION! ---
+//
 // prplz said: there's a better method but it causes js to count it wrong
 // http://xem.github.io/golfing/#jstweet_en
+//
+// The upper limit with this method is 194.
+//
+// But to post it on Dwitter, you may need to remove the 'disabled' attribute from the Post button.
+//
+// Compressor implemented here by metamo: https://www.dwitter.net/d/11852

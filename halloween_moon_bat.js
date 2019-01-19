@@ -53,9 +53,9 @@ s=9+T(t?t/5:8)**8,x.fillRect(960-500*C(2*t)-s,400-s*.4*S(70*t)-s/2,2*s,s)
 // --- GOOD 140 char redux --- Golfed (by expanding the **2) and then cancelling
 for(i=600;i--;x.clearRect(960-W,99+i,2*W,1))W=(600*i-i*i)**.5
 s=9+T(t/5||8)**8,x.fillRect(960-500*C(2*t)-s,400-s*.4*S(70*t)-s/2,2*s,s)
-// 141!  Angled crossing (fixed diagonal, not swapping)
+// 140!  Angled crossing (fixed diagonal, not swapping) === RELEASED === https://www.dwitter.net/d/10788
 for(i=600;i--;x.clearRect(960-W,99+i,2*W,1))W=(600*i-i*i)**.5
-s=9+T(t/5||8)**8,x.fillRect(960-5*(q=99*C(2*t))-s,400-s*S(70*t)/3-s/2+q,2*s,s)
+s=9+T(t/5||8)**6,x.fillRect(960-5*(q=99*C(2*t))-s,400-s*S(70*t)/3-s/2+q,2*s,s)
 
 // Perform 3 fillRects for the bat, with the middle one oscillating independently of the outer two.  (7 or more also acceptable)
 // I thought it might be possible if the clearRect was a fillRect, then we could combine them all, but it's not!
@@ -71,9 +71,17 @@ s=9+T(t?t/5:8)**8;for(j=9;j--;)x.fillRect(960-500*C(2*t)-s*(j-4)/3,400-s*S(80*t)
 for(i=600;i--;x.clearRect(960-W,99+i,2*W,1))W=(600*i-i*i)**.5
 for(j=9;j--;x.fillRect(960-500*C(2*t)-s*(j-4)/3,400-s*S(80*t)*((j-4)**2)**.5/2.9-s/2+80*S(4*t),s,s))s=9+T(t/5||8)**8
 // === OH THIS COULD BE PUBLISHED COMPRESSED! ===
+// Flapping at 80 (too fast?)
 eval(unescape(escape`景爨椽㘰〻椭ⴻ砮捬敡牒散琨㤶〭圬㤹⭩ⰲ⩗ⰱ⤩圽⠶〰⩩⵩⩩⤪⨮㔊景爨樽㤻樭ⴻ砮晩汬剥捴⠹㘰ⴵ〰⩃⠲⩴⤭猪⡪ⴴ⤯㌬㐰〭猪匨㠰⩴⤪⠨樭㐩⨪㈩⨪⸵⼲⸹⵳⼲⬸〪匨㐪琩ⱳⱳ⤩猽㤫吨琯㕼簸⤪⨸`.replace(/u(..)/g,"$1%")))
+// Flapping at 70
+eval(unescape(escape`景爨椽㘰〻椭ⴻ砮捬敡牒散琨㤶〭圬㤹⭩ⰲ⩗ⰱ⤩圽⠶〰⩩⵩⩩⤪⨮㔻景爨樽㤻樭ⴻ砮晩汬剥捴⠹㘰ⴵ〰⩃⠲⩴⤭猪⡪ⴴ⤯㌬㐰〭猪匨㠰⩴⤪⠨樭㐩⨪㈩⨪⸵⼲⸹⵳⼲⬸〪匨㐪琩ⱳⱳ⤩猽㤫吨琯㕼簸⤪⨸`.replace(/u(..)/g,"$1%")))
 // Recommend: Publish the 140 redux, then publish the full compressed version as a remix
 // TODO CONSIDER: Instead of **8 (shocking) we could use **6 (get to watch the incoming bat)
 // Hmmm I still like the **8.  More shocking!
 // Comment: End with `**6` or `**4` for a gentler approach
 // I am leaning towards `**6` now.  It gives the viewer a little moment to understand what they are seeing.
+// Reduced speed:
+t*=.7;for(i=600;i--;x.clearRect(960-W,99+i,2*W,1))W=(600*i-i*i)**.5
+for(j=9;j--;x.fillRect(960-500*C(2*t)-s*(j-4)/3,400-s*S(80*t)*((j-4)**2)**.5/2.9-s/2+80*S(4*t),s,s))s=9+T(t/5||8)**8
+// === RELEASED === https://www.dwitter.net/d/10789
+eval(unescape(escape`琪㴮㜻景爨椽㘰〻椭ⴻ砮捬敡牒散琨㤶〭圬㤹⭩ⰲ⩗ⰱ⤩圽⠶〰⩩⵩⩩⤪⨮㔻景爨樽㤻樭ⴻ砮晩汬剥捴⠹㘰ⴵ〰⩃⠲⩴⤭猪⡪ⴴ⤯㌬㐰〭猪匨㠰⩴⤪⠨樭㐩⨪㈩⨪⸵⼲⸹⵳⼲⬸〪匨㐪琩ⱳⱳ⤩猽㤫吨琯㕼簸⤪⨸`.replace(/u(..)/g,"$1%")))

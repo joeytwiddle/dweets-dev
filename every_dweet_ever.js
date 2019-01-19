@@ -1,5 +1,10 @@
 // Every dweet ever?  Builds random strings and execute them
 
+// An earlier version of this file was published here: https://gist.github.com/joeysino/873024af8e175c3de37b0c36cdc529a6#file-every_dweet_ever-js-L208
+
+// See also:
+// - magna's "Brute-force dweet" https://www.dwitter.net/d/10548
+
 // There are < 3e277 possible dweets (excluding unicode chars)
 // (128 - 32) ** 140
 
@@ -259,3 +264,32 @@ r=()=>Math.random()*140|0;D=t?(i=D.split(''),i[r()]=String.fromCharCode(r()),eva
  * (Oh shit, assigning a function will break it permanently!  OK nevermind, lets always try to call it.)
  * Now we need to build some random expressions to pass to it!
  */
+
+// Remixing magna's https://www.dwitter.net/d/10548
+// The try-catch is not strictly necessary, but helps to stop the console from filling up
+s=[];for(p in x)s.push(p)
+T.valueOf=_=>Math.random()*s.length
+f=x[s[T|0]]
+try{f.call&&f.apply(x,[T,T,T,T,T,T,T,T,T].slice(0,f.length))}catch(e){}
+//
+s=[];for(p in x)s.push(p)
+T.valueOf=_=>Math.random()*s.length
+f=x[s[T|0]]
+try{f.apply(x,[T,T,T,T,T,T,T,T,T].slice(0,f.length))}catch(e){}
+//
+s=[];for(p in x)s.push(p)
+T.valueOf=_=>Math.random()*s.length
+try{x[s[T|0]].apply(x,[T,T,T,T,T,T,T,T,T].slice(0,T))}catch(e){}
+// Golfed
+s=[];for(p in x)s.push(p)
+T.valueOf=_=>Math.random()*s.length
+try{x[s[T|0]](...[T,T,T,T,T,T,T,T,T].slice(0,T))}catch(e){}
+// Golfed, and deterministic
+// --- GOOD --- Cool pattern, but clearly a pattern
+s=[];for(p in x)s.push(p)
+T.valueOf=_=>t++**t%s.length
+x[s[T|0]](...[T,T,T,T,T,T,T,T,T].slice(0,T))
+// Really minimised
+s=[];for(p in x)s.push(p)
+T.valueOf=_=>t++**t%s.length
+x[s[T|0]](T,T,T,T,T,T,T,T,T)

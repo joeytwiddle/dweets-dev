@@ -1,3 +1,5 @@
+magna: If you have `x.translate(X,Y);x.scale(Z,Z);x.rotate(A)`, it can be combined into `x.setTransform(p=C(A)*Z,q=S(A)*Z,-q,p,X,Y)` to do it one shot and you get to avoid doing either a `x.save();...;x.restore()` or `x.resetTransform()` if this is happening in a loop.
+
 # Encoding and decoding binary data
 
 By hand:
