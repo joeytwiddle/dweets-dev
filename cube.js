@@ -183,3 +183,13 @@ sx = scale * wx / wz + W / 2
 sy = scale * wy / wz + W*.26
 x.fillRect(sx,sy,5,5)
 }
+
+// sigveseb's cube: https://www.dwitter.net/d/403
+s=S(t);r=a=>(Math.random()*2|0)-.5;for(n=c.width=i=99;i--;x.lineTo(n*X/Z,n*U/Z))F=r(),U=s+r(),V=r(),Z=V*C(t)-F*s+2,X=s+V*s+F*C(t);x.stroke()
+// My idea: 8 corners, 8*8 = 64 pairs.  Only draw a line between a pair if two of the coords match (only one differs)
+// My unfinished remix
+s=S(t);r=a=>((i/2>>a*(1+(i&1)))&1)-.5;for(n=c.width=i=99;i--;x.lineTo(n*X/Z,n*U/Z))F=r(0),U=s+r(1),V=r(2),Z=V*C(t)-F*s+2,X=s+V*s+F*C(t);x.stroke()
+// My unfinished version
+P=n=>(i>>n)&1
+c=k=>[P(0),P(1),P(2)]
+for(i=64;i--;)A=c(0),B=c(1),x.fillRect(960+400*A[0],540+200*A[1],5,5)

@@ -164,6 +164,7 @@ e=[3,4.5,6,9].map(i=>[...a].map((c,j)=>a[(3*j/i+6*t*i|0)%a.length]).join(''))
 e[0]=e[0].slice(0,63)+'⛵'+e[0].slice(63,-4)
 throw e.join('\n')
 
+// Knot
 // Tribute to https://twitter.com/beesandbombs/status/1037429260833746945 (176)
 // Original source code: https://gist.github.com/beesandbombs/d1c009425a6ed52f62227905a1f7e585
 x.fillRect(0,0,c.width=W=300,W);x.fillStyle='#fff'

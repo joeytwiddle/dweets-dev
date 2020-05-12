@@ -26,30 +26,32 @@ https://www.dwitter.net/d/2108 mxfh's Joy Division album cover
 https://www.dwitter.net/d/3161 joeytwiddle's flag
 https://www.dwitter.net/d/6714 Paisley's cute bouncing emoji face
 https://www.dwitter.net/d/135 icecuber's pong tribute
-https://www.dwitter.net/d/1231 iverjo's tunnel
+https://www.dwitter.net/d/1231 iverjo's cyber tunnel
+https://www.dwitter.net/d/106 iverjo's dark/light tunnel
 https://www.dwitter.net/d/1829 New_Core's 3d fish
+https://www.dwitter.net/d/9649 yonatan's 3d fish
 https://www.dwitter.net/d/4665 ben's fractal tree
-https://www.dwitter.net/d/8675 Xen's colourful golden-ratio wobbler
 https://www.dwitter.net/d/9134 yonatan's rainbow lights projection
+https://www.dwitter.net/d/16741 rnbw's nice smooth twister
 
 # Hall of Fame
 
-https://www.dwitter.net/d/410 sigveseb's frosted glass
 https://www.dwitter.net/d/7535 jylikangas's mining tunnel
 https://www.dwitter.net/d/1892 p01's Space Harrier
--- lotus final? --
 https://www.dwitter.net/d/7702 jylikangas's trains
-https://www.dwitter.net/d/3078 FireFly's alien sprites
+https://www.dwitter.net/d/3078 FireFly's space invaders sprite generator
 https://www.dwitter.net/d/2298 keithclark's sphere of dots
 https://www.dwitter.net/d/2249 aemkei's sphere
 https://www.dwitter.net/d/5600 p01's globe
 https://www.dwitter.net/d/5747 corruptio's coloured globe
 https://www.dwitter.net/d/672 aeimkei's game of life
 https://www.dwitter.net/d/1875 FireFly's U/V mapped sphere
-https://www.dwitter.net/d/2738 Nystrand's animation of my clouds
+https://www.dwitter.net/d/2737 Nystrand's animation of my clouds
 https://www.dwitter.net/d/5321 hoplite's plasma with beautiful orange/blue shading
 https://www.dwitter.net/d/7495 jylikangas's reflective white room
+https://www.dwitter.net/d/9672 yonatan's dreamy purple wave
 https://www.dwitter.net/d/1112 sigveseb/3bl3gamer's raytraced wobbly sphere
+https://www.dwitter.net/d/18597 pavel's cavern tunnel
 
 ## Landscapes
 https://www.dwitter.net/d/8595 robbyg's dunes
@@ -57,20 +59,18 @@ https://www.dwitter.net/d/7755 jylikangas's neon city over water
 https://www.dwitter.net/d/7662 jylikangas's minecraft landscape
 https://www.dwitter.net/d/7215 jylikangas's minecraft with perspective
 https://www.dwitter.net/d/7430 nystrand's palm trees (amazing!)
-https://www.dwitter.net/d/2357 Jenky's parallax trees
 
 ## Seascapes
 https://www.dwitter.net/d/63 sigveseb's sun and sea
 https://www.dwitter.net/d/6450 yonatan's water fountain
 https://www.dwitter.net/d/1976 recursive's green waves
-https://www.dwitter.net/d/7242 yonatan's sunset at sea
 https://www.dwitter.net/d/2015 New_Core's moody rain over sea
-
-## Second level landscapes
-https://www.dwitter.net/d/6962 New_Core's sun behind buildings
-https://www.dwitter.net/d/6940 Erazed's sun and coloured sky
-https://www.dwitter.net/d/1911 veubeke's grassy hills (2)
-https://www.dwitter.net/d/1901 veubeke's grassy hills (1)
+https://www.dwitter.net/d/10718
+https://www.dwitter.net/d/10757 yonatan's sea (cyan)
+https://www.dwitter.net/d/10764 yonatan's sea (cyan 2)
+https://www.dwitter.net/d/10765 yonatan's sea (black and white 95)
+https://www.dwitter.net/d/10782 yonatan's sea and stars
+https://www.dwitter.net/d/10792 yonatan's sea with mountains
 
 ## The great banana frenzy of 2018
 https://www.dwitter.net/h/banana
@@ -110,3 +110,20 @@ Xen
 If it's cheaper to test inside the code, then it's fine to draw 100 circles of radius 0
 `x.fillRect` is powerful, because no `x.begin();...;x.fill()`
 
+# Compressed
+https://www.dwitter.net/d/12796 tomxor's sunrise over the moon
+https://www.dwitter.net/d/11257 yonatan's rising fire simulation
+
+# Personal favourites which don't quite suit a presentation
+https://www.dwitter.net/d/410 sigveseb's frosted glass
+https://www.dwitter.net/d/7242 yonatan's sunset at sea (it's beautiful but a bit slow/subtle)
+https://www.dwitter.net/d/8675 Xen's colourful golden-ratio wobbler
+https://www.dwitter.net/d/13148 pavel's wiggly walker over a sphere
+https://www.dwitter.net/d/7105 yonatan's zooming sphere
+https://www.dwitter.net/d/7111 yonatan's coloured sphere
+https://www.dwitter.net/d/6962 New_Core's sun behind buildings
+
+## Second level landscapes
+https://www.dwitter.net/d/6940 Erazed's sun and coloured sky
+https://www.dwitter.net/d/1911 veubeke's grassy hills (2)
+https://www.dwitter.net/d/1901 veubeke's grassy hills (1)

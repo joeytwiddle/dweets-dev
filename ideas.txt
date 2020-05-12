@@ -2,11 +2,13 @@
 -->
 
 <!-- Useful setup for Vim
+" TODO: We often get syntax errors from filetype=js,jsx but filetype=js works fine
 let g:NoSwapSuck_Enabled = 0
 let g:syntastic_javascript_checkers = []
 ALEDisable
 au BufEnter * set noswapfile nowrap nolinebreak colorcolumn=141 indentkeys= formatoptions-=ro
 syn sync minlines=1 maxlines=1
+set iskeyword-=-
 -->
 OLD: BufDo set noswapfile nowrap colorcolumn=141 indentkeys= formatoptions-=ro
 
@@ -164,3 +166,29 @@ Animation loops.
 
 # Cable
 A thick black curve with cyan squares moving along it.
+
+# Do a tribute: https://twitter.com/jsconfeu/status/1097411014767927296?s=12
+
+A tunnel with spikes coming inward off the edges
+Inspired by https://youtu.be/j72GExsDnDU?t=1141
+We could do simple black+white striped circles for the edges of the tunnel
+For the spikes we could use a circle/ellipse arc (which starts nearer the middle and ends at the edge)
+Perhaps two passes: first the outer stripes (iterating inwards), then the inner spikes (iterating outwards)
+
+Another idea: That demo ends with a spike blob.  Could we do a spike blob using ellipse arcs?
+Note that the difficulty here will be occlusion, but the technique we used for the flower might work.
+
+# Deus Ex tribute
+Gold triangles against a dark gold background.  https://www.youtube.com/watch?v=_MVcJDzX-OU
+
+# Apex legends
+Pulsing red triangles (rare skin)
+
+# Finish off this rainbow between two clouds
+https://www.dwitter.net/d/9117
+
+# Do a Badger Mushroom Snake (perhaps without audio)
+Although someone did audio for emojis, didn't they?  Perhaps we could too?!
+```
+for(p of'🦡🍄🐍')console.log(p)
+```

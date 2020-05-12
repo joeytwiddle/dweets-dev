@@ -31,21 +31,42 @@ Piano:
  # # #   # #   # # #   # #   #
 F G A B C D E F G A B C D E F G
 
+Sheet (counting letters each half-line up from C):
+ # # #   # #   # # #   # #   #
+_ _ A B C D E F G H I J K L M N
+
 Dweetiano:
  A C E   H J   M O Q   T V   Y
 @ B D F G I K L N P R S U W X Z
 
-Twinkle notes: CCGGAAG FFEEDDC GGFFEEDx2 CCGGAAG FFEEDDC
+StarT sheet 1: F L L K J I H  H#  A B D# F#
+StarT dweet 1: L W W U S R P  Q  D F J  M
+
+Twinkle piano: CCGGAAG FFEEDDC GGFFEEDx2 CCGGAAG FFEEDDC
 Twinkle dweet: GGNNPPN LLKKIIG NNLLKKIx2 GGNNPPN LLKKIIG
 
-Silent notes: CDCB CDCB GGE FFC DDFEDCDCAx2 ^GGBbGEF^A FCACB\G\F\F
+Silent piano: CDCB CDCB GGE FFC DDFEDCDCAx2 ^GGBbGEF^A FCACB\G\F\F
 Silent dweet: G IG D, G IG D, N NK, L LG, (I IL KIG IGD)x2, N NQ NKL P LGDGEB L
 (or @)
 
-StarW notes: AAAD? A? GF#E^D A GF#ED A GF#GE A AB BG^FED DEFE BC#  AABB GFED ^AE  AB B .............. AADCBbA_GFbEDA
+StarW piano: AAAD? A? GF#E^D A GF#ED A GF#GE A AB BG^FED DEFE BC#  AABB GFED ^AE  AB B .............. AADCBbA_GFbEDA
 StarW dweet: DDDI  P  NM KU  P NM KU P NMNK  D DF FNMKI  IKMK FH   D DF FNMKI PK  D DF FNMKI  IKMK FH DDIGE D B_ __D
-StarW notes:                                                                                          DDGFEbD CBbAGD
+StarW piano:                                                                                          DDGFEbD CBbAGD
 StarW dweet: (IIIN U SRPZ U SRPZ U SRSP)x2 I IK KSRPN NPRP KM, I IK KSRPN UP. I IK KSRPN NPRP KM, IIN LJI GED BI. IKNSP
+
+RR sheet: GHJH LLK, GHJH KKJ, GHJH J KI G GK J
+RR dweet: NPSP WWU, NPSP UUS, NPSP S UR N NU S
+
+# This one is foobar
+IL sheet: DG FHG DBE C, EH GFE DCB, DG FHG DBE C, HG FHJ FG, IHF EFGEF D,CDE CH GF, ...
+IL sheet: IN LPN IFK G, KP NLK IGF, IN LPN IFK G, PN LPS LN, RPL KLNKL I,GIK GP NL, ...
+
+Star Trek intro dweet: R M P H, F KP O-KHMR RV Q T L, J OT S-OLQV VZ
+Star Trek main dweet: B-L-KIGFE, C B-N-LKIGF, E-D FGIKLKN Q, P N D, I G (ILPS!)
+
+Other tunes we could consider:
+- https://www.youtube.com/watch?v=oyK5UKAQoLo#Take_On_Me_(Piano_Sheet_Music)
+- https://www.youtube.com/watch?v=nAqgybJ7bHU#The_Village_People_-_%22YMCA%22_-_Sheet_Music_(Sibelius)
 
 //p=r=>{for(k in Z)if(k.match(r))return k};P=r=>Z[p(r)];c.onclick=e=>{this.Z||(Z=new AudioContext,o=P(/eO/)(),d=P(/de/),Z=o,P(/ct/)(d),o.start());P(/fr/).value=56*1.06**(e.x/9|0)}
 //p=r=>Object.keys(Z).find(k=>k.match(r));P=r=>Z[p(r)];c.onclick=e=>{this.Z||(Z=new AudioContext,o=P(/eO/)(),d=P(/de/),Z=o,P(/ct/)(d),o.start());P(/fr/).value=56*1.06**(e.x/9|0)}

@@ -55,7 +55,7 @@ for(c.width+=i=p=0;i++<252;x.fillRect(204+i*6,250+o-i/2,6,800),p=o)o=(S(i**1.4/4
 // Just experimenting with a larger exponent
 for(c.width+=i=p=0;i++<252;x.fillRect(204+i*6,70+o+i/4,6,800),p=o)o=(S(i**1.5/452-t*7))*i/4,x.fillStyle=`hsl(${i/43<<6},70%,${6*(9+p-o)}%`
 // Now we can extract k for 0 gain
-k=252;for(c.width+=i=p=0;i++<k;x.fillRect(k+i*6,70+o+i/4,6,800),p=o)o=(S(i**1.4/k-t*7))*i/4,x.fillStyle=`hsl(${i/43<<6},70%,${6*(9+p-o)}%`
+//k=252;for(c.width+=i=p=0;i++<k;x.fillRect(k+i*6,70+o+i/4,6,800),p=o)o=(S(i**1.4/k-t*7))*i/4,x.fillStyle=`hsl(${i/43<<6},70%,${6*(9+p-o)}%`
 // Again, only flap the end, but back to basic linear
 for(c.width+=i=p=0;i++<252;x.fillRect(180+i*6,70+o+i/4,6,800),p=o)o=(S(i/19-t*7))*i/8,x.fillStyle=`hsl(${i/43<<6},70%,${55+(o-p)*9}%`
 // Back to the double wobble
@@ -183,3 +183,25 @@ for(i=4;i--;)x.beginPath(),x.arc(i%2?960:1660-1050*i,540+(i||300),150+135*i+200*
 ['#000','#ff0','#39f','#fff'].map((C,i)=>{x.beginPath(),x.arc(i%2?1050*i-1490:960,i<3?540:840,2310-1305*i+195*i*i,0,7),x.fillStyle=C,x.fill()})
 // --- RELEASED --- https://www.dwitter.net/d/9116
 ['#000','#ff0','#39f','#fff'].map((C,i)=>x.beginPath(x.fillStyle=C)|x.arc(i%2?1050*i-1490:960,i<3?540:840,2310-1305*i+195*i*i,0,7)|x.fill())
+
+// f8f82804_s Pride flag: https://www.dwitter.net/d/9188 clever but too strong
+c.width=500;a=29;for(i=240;α=C(T=i/a-t),i--;)for(j=6;j--;x.fillRect(i,a+j*a+S(T)*7,1,30))x.fillStyle=`hsl(${a*j**1.4} 99%${9+a*(0<α)*α**2}%`
+// An improvement
+c.width=500;a=29;for(i=240;α=C(T=(i/a)**.8-t*6),i--;)for(j=6;j--;x.fillRect(i,a+j*a+S(T)*i/a,1,30))x.fillStyle=`hsl(${a*j**1.4} 99%${a+a*(0<α)*α**2}%`
+// My remix
+c.width=400;a=29;for(i=240;α=C(T=i**.4-t),i--;)for(j=6;j--;x.fillRect(i,i/9+j*a+S(T)*i/a,1,30))x.fillStyle=`hsl(${a*j**1.4} 90%${40-9*S(T)}%`
+c.width=400;a=29;for(i=250;α=C(T=i**.4-t),i--;)for(j=6;j--;x.fillRect(i,i/9+j*a+k/3,1,30))x.fillStyle=`hsl(${a*j**1.4} 90%${k=40+S(T)*i/9}%`
+c.width=400;a=29;for(i=250;α=C(T=i**.4-t*3),i--;)for(j=6;j--;x.fillRect(i,a+j*a-k/3,1,30))x.fillStyle=`hsl(${a*j**1.4} 90%${k=42+S(T)*i/9}%`
+c.width=400;a=29;for(i=240;α=C(T=i**.4-t*6),i--;)for(j=6;j--;x.fillRect(i,60+j*a-k,1,30))x.fillStyle=`hsl(${a*j**1.4} 80%${k=40+S(T)*i/20}%`
+c.width=400;a=29;for(i=240;α=C(T=i**.4-t*6),i--;)for(j=6;j--;x.fillRect(i,65+j*a-k,1,30))x.fillStyle=`hsl(${a*j**1.4} 90%${k=45+S(T)*i/20}%`
+// Change 20 for 18, and t*6 for t*7
+// --- RELEASE THIS --- #pride #flag a combination of d/9188 and d/3153 (no phong, soft shadows)
+c.width=400;a=29;for(i=240;α=C(T=i**.4-t*7),i--;)for(j=6;j--;x.fillRect(i,65+j*a-k,1,30))x.fillStyle=`hsl(${a*j**1.4} 90%${k=45+S(T)*i/18}%`
+// === RELEASE THIS === Or is this better? (without a)
+c.width=400;for(i=240;α=C(T=i**.5/2-t*7),i--;)for(j=6;j--;x.fillRect(i,65+j*29-k,1,30))x.fillStyle=`hsl(${29*j**1.4} 90%${k=45+S(T)*i/18}%`
+// A much brighter version (a is back)
+c.width=400;a=29;for(i=240;α=C(T=i**.4-t*6),i--;)for(j=6;j--;x.fillRect(i,50+j*a-k/2,1,30))x.fillStyle=`hsl(${a*j**1.4} 90%${k=55+S(T)*i/9}%`
+// Slightly improved the **.4 situation by making everything smaller (141)
+c.width=200;a=15;for(i=120;α=C(T=i**.4-t*7),i--;)for(j=6;j--;x.fillRect(i,j*a+k/3-5,1,16))x.fillStyle=`hsl(${29*j**1.4} 80%${k=45+S(T)*i/5}%`
+// Wait a minute, we don't need a anymore!
+c.width=200;for(i=120;α=C(T=i**.4-t*7),i--;)for(j=6;j--;x.fillRect(i,j*15+k/2-11,1,16))x.fillStyle=`hsl(${29*j**1.4} 80%${k=45+S(T)*i/8}%`

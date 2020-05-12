@@ -139,8 +139,14 @@ t*=9;with(x)for(c.width|=i=12;i--;fillRect(0,0,i==9?12:-6,q?i>9?4:1:-22))setTran
 // Compressed
 eval(unescape(escape`睩瑨⡸⥦潲⡣⹷楤瑨簽椽ㄲ㭩ⴭ㭦楬汒散琨〬〬椽㴹㼱㈺ⴶⱱ㽩㸹㼴㨱㨭㈲⤩獥瑔牡湳景牭⠹ⰰⱱ㵩㸸ⰹⰵ〰⬴〪椪⠳⵱⤬焿㌹〭㡥㔯琪⨶㨶㐰⤬愽琭椯㌬氽椼㌿ㄮ㔺椼㠿㈮㠭⸴⩩㨰Ⱳ潴慴攨愾〦♓⡡㱬㽡㩬⤩`.replace(/u(..)/g,"$1%")))
 // TODO: t*=.6 or .7 would be ideal for machines running at 60 FPS
-// TODO: Failing that, at least use 2e6 instead of 8e5
+// With 3e6 instead of 8e5
+eval(unescape(escape`睩瑨⡸⥦潲⡣⹷楤瑨簽椽ㄲ㭩ⴭ㭦楬汒散琨〬〬椽㴹㼱㈺ⴶⱱ㽩㸹㼴㨱㨭㈲⤩獥瑔牡湳景牭⠹ⰰⱱ㵩㸸ⰹⰵ〰⬴〪椪⠳⵱⤬焿㌹〭㍥㘯琪⨶㨶㐰⤬愽琭椯㌬氽椼㌿ㄮ㔺椼㠿㈮㠭⸴⩩㨰Ⱳ潴慴攨愾〦♓⡡㱬㽡㩬⤩`.replace(/u(..)/g,"$1%")))
+// Or with 400-5e4/t**3
+eval(unescape(escape`睩瑨⡸⥦潲⡣⹷楤瑨簽椽ㄲ㭩ⴭ㭦楬汒散琨〬〬椽㴹㼱㈺ⴶⱱ㽩㸹㼴㨱㨭㈲⤩獥瑔牡湳景牭⠹ⰰⱱ㵩㸸ⰹⰵ〰⬴〪椪⠳⵱⤬焿㐰〭㕥㐯琪⨳㨶㐰⤬愽琭椯㌬氽椼㌿ㄮ㔺椼㠿㈮㠭⸴⩩㨰Ⱳ潴慴攨愾〦♓⡡㱬㽡㩬⤩`.replace(/u(..)/g,"$1%")))
+// === RELEASE THIS ONE! === Now with 400-3e4/t**3
+eval(unescape(escape`睩瑨⡸⥦潲⡣⹷楤瑨簽椽ㄲ㭩ⴭ㭦楬汒散琨〬〬椽㴹㼱㈺ⴶⱱ㽩㸹㼴㨱㨭㈲⤩獥瑔牡湳景牭⠹ⰰⱱ㵩㸸ⰹⰵ〰⬴〪椪⠳⵱⤬焿㐰〭㍥㐯琪⨳㨶㐰⤬愽琭椯㌬氽椼㌿ㄮ㔺椼㠿㈮㠭⸴⩩㨰Ⱳ潴慴攨愾〦♓⡡㱬㽡㩬⤩`.replace(/u(..)/g,"$1%")))
 
+// Unsatisfying dominoes #dealwithit
 // #dominoes #dominoesnt #dealwithit #thuglife
 
 // Or can we hack the compressed version?  No, not easily.

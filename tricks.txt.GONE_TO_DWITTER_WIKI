@@ -135,6 +135,16 @@ It is shorter to draw text than to fill a rectangle (if your `w` and `h` are mor
 
 Are you put off using `x.transform()` because it doesn't reset.  Try `x.setTransform()` instead!  But it is different: it takes a matrix rather than a string of transforms.
 
+## Using arcs to draw polygons?
+
+Pro tip from pavel:
+
+```js
+x.lineTo(X+r*C(a),Y+r*S(a))
+// is the same as
+x.arc(X,Y,r,a,a)
+```
+
 ## Setting font size
 
     // Long ways:

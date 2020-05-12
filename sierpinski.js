@@ -76,3 +76,12 @@ for(i=600;i--;x.fillRect(X=X+440+c*520>>1,Y=Y+88+900*(1-c&1)>>1,4,4),H=H+400*(c+
 for(i=900;i--;x.fillRect(X=X+400+c*600>>1,Y=Y+1076*(1-c&1)>>1,6,6),H=(.3*H+.7*400*(c+t))/2)c=(i*t^i)%3,t?x.fillStyle=`hsl(${H},80%,60%)`:X=Y=H=0
 
 // 20171012 I discovered yonatan did something similar (but not animated): https://www.dwitter.net/d/2668
+
+// 2020 Same thing but better colours
+for(i=600;i--;x.fillRect(X=X+400+c*600>>1,Y=Y+1076*(1-c&1)>>1,4,4),H=H+400*(c+t)>>2)c=(i*t^i)%3,t?x.fillStyle=`hsl(${H},99%,65%)`:X=Y=H=0
+// Slower colours (a bit prettier)
+for(i=600;i--;x.fillRect(X=X+400+c*600>>1,Y=Y+1076*(1-c&1)>>1,4,4),H=H+250*(c+t)>>2)c=(i*t^i)%3,t?x.fillStyle=`hsl(${H},99%,65%)`:X=Y=H=0
+// Finer, slower (for powerful machines)
+for(i=2e3;i--;x.fillRect(X=X+400+c*600>>1,Y=Y+1076*(1-c&1)>>1,2,2),H=H+300*(c+t)>>2)c=(i*t^i)%3,t?x.fillStyle=`hsl(${H},99%,65%)`:X=Y=H=0
+// Finer, good speed (for powerful machines)
+for(i=4e3;i--;x.fillRect(X=X+400+c*600>>1,Y=Y+1076*(1-c&1)>>1,2,2),H=H+400*(c+t)>>2)c=(i*t^i)%3,t?x.fillStyle=`hsl(${H},99%,65%)`:X=Y=H=0

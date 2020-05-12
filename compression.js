@@ -6,7 +6,7 @@
 //eval(String.fromCharCode(...[...`ŀḀǨ̠͸̘Ψ̨ͨͰΠňŲ̠̋̀̈Ű̈΀΀̨Ͱ̠Ș͈̠̀͠ŀ˸ǨḀŰ̘ΐ̨̈Π̨Ȩ̨̨ͨ͠ͰΠ̀Θ̘ΐ͈΀Π̀ňŠ˸ŰΘΐ̘Ǩ̀ŸŸϐπͰͨŰ̘̰ŸƐ̀`].map(v=>v.charCodeAt()>>3)))
 
 // --- POPULAR TECHNIQUE ---
-// (Scroll down for the best known technique)
+// (Scroll down for the best known technique, limit 194 with emojis)
 // The popular technique can compress 184 chars into 140 bytes.  Here is an example output:
 //eval(unescape(escape`挮睩摴桼㵰㴰㭸⹦潮琽❢潬搠㘰灸⁭潮潳灡捥✻景爨愠潦≌潯欠䵡Ⱐ䤠捡渠晩琠ㄸ㐠批瑥猠潦⁣潤攠楮瑯⁡⁳楮杬攠摷敥琡∩砮晩汬呥硴⡡Ⱳ㴨瀫㴳㈩⭓⡴ⴽ⸲⤪ㄸⱱ㴴〰⭓⡴⨲⤪㤩ⱸ⹦楬汔數琨✮✬爬焫㐰⤻`.replace(/u(..)/g,"$1%")))
 
@@ -15,6 +15,10 @@
 // Improved (can deal with odd char counts): https://www.dwitter.net/d/9207
 // Max 184!
 //eval(unescape(escape`瑼簨挮潵瑥版呍䰽⊻㱩湰畴⁩搽漾ꬢⱯ⹯湢汵爽昽㹯⹶慬略㴨甫〩⹳灬楴恜湠嬱崮牥灬慣攨⽛帡⵾崫⼬却物湧⹦牯浃桡牃潤攨⸮⸨漮癡汵攫∻∩⹭慴捨⠯⸮⽧⤮浡瀨攽㹥学㴢捨慲䍯摥䅴≝⠩㰼㡼敛晝⠱⤩⤩⤻`.replace(/u(..)/g,"$1%")))
+
+// An example dweet which mixes compressions and emojis:
+// https://www.dwitter.net/d/17954
+// s="🔥🔥🔥🚒🏠";eval(unescape(escape`𩡯𬠨𭀥🐸𛁣𛡷𪑤𭁨𯀽𪐽𝐻𪐭𛐻𮀮𩡩𫁬𥁥𮁴𚁛𛠮𛡳𧑛𪑝𛀴𜀰𚰨𪐽🐳𚐪𚀶𜠰𚰲𜀰𚠨𝠭𭀩𚠪𝐩𚰨𪐼𜰩𚠨𭀼𜐫𪑼𭀾𝐮𝰿𜡥𜰺𜰵𜀫𚁩𙠱𚐪𜐵𜀫𤰨𭀪𞐫𪐩𚠹𚐬𞀵𜀫𚁩🀳𚐪𚁃𚁩𚐪𜐸𜀭𝀰𜀩𚐩𮀮𩡯𫡴🐸𚰨𪐦𝀩𚠴𚰧𨱭𘠧`.replace(/u../g,'')))
 
 // My implementation:
 
@@ -51,8 +55,11 @@ console.log('eval(unescape(escape`' + out + '`.replace(/u(..)/g,"$1%")))');
 // prplz said: there's a better method but it causes js to count it wrong
 // http://xem.github.io/golfing/#jstweet_en
 //
-// The upper limit with this method is 194.
+// The upper limit with this method is 194.  The output may contain emojis.
 //
-// But to post it on Dwitter, you may need to remove the 'disabled' attribute from the Post button.
+// But to post it on Dwitter, you may need to remove the 'disabled' attribute from the Post button!
 //
-// Compressor implemented here by metamo: https://www.dwitter.net/d/11852
+// Compressor implemented here by metamo: https://www.dwitter.net/d/11852 and here by KilledByAPixel: https://www.dwitter.net/d/14282
+
+// Recently people have been working on new compression methods, like this one: https://www.dwitter.net/d/15796
+

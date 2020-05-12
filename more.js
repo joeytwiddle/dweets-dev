@@ -26,3 +26,36 @@ for(c.width|=j=20;j--;x.fillRect(960+S(k=9*t+j/2.3)*12-w,540+C(k)*12-h,2*w,2*h))
 for(c.width|=j=22;j--;x.fillRect(960+S(k=9*t-(j>>2))*15-w,540+C(k+6)*15-h,2*w,2*h))x.fillStyle=R(s=10+11*(j|1),s,r=s*1.5),w=r*(.5+j%2),h=r*(1.5-j%2)
 for(c.width|=j=22;j--;x.fillRect(960+S(k=9*t-(j>>2))*16-w,540+S(k+7)*9-h,2*w,2*h))x.fillStyle=R(s=10+11*(j|1),s,r=s*1.5),w=r*(.5+j%2),h=r*(1.5-j%2)
 for(c.width|=j=22;j--;x.fillRect(960+S(k=9*t-(j>>2))*18-w,540+S(k+7)*12-h,2*w,2*h))x.fillStyle=R(s=18+11*(j&30),s,r=s*1.5),w=r*(.5+j%2),h=r*(1.5-j%2)
+
+// Bauhaus triangle square circle
+q=t%3|0
+//c=(q||99)+2
+//c=(((q+1)%3)||99)+2
+c=[3,4,99][q]
+x.beginPath()
+for(i=c;i--;)x.lineTo(320+640*q+300*S(a=(2*i+1)/c*22/7),540+300*C(a))
+//x.fillStyle=`hsl(${[0,60,240][q]},99%,45%)`
+//x.fillStyle='#f00#ff0#00f'.slice(4*q,4*q+4)
+//x.fillStyle='#'+'f00ff000f'.slice(3*q,3*q+3)
+x.fillStyle='#'+'ff00f'.substr(q,3)
+x.fill()
+// Golfing
+i=c=[3,4,99][q=t%3|0]
+for(x.beginPath();i--;x.fillStyle='#'+'ee33e'.substr(q,3))x.lineTo(320+640*q+300*S(a=(2*i+1)/c*22/7),540+300*C(a))
+x.fill()
+// Same one line
+i=c=[3,4,99][q=t%3|0];for(x.beginPath();i--;x.fillStyle='#'+'ee33e'.substr(q,3))x.lineTo(320+640*q+300*S(a=(2*i+1)/c*22/7),540+300*C(a));x.fill()
+// Arc smashes it
+i=c=[3,4,99][q=t%3|0];for(x.beginPath();i--;x.fillStyle='#'+'ee33e'.substr(q,3))x.arc(320+640*q,540,300,a=(4*i+1+q)/c*11/7,a);x.fill()
+// Sizing and positioning (140, unfinished)
+i=c=[3,4,50][q=t%3|0];W=250-c;for(x.beginPath();i--;x.fillStyle='#'+'ee33e'.substr(q,3))x.arc(320+640*q,3*W,W,a=(4*i+1+q)/c*11/7,a);x.fill()
+// WIP
+i=c=[3,4,50][q=t%3|0];for(x.beginPath();i--;x.fillStyle='#'+'ee33e'.substr(q,3))x.arc(X=320+640*q,200+X/3,250-c,a=(1+q+4*i)/c*1.57,a);x.fill()
+for(i=c=[3,4,50][q=t%3|0],x.beginPath(P=250);i--;x.fillStyle='#'+'ee33e'.substr(q,3))x.arc(P+710*q,880-P*q,P-c,a=(1+q+4*i)/c*11/7,a);x.fill()
+with(x)for(i=c=[3,4,50][q=t%3|0],beginPath(P=250);i--||fill();fillStyle='#'+'ee33e'.substr(q,3))arc(P+710*q,880-P*q,P-c,a=(1+q+4*i)/c*11/7,a)
+with(x)for(i=c=[3,4,50][q=t%3|0],beginPath(P=250);i--?z=1+q+4*i:fill();fillStyle='#'+'ee33e'.substr(q,3))arc(P+710*q,880-P*q,P-c,a=z/c*11/7,a)
+// Got it: use zero instead of undefined
+with(x)for(i=c=[3,4,50][q=t%3|beginPath(P=250)];i--||fill();fillStyle='#'+'ee33e'.substr(q,3))arc(P+710*q,880-P*q,P-c,a=(1+q+4*i)/c*11/7,a)
+// Now we can actually decomplicate it
+with(x)for(i=c=[3,4,50][q=t%3|beginPath()];i--||fill();fillStyle='#'+'ee33e'.substr(q,3))arc(320+640*q,880-250*q,250-c,a=(1+q+4*i)/c*11/7,a)
+for(i=c=[3,4,50][q=t%3|x.beginPath()];i--;x.fillStyle='#'+'ee33e'.substr(q,3))x.arc(320+640*q,880-250*q,250-c,a=(1+q+4*i)/c*11/7,a);x.fill()

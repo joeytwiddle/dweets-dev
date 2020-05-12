@@ -1,5 +1,3 @@
-// HEY I HAVEN'T RELEASED THIS YET SO PLEASE DON'T SHARE OR PUBLISH IT, THANKS!
-
 for(c.width|=j=99;j--;)W=120*S(j/39)*C(t),x.fillRect(960-W+(500-j*j/20)*S(t),440+4*j,2*W,4)
 for(c.width|=j=99;j--;)W=120*S(k=j/39)*C(t),x.fillRect(960+(500+j*4*C(k))*S(t)-W,440+4*j,2*W,4)
 c.width|=0;for(i=19;i--;)for(j=99;j--;)W=120*S(j/39)*C(a=t+i),x.fillRect(960-W+(500-j*j/20)*S(a),440+4*j+99*C(a),2*W,5)
@@ -154,40 +152,79 @@ for(c.width=k=768;k--;x.fillRect(384-W-9*j*C(a=t+i*8),280-j*4*S(a)+j*(k>>8?-i:i)
 // --- GREAT --- Oh we can use a number larger than 768, and write the top half many times
 // QUOTE: Vesak day - a time for reflection
 
-// --- FAVOURITE --- Small and cute (switch to -i*8 to start with some taller petals)
-for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),420-j*4*S(a)+j*(k>>7?-i:i),2*W,6))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
+// Small and cute (switch to -i*8 to start with some taller petals)
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),440-j*4*S(a)+j*(k>>7?-i:i),2*W,6))i=k/16&7,j=k%16,x.fillStyle='#f9b1',W=30*S(j/5)
+// === FAVOURITE === Minor tweaks
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),440-j*3*S(a)+j*(k>>7?-i:i),2*W,6))i=k/16&7,j=k%16,x.fillStyle='#f9b1',W=30*S(j/5)
 // Small and cute and solid (+2)
-for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),420-j*(p=4*S(a)-(k>>7?-i:i)),2*W,p))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
-// Raise the bottommost petals, so none are resting on the water (+4)
-for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),420-j*4*S(a)+j*(k>>7?-i:i),2*W,6))i=1+(k/16&7),j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
-// Speed up the rotation (+2)
-for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=2*t-i*8),420-j*4*S(a)+j*(k>>7?-i:i),2*W,6))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
-// Combined: solid, raised and faster, and golfed the raise by moving k--
-for(c.width=k=1e3;k;x.fillRect(500-W-9*j*C(a=2*t-i*8),420-j*(p=4*S(a)-(k>>7?-i:i)),2*W,p))i=k--/16&7,j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
+// Unfortunately with simple solid, the petals disappear when they transition between up/down
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),440-j*(p=4*S(a)-(k>>7?-i:i)),2*W,p))i=k/16&7,j=k%16,x.fillStyle='#f9b1',W=30*S(j/5)
+// --- FAVOURITE despite issues --- Little lotus Experiment, more side-on
+// Note: The p+2 trick strengthens the upwards petals, whilst weakening the downwards petals.  But this isn't ideal, because some upwards petals are reflections, and downwards petals are real!
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),440-j*(p=3*S(a)-(k>>7?-i:i)),2*W,p+2))i=k/16&7,j=k%16,x.fillStyle='#f9b2',W=30*S(j/5)
+// === GOOD === Raise the bottommost petals, so none are resting on the water (ungolfed, +4)
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),440-j*3*S(a)+j*(k>>7?-i:i),2*W,6))i=1+(k/16&7),j=k%16,x.fillStyle='#fac2',W=30*S(j/5)
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),440-j*4*S(a)+j*(k>>7?-i:i),2*W,6))i=1+(k/16&7),j=k%16,x.fillStyle='#f8a2',W=30*S(j/5)
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),440-j*3*S(a)+j*(k>>7?-i:i),2*W,9))i=1+(k/16&7),j=k%16,x.fillStyle='#f8a1',W=30*S(j/5)
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),440-j*3*S(a)+j*(k>>7?-i:i),2*W,9))i=1+(k/16&7),j=k%16,x.fillStyle='#f791',W=30*S(j/5)
+// === RELEASED 2020 === https://www.dwitter.net/d/18635 Same but gentler
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),440-j*3*S(a)+j*(k>>7?-i:i),2*W,9))i=1+(k/16&7),j=k%16,x.fillStyle='#f9a1',W=30*S(j/5)
+// But I think 700 is more attractive than 500
+
+// Experimenting with double petals
+for(c.width=k=2e3;k--;x.fillRect(1e3-W-19*j*C(a=t-i*9),840-j*(p=6*S(a)-(k>>8?-i:i)),2*W,p+4))i=k/32&15,j=k%32,x.fillStyle='#f9b2',W=90*S(j/10)
+// Experiment: Instead of layering the top, use thinner lines for the reflections
+for(c.width=1e3,k=256;k--;x.fillRect(500-W-9*j*C(a=t-i*8),440-j*(p=3*S(a)-(s?-i:i)),2*W,s?p*2:p/4))i=k/16&7,j=k%16,s=k>127,x.fillStyle='#f9b4',W=30*S(j/5)
+// Interesting experiment: Petals thicken at their outermost
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),440-j*(3*S(a)-(k>>7?-i:i)),2*W,j))i=k/16&7,j=k%16,x.fillStyle='#f9b1',W=30*S(j/5)
+// Lines thicken with k
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),440-j*(3*S(a)-(k>>7?-i:i)),2*W,4+k/99))i=k/16&7,j=k%16,x.fillStyle='#f9b1',W=30*S(j/5)
+// === FAVOURITE ===
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),440-j*(3*S(a)-(k>>7?-i:i)),2*W,4+k/99))i=k/16&7,j=k%16,x.fillStyle='#f8a1',W=30*S(j/5)
+for(c.width=k=1e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),440-j*(3*S(a)-(k>>7?-i:i)),2*W,4+k/99))i=k/16&7,j=k%16,x.fillStyle='#f791',W=30*S(j/5)
 
 // TODO: Consider using height 9 instead of 6; it makes the petals stronger, more distinct from the reflection
 // TODO :Or even cooler, replace 6 with t!
 // If we want to avoid the complete flatness, we must never let p===0
-for(c.width=k=1e3;k;x.fillRect(500-W-9*j*C(a=3*t-8*i),420-j*(p=4*S(a)-(k>>7?-i:i)|3),2*W,p))i=k--/16&7,j=k%16,x.fillStyle='#fb31',W=30*S(j/5)
+for(c.width=k=1e3;k;x.fillRect(500-W-9*j*C(a=3*t-8*i),440-j*(p=4*S(a)-(k>>7?-i:i)|3),2*W,p))i=k--/16&7,j=k%16,x.fillStyle='#fb31',W=30*S(j/5)
 // This hack patches that with a fake, but it goes over the limit
-for(c.width=k=1e3;k;x.fillRect(500-W-9*j*C(a=2*t-i*8),420-j*(4*S(a)-(k>>7?-i:i)),2*W,6+6*C(a)**2))i=k--/16&7,j=k%16,x.fillStyle='#f7f1',W=30*S(j/5)
+for(c.width=k=1e3;k;x.fillRect(500-W-9*j*C(a=2*t-i*8),440-j*(4*S(a)-(k>>7?-i:i)),2*W,6+6*C(a)**2))i=k--/16&7,j=k%16,x.fillStyle='#f9b1',W=30*S(j/5)
 
 // Just for fun, petals move at different speeds
-for(c.width=k=1e3;k;x.fillRect(500-W-9*j*C(a=i*t),420-j*(p=4*S(a)-(k>>7?-i:i)),2*W,p))i=k--/16&7,j=k%16,x.fillStyle='#fb31',W=30*S(j/5)
+for(c.width=k=1e3;k;x.fillRect(500-W-9*j*C(a=i*t),440-j*(p=4*S(a)-(k>>7?-i:i)),2*W,p))i=k--/16&7,j=k%16,x.fillStyle='#fb31',W=30*S(j/5)
 
-// === PRETTY GOOD === Same shape but stronger (higher res, more overwrites)
-for(c.width=k=2e3;k--;x.fillRect(1e3-W-18*j*C(a=t+i*8),720-j*8*S(a)+j*2*(k>>7?-i:i),2*W,12))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=60*S(j/5)
-for(c.width=k=2e3;k--;x.fillRect(999-W-15*j*C(a=t+i*8),760-j*8*S(a)+2*j*(k>>7?-i:i),2*W,9))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=50*S(j/5)
-for(c.width=k=2e3;k--;x.fillRect(999-W-25*j*C(a=t+i*8),760-j*15*S(a)+3*j*(k>>7?-i:i),2*W,9))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=80*S(j/5)
+// === ALMOST FAVOURITE but too slow on mobile === Same shape but stronger (higher res, more overwrites)
+for(c.width=k=2e3;k--;x.fillRect(1e3-W-18*j*C(a=t+i*8),840-j*8*S(a)+j*2*(k>>7?-i:i),2*W,12))i=k/16&7,j=k%16,x.fillStyle='#f9b1',W=60*S(j/5)
+for(c.width=k=2e3;k--;x.fillRect(999-W-15*j*C(a=t+i*8),760-j*8*S(a)+2*j*(k>>7?-i:i),2*W,9))i=k/16&7,j=k%16,x.fillStyle='#f9b1',W=50*S(j/5)
+for(c.width=k=2e3;k--;x.fillRect(999-W-25*j*C(a=t+i*8),760-j*15*S(a)+3*j*(k>>7?-i:i),2*W,9))i=k/16&7,j=k%16,x.fillStyle='#f9b1',W=80*S(j/5)
 
 // Large and detailed
-for(c.width=k=2e3;k--;x.fillRect(999-W-15*j*C(a=t+i*8),680-j*8*S(a)+j*(k>512?-i:i),2*W,9))i=k/32&15,j=k%32,x.fillStyle='#f7f1',W=90*S(j/10)
+for(c.width=k=2e3;k--;x.fillRect(999-W-15*j*C(a=t+i*8),680-j*8*S(a)+j*(k>512?-i:i),2*W,9))i=k/32&15,j=k%32,x.fillStyle='#f9b1',W=90*S(j/10)
 // Large and detailed and solid
-for(c.width=k=2e3;k--;x.fillRect(999-W-15*j*C(a=t+i*8),680-j*(p=8*S(a)-(k>>9?-i:i)),2*W,p))i=k/32&15,j=k%32,x.fillStyle='#f7f1',W=90*S(j/10)
+for(c.width=k=2e3;k--;x.fillRect(999-W-15*j*C(a=t+i*8),680-j*(p=8*S(a)-(k>>9?-i:i)),2*W,p))i=k/32&15,j=k%32,x.fillStyle='#f9b1',W=90*S(j/10)
 // === NICE === Large and cute
-for(c.width=k=1e3;k--;x.fillRect(500-W-15*j*C(a=t+i*8),360-j*8*S(a)+2*j*(k>>7?-i:i),2*W,9))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=50*S(j/5)
+for(c.width=k=1e3;k--;x.fillRect(500-W-15*j*C(a=t+i*8),360-j*8*S(a)+2*j*(k>>7?-i:i),2*W,9))i=k/16&7,j=k%16,x.fillStyle='#f9b1',W=50*S(j/5)
 // === GREAT === Large and cute and solid
-for(c.width=k=1e3;k--;x.fillRect(500-W-15*j*C(a=t+i*8),360-j*(p=8*S(a)-2*(k>>7?-i:i)),2*W,p))i=k/16&7,j=k%16,x.fillStyle='#f7f1',W=50*S(j/5)
+for(c.width=k=1e3;k--;x.fillRect(500-W-15*j*C(a=t+i*8),360-j*(p=8*S(a)-2*(k>>7?-i:i)),2*W,p))i=k/16&7,j=k%16,x.fillStyle='#f9b1',W=50*S(j/5)
 
 // Medium cuteness (Solid top, faint bottom, from above)
 for(c.width=k=768;k--;x.fillRect(384-W-9*j*C(a=t+i*8),300-j*(i*(2*l-1)+4*S(a)),2*W,6))i=k>>4&7,j=k%16,l=k<512,x.fillStyle=l?'#f9f':'#fef',W=30*S(j/5)
+
+// 2020 release with more petals, and no longer raise the first petal
+for(c.width=k=2e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),880-j*3*S(a)+j/2*(k>>8?-i:i),2*W,9))i=k/16&15,j=k%16,x.fillStyle='#f8a1',W=30*S(j/5)
+// Lighter version (less flooding)
+for(c.width=k=2e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),880-j*3*S(a)+j/2*(k>>8?-i:i),2*W,6))i=k/16&15,j=k%16,x.fillStyle='#fab1',W=30*S(j/5)
+// === FAVOURITE FOR 2021 === But I actually recommend a compromise between the two
+for(c.width=k=2e3;k--;x.fillRect(1400-W-9*j*C(a=i*8-t),820-j*3*S(a)+j/2*(k>>8?-i:i),2*W,9))i=k/16&15,j=k%16,x.fillStyle='#fab1',W=30*S(j/5)
+// Just for fun, let the petals rise and fall (the flower opens and closes)
+for(c.width=k=2e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8)*C(o),880-j*3*S(a)+6*j*S(o)*(k>>8?-1:1),2*W,7))i=k/16&15,j=k%16,o=.2+i*(1-C(t))/25,x.fillStyle='#fab1',W=30*S(j/5)
+// === ALTERNATIVE FOR 2021 === Solid version
+for(c.width=k=2e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),880-j*(p=3*S(a)-(k>>8?-i:i)/2),2*W,p))i=k/16&15,j=k%16,x.fillStyle='#f8a2',W=30*S(j/5)
+// === ALTERNATIVE FOR 2021 === Larger (try 1500 instead of 500 if you like)  But perhaps smaller is prettier than larger?
+for(c.width=k=2e3;k--;x.fillRect(500-W-18*j*C(a=t-i*8),880-j*6*S(a)+j*(k>>8?-i:i),2*W,12))i=k/16&15,j=k%16,x.fillStyle='#f8a1',W=60*S(j/5)
+// Solid version
+for(c.width=k=2e3;k--;x.fillRect(500-W-18*j*C(a=t-i*8),880-j*(p=6*S(a)-(k>>8?-i:i)),2*W,p))i=k/16&15,j=k%16,x.fillStyle='#f9b2',W=60*S(j/5)
+// Same thing, but with 4x iterations, to make smoother petal edges
+for(c.width=2e3,k=8e3;k--;x.fillRect(500-W-18*j/4*C(a=t-i*8),880-j*(p=6/4*S(a)-(k>>10?-i:i)/4),2*W,p))i=k/64&15,j=k%64,x.fillStyle='#f9b2',W=60*S(j/20)
+// BAD Petals pink to yellow
+for(c.width=k=2e3;k--;x.fillRect(1500-W-9*j*C(a=t-i*8),880-j*3*S(a)+j/2*(k>>8?-i:i),2*W,9))i=k/16&15,j=k%16,x.fillStyle=`hsl(${-40+6*i},90%,${50+i*2}%,.1)`,W=30*S(j/5)

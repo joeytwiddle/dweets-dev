@@ -182,10 +182,22 @@ for(t?i=Z:Z=c.width=255;i--;x.fill(x.arc(129-i*C(t+i),69+55*S(t+i/(S(t)+6)),i/9,
 
 // Remixing d/3239 cross-browser cross-platform and working
 // Do we really need `r()**3`?  Let's just use `r()/5`.
-// Tested on Chrome on Linux.  62% greys out.  65% almost whites out.
+// Tested on Chrome on Linux around September 2018.  62% greys out.  65% almost whites out.
 // Consider 63% instead of 64%
+// February 2091, Chrome on dumpling's Manjaro:  Back to previous behavior.  66% is good, 62% and 69% start to lose it
 // --- TO RELEASE ---
-r=()=>Math.random()*2520;for(i=99;i--;)x.fillStyle=`hsla(${r()},99%,64%,.01`,x.beginPath(),x.arc(r()-99,r()/2-99,r()/5,0,7),x.fill()
+r=()=>Math.random()*2520;for(i=99;i--;)x.fillStyle=`hsla(${r()},99%,66%,.01`,x.beginPath(),x.arc(r()-99,r()/2-99,r()/5,0,7),x.fill()
+// Work for a while, but then stabilise
+r=()=>Math.random()*2520;if(t<9)for(i=200;i--;)x.fillStyle=`hsla(${r()},99%,66%,.01`,x.beginPath(),x.arc(r()-99,r()/2-99,r()/5,0,7),x.fill()
+r=()=>Math.random()*2520;for(i=99/(1+t)|0;i--;)x.fillStyle=`hsla(${r()},99%,33%,.01`,x.beginPath(),x.arc(r()-99,r()/2-99,r()/5,0,7),x.fill()
+r=()=>Math.random()*2520;for(i=99-8*t;i>0;i--)x.fillStyle=`hsla(${r()},99%,33%,.01`,x.beginPath(),x.arc(r()-99,r()/2-99,r()/5,0,7),x.fill()
+// For the best results, use 33% and add this:
+c.style.filter='saturate(100%) brightness(150%)'
+
+// Remixing https://www.dwitter.net/d/12271
+// Just a simple square plasma
+// Remove the |0 for details
+r=x=>Math.random()*x|0;w=50;for(k=400;k--;)i=r(192),j=r(108),x.fillStyle=`hsla(${r(360)},99%,66%,.01)`,x.fillRect(10*i,10*j,k,k)
 
 
 

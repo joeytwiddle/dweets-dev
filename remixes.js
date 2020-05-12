@@ -267,25 +267,6 @@ k=p=>1+S(p*t)
 x.ellipse(960+300*S(t),540,300*k(U),200*k(V),t,0,7)
 x.stroke()
 
-// An excellent bouncing ball, with compresion: https://www.dwitter.net/d/244
-
-// NewCore's bouncing ball https://www.dwitter.net/d/2754
-t?c.width|=0:d=a=y=0;y+=9*a;a-=.01;b=y<1?-20*a:20*a+20;y<0?(y=0,b>29?a=1:T):T;x.ellipse(960,840-y,b*C(t*9)+200,b*S(t*9)+200,0,0,7);x.fill();
-t?c.width|=0:d=a=y=F=1;y+=9*a;a-=.01;y<0?(y=-1,b=-20*a,b>29?a=y=1:T):b=20*a+20;x.ellipse(960,840-y,b*C(t*9)+200,b*S(t*9)+200,0,0,7);x.fill();
-t?c.width|=0:d=a=y=F=1;y+=9*a;a-=.01;y<0?(y=0,b=-20*a,b>29?a=y=1:T):b=20*a+20;h=b*S(t*9);x.ellipse(960,840-y-(y>0?0:h),200+b*C(t*9),200+h,0,0,7);x.fill();
-t?c.width|=0:d=a=y=F=T=1;y+=9*a;a-=.01;y<0?(y=0,b=-20*a,T||(T=t),b>29?(a=y=1,T=0):T):b=20*a+20;l=t-T;h=b*S(l*9);x.ellipse(960,840-y-(y>0?0:h),200+b*C(l*9),200+h,0,0,7);x.fill();
-t?c.width|=0:d=a=y=F=T=1;y+=9*a;a-=.01;y<0?(y=0,b=-20*a,T||(T=t),b>29?(a=y=1,T=0):T):b=20*a+20;l=t-T-1.57;h=b*S(l*9);x.ellipse(960,840-y-(y>0?0:h),200+b*C(l*9),200+h,0,0,7);x.fill();
-t?c.width|=0:d=a=y=F=T=0;l=t-T-.087;y+=9*a;a-=.01;y<0?(y=0,b=40,T?l>1.5?(a=y=1,T=0):u:T=t):b=20*a+20;h=b*S(l*9);x.ellipse(960,840-y-(y>0?0:h),200+b*C(l*9),200+h,0,0,7);x.fill();
-t?c.width|=0:d=a=y=F=T=0;l=t-T-.087;y+=9*a;a-=.01;y<0?(T||(T=t),l=.087+t-T,y=0,b=40,l>.43?(a=y=1,T=0):u):b=20*a+20;h=-b*S(l*9);x.ellipse(960,840-y-(y>0?0:h),200+b*S(l*9),200+h,0,0,7);x.fill();
-t?c.width|=0:d=a=y=F=T=0;l=t-T+.087;y+=9*a;a-=.01;y<0?(F||(F=T=t),l=.087+t-T,y=0,b=40,l>.43?(a=1,y=28,F=0):u):b=20*a+20;h=-b*S(l*9);x.ellipse(960,840-y-(y>0?0:h),200+b*S(l*9),200+h,0,0,7);x.fill();
-t?c.width|=0:d=a=y=F=T=0;l=t-T+.087;y+=9*a;a-=.01;y<-28?(F||(F=T=t),l=.087+t-T,y=-28,b=40,l>.43?(a=1,y=28,F=0):u):b=20*a+20;h=-b*S(l*9);x.ellipse(960,840-y-(y>0?0:h),200+b*S(l*9),200+h,0,0,7);x.fill();
-t?c.width|=0:d=a=y=F=T=0;l=t-T+.087;y+=9*a;a-=.01;y<-28?(F||(F=T=t),l=.087+(t-T)/2,y=-28,b=40,l>.43?(a=1,y=28,F=0,T+=(t-T)/2):u):b=20*a+20;h=-b*S(l*9);x.ellipse(960,840-y-(y>0?0:h),200+b*S(l*9),200+h,0,0,7);x.fill();
-// Presumably it should slow down in the depth of the squash, but not at the beginning or end of the squash
-// Correction for smooth landing and take-off
-t?c.width|=0:d=a=y=F=T=0;l=t-T+.087;y+=9*a;a-=.01;y<-28?(F||(F=T=t),l=.0+(t-T)/2,y=-28,b=40,l>.43?(a=1,y=1,F=0,T+=(t-T)/2):u):b=20*a+20;h=-b*S(l*9);x.ellipse(960,840-y-(y>0?0:h),200+b*S(l*9),200+h,0,0,7);x.fill()
-// Squish at 1x speed
-t?c.width|=0:d=a=y=F=T=0;l=t-T+.087;y+=9*a;a-=.01;y<-28?(F||(F=T=t),l=.0+t-T,y=-28,b=40,l>.43?(a=1,y=1,F=0,T+=0):u):b=20*a+20;h=-b*S(l*9);x.ellipse(960,840-y-(y>0?0:h),200+b*S(l*9),200+h,0,0,7);x.fill()
-
 // Grapher https://www.dwitter.net/d/2760
 // My remix
 t?x.F(~x.F(K,9,9),--X+50,110+-eval(K+" "+~0)):(X=K="",x.F=x.fillText,onkeydown=e=>/[\--9XYS()+*]$/.test(A=e.key)&&(K+=A)+(X=c.width=200))
@@ -1250,3 +1231,297 @@ for(i=17;i--;x.beginPath(x.fill()))q=6*S(t/2),p=i+t%1,r=p*p,x.fillStyle=`hsl(${(
 // Impossible triangle by pavelb and anotherkitten https://www.dwitter.net/d/10655
 // Lighting
 ϕ=t;with(x)for(c.width=-1,translate(150,84),i=3;i--;rotate(t),t=2.1,fill(new Path2D('M67 28 9-72-9-72 37 11-19 11-28 25')))fillStyle=R(a=120+80*C((ϕ-i*Math.PI*2/3)),a,a)
+
+// https://www.dwitter.net/d/12000
+for(c.width|=j=0;j<20;j++)for(g=S(j*j*400)*900+940,i=99;i>-120;i--)x.fillRect(i<0?g:g+i/30*S(1e3/i-t*8+j*j*400)*i/2,i*5+600,90,5)
+for(c.width|=j=0;j<20;j++)for(g=j*120,i=99;i>-120;i--)x.fillRect(i<0?g:g+i/30*S(1e3/i-t*8+j*j*400)*i/2,i*5+600,120+60*S(j*j),5)
+for(c.width|=j=20;j--;)for(g=j*120,i=99;i>-120;i--)x.fillRect(i<0?g:g+i/30*S(1e3/i-t*8+j*j*400)*i/2,i*5+600,120+60*S(j*j*(t|1)),5)
+// === RELEASED I think === https://www.dwitter.net/d/12003
+for(c.width|=j=20;j--;)for(g=j*120,i=99;i--;)x.fillRect(i?g+i/30*S(1e3/i-t*8+j*j*400)*i/2:g,i?i*5+600:0,120+60*S(j*j*(t|1)),i?5:600)
+for(c.width|=j=20;j--;)for(g=j*120,i=500;i--;)x.fillRect(i?g+i/150*S(1e3/i-t*8+j*j*400)*50:g,i?i+600:0,120+60*S(j*j*(t|1)),i?1:600)
+// Very slow
+for(c.width|=j=0;j<20;j++)for(g=j*120,i=500;i>-600;i--)x.fillRect(i<0?g:g+i/150*S(1e3/i*5-t*8+j*j*400)*i/10,i+600,120+60*S(j*j),1)
+// Scrolling and shifted up
+for(c.width|=j=15+t|0;j-->t;)for(g=(j-t)*180,i=150;i--;)x.fillRect(i?g+i*S(1e3/i-t*8+j**3):g,400+!!i*i*5,-99-80*S(j*j),i?3:-400)
+// Smoothed
+for(c.width|=j=14+t|0;j-->t;)for(g=(j-t)*180,i=250;i--;)x.fillRect(i?g+i*S(2e3/i-t*8+j**3)/2:g,400+!!i*i*3,-99-80*S(j*j),i?2:-400)
+// Wobbling with i*i
+for(c.width|=j=15+t|0;j-->t;)for(g=(j-t)*180,i=200;i--;)x.fillRect(i?g+i/60*i*S(1e3/i-t*8+j**3):g,400+!!i*i*5,-99-80*S(j*j),i?3:-400)
+// More, slower (but it might also be the nicest) I get 35 fps
+for(c.width|=j=14+t|0;j-->t;)for(g=(j-t)*180,i=340;i--;)x.fillRect(i?g+i*S(2e3/i-t*8+j**3)/2:g,400+!!i*i*2,-99-80*S(j*j),i?1:-400)
+// === GOOD === Compromise (best of both worlds)
+for(c.width|=j=14+t|0;j-->t;)for(g=(j-t)*180,i=170;i--;)x.fillRect(i?g+i*S(1e3/i-t*8+j**3):g,400+!!i*i*4,-99-80*S(j*j),i?2:-400)
+// Add some Y-wobble to each rectangle.  Doesn't look too great.
+for(c.width|=j=14+t|0;j-->t;)for(g=(j-t)*180,i=170;i--;)x.fillRect(i?g+i*S(1e3/i-t*8+j**3):g,400+!!i*i*4+i*C(j**3+t+i)/10,-99-80*S(j*j),i?2:-400)
+// === PRETTY NICE === Buildings with different heights
+for(c.width|=j=20;j--;)for(g=j*120,i=99;i--;)x.fillRect(i?g+i*i/50*S(1e3/i-t*8+j*j*400):g,700+!!8*i*5,120+60*S(j*j*(t|1)),i?5:-500+99*S(j))
+for(c.width|=j=20+t|0;j-->t;)for(g=(j-t)*120,i=170;i--;)x.fillRect(i?g+i*i/70*S(1e3/i-t*8+j**3):g,400+!!i*i*4,-99-80*S(j*j),i?4:-(2+S(j))*200)
+for(c.width|=j=20+t|0;j-->t;)for(g=(j-t)*120,i=170;i--;)x.fillRect(i?g+i*i/70*S(1e3/i-t*8+j**3):g,400+!!i*i*4,-99-80*S(j*j),i?3:-300-99*S(j))
+for(c.width|=j=20+t|0;j-->t;)for(g=(j-t)*120,i=W=99;i--;)x.fillRect(i?g+i*i/70*S(1e3/i-t*8+j**3):g,500+!!i*i*4,-W-80*S(j*j),i?3:-300-W*S(j))
+// Trying to adapt it back more like the original
+for(c.width|=j=20+t|0;j-->t;)for(g=(j-t)*120,i=170;i--;)x.fillRect(i?g+i*i/70*S(1e3/i-t*8+j**3):g,400+!!i*i*4,-120+60*S(j*j),i?4:-400-200*S(j))
+
+// trancor's wireframe smoke https://www.dwitter.net/d/7907
+// With blur
+c.width=999,w=540,x.shadowBlur=15,x.shadowColor='black',t?m=[w+S(t)*340,w]:p=[];p.push([[...m],5]),p.map((z,i)=>{k=z[0],k[0]+=S(i+t),k[1]-=z[1]+S(i*8),i>p.length-130&&x.lineTo(...k),x.stroke()})
+// With trails
+x.fillStyle='#fff3',t?x.fillRect(0,0,999,800):c.width=999;x.beginPath();w=540,t?m=[w+S(t)*340,w]:p=[];p.push([[...m],5]),p.map((z,i)=>{k=z[0],k[0]+=S(i+t),k[1]-=z[1]+S(i*8),x.lineTo(...k),x.stroke()})
+
+// kipkat's planet https://www.dwitter.net/d/11742
+c.width^=0;for(i=800;i--;)x.lineTo(960+S(i*S(i)+t/9)*500,540+C(i*S(i)+t/9)*500);x.fill()
+// Finer, and moving
+c.width^=0;for(i=2e3;i--;)x.lineTo(960+S(a=(9+t/3e4)*i*S(i)+t/9)*500,540+C(a)*500);x.fill()
+
+// https://www.dwitter.net/d/12321
+for(s=24,d=360,i=4e3;i--;f=(X^Y)/5-t,x.fillStyle=`hsla(${S(f/d)*d} 75% ${s+C(f/s)*C(f*8+t)*60}%`)x.fillRect(X=i%82*s,Y=~~(i/82)*s,s,s)
+// Slow
+for(s=12,d=360,i=16e3;i--;f=((X/2)^(Y/2))/5-t,x.fillStyle=`hsla(${S(f/d)*d} 75% ${24+C(f/s)*C(f*8+t)*60}%`)x.fillRect(X=i%164*s,Y=~~(i/164)*s,s,s)
+t*=64;for(s=6,d=360,i=60e3;i--;f=((X/4)^(Y/4))/5-t,x.fillStyle=`hsla(${S(f/120)*d} 75% ${24+C(f/s)*C(f*8+t)*60}%`)x.fillRect(X=i%328*s,Y=~~(i/328)*s,s,s)
+// https://www.dwitter.net/d/12322
+// I like this minor remix (just made it smooth)
+for(s=24,i=4e3;i--;f=(X^Y)/9-t/2,x.fillStyle=`hsla(${S(f/128)*360} 75% ${s+C(f/s)*C(f*7+t)*70}%`)x.fillRect(X=i%82*s,Y=~~(i/82)*s,s,s)
+for(s=24,i=4e3;i--;f=(X^Y)/9+S(t),x.fillStyle=`hsla(${S(f/128)*360} 75% ${s+C(f/s)*C(f*7+t)*70}%`)x.fillRect(X=i%82*s,Y=~~(i/82)*s,s,s)
+for(s=24,i=4e3;i--;f=(X^Y)/9+T(t/2)/3,x.fillStyle=`hsla(${S(f/128)*360} 75% ${s+C(f/s)*C(f*7+t)*70}%`)x.fillRect(X=i%82*s,Y=~~(i/82)*s,s,s)
+// With colour cycling
+for(s=24,i=4e3;i--;f=(X^Y)/9+t,x.fillStyle=`hsla(${f+t*99} 75% ${s+C(f/s)*C(f*7+t)*70}%`)x.fillRect(X=i%82*s,Y=~~(i/82)*s,s,s)
+
+// Snow: https://www.dwitter.net/d/1520
+// Remove acceleration, create more distant flakes than near flakes
+c.width=w=2e3
+d=Math.random()*w,p=Math.random()
+t?!(d&9)&&o.push([d%w,0,0,1+p**20*9]):o=[]
+o.map(a=>(x.font=a[3]+'em ø',x.fillText('❄',a[0],a[1]+=a[3])))
+
+// Saturn https://www.dwitter.net/d/12556
+// My remix, one fatal flaw
+c.width|=0
+f=(i,j)=>{x.beginPath(),x.ellipse(960,560,...i),x.fill()}
+//f([r=300,r,0,0,7],9)
+for(i=5;--i;)x.fillStyle=R(k=255*(i%2),k,k),p=i>2,r=300+9*i,f([s=r+p*99*i,p?Math.abs(s*S(t)):r,9,0,7],35)
+// We can avoid the Math.abs() by modding (taking the modulus of) t by PI
+c.width|=0
+f=(i,j)=>{x.beginPath(),x.ellipse(960,560,...i),x.fill()}
+//f([r=300,r,0,0,7],9)
+for(i=5;--i;)x.fillStyle=R(k=255*(i%2),k,k),p=i>2,r=300+9*i,f([s=r+p*99*i,p?s*S(t%3.141):r,9,0,7],35)
+
+// KilledByAPixel's hearts: https://www.dwitter.net/d/12994
+x.textAlign='center';for(X=400;X--;)x.font=t*400+"px a",x.fillStyle=R(128+128*S(X*X+t*(X%9))%255,0,0,1),x.fillText("♥",X%20*99,99*(X/20|0));
+// Really bad performance changing font sizes, but eventually improves thanks to caching
+x.textAlign='center';for(X=400;X--;)x.font=200*(1+S(X+t))+"px a",x.fillStyle=R(128+128*S(X*X+t*(X%9))%255,0,0,1),x.fillText("♥",X%20*99,99*(X/20|0));
+x.textAlign='center';for(X=W=300;X--;)x.font=W*(1+S(X+t))+"px'",x.fillStyle=R(99*(1+S(X*X%7+t*(X%9))),0,0,1),x.fillText("♥",X%20*99,99*X/20)
+x.textAlign='center';for(X=W=300;X--;)x.font=W*(1+S(X+t))+"px'",x.fillStyle=R(99*(1+S(X*X+t*(X%5))),0,0,1),x.fillText("♥",X%16*150,99*X/16)
+
+// Trying to remix this pyramid https://www.dwitter.net/d/12540 to hide the back part
+// So far no success:
+c.width=1920
+p=[a=960,a/3]
+w=i=>[a+300*C(z),800+100*S(z)]
+f=i=>x.lineTo(...i)
+for(i=4;i--;){z=t+2.09*i;S(z)>-.8&(f(w(i)),f(p),f(w(i)))}
+x.stroke() 
+
+// Trying to golf https://www.dwitter.net/d/13538 red-purple-blue metaballs/lavalamp
+for(c.width|=0,i=7e3,h=Math.hypot,p=18;i--;x.fillRect(p*X,p*Y,p,p))X=i>>6,Y=i&63,a=200/h(p-X,1+Y),b=90/h(p-p*C(9*t)*S(t)-X,p+9*T(7*t)-Y),x.fillStyle=R(p*(a+b),0,p*b)
+for(c.width=106,i=7e3,h=Math.hypot,p=18;i--;x.fillRect(X,Y,1,1))X=i>>6,Y=i&63,a=200/h(p-X,1+Y),b=90/h(p-p*C(9*t)*S(t)-X,p+9*T(7*t)-Y),x.fillStyle=R(p*(a+b),0,p*b)
+for(c.width=106,i=7e3,h=Math.hypot,p=18;i--;x.fillRect(X,Y,1,1))X=i>>6,Y=i&63,a=200/h(p-X,1+Y),b=90/h(p-p*C(9*t)*S(t)-X,p*T(7*t)-Y),x.fillStyle=R(p*(a+b),0,p*b)
+for(c.width=106,i=7e3,h=Math.hypot,p=18;i--;)x.fillRect(X=i>>6,Y=i&63,1,1,a=200/h(p-X,1+Y),b=90/h(p-p*C(9*t)*S(t)-X,p*T(7*t)-Y),x.fillStyle=R(p*(a+b),0,p*b))
+// GETTING LONGER
+// h=x=>x**.5 but we can just skip the sqrt
+for(c.width=106,i=7e3,h=x=>x/p,p=18;i--;)x.fillRect(X=i>>6,Y=i&63,1,1,a=200/h((p-X)**2+(1+Y)**2),b=90/h((p-p*C(9*t)*S(t)-X)**2+(p*T(7*t)-Y)**2),x.fillStyle=R(p*(a+b),0,p*b))
+for(c.width=106,i=7e3,h=x=>x/p,p=18;i--;)x.fillRect(X=i>>6,Y=i&63,1,1,a=4e3/((p-X)**2+(1+Y)**2),b=2e3/((p-p*C(9*t)*S(t)-X)**2+(p*T(7*t)-Y)**2),x.fillStyle=R(p*(a+b),0,p*b))
+// Back to the shorter version, inline a and the a and b multipliers
+for(c.width=106,i=7e3,h=(x,y)=>2e4/(x**2+y**2),p=18;i--;)x.fillRect(X=i>>6,Y=i&63,1,1,b=h(p-p*C(9*t)*S(t)-X,p*T(7*t)-Y),x.fillStyle=R(4*h(p-X,1+Y)+b,0,b))
+for(c.width=106,i=7e3,h=(x,y)=>2e4/(x**2+y**2),p=18;i--;)x.fillRect(X=i>>6,Y=i&63,1,1,b=h(p*C(9*t)+p-X,p*T(7*t)-Y),x.fillStyle=R(8*h(X,1+Y)+b,0,b))
+for(c.width=99,i=7e3,h=(x,y)=>2e4/(x**2+y**2),p=18;i--;)x.fillRect(X=i>>6,Y=i%64,1,1,b=h(p*C(9*t)+p-X,p*T(7*t)-Y),x.fillStyle=R(8*h(X,1+Y)+b,0,b))
+// Forget c.width: use the normal width!
+h=(x,y)=>2e4/(x**2+y**2);for(i=7e3;i--;x.fillRect(p*X,p*Y,p,p,x.fillStyle=R(b=h(p*C(9*t)+p-X,p*T(7*t)-Y),0,8*h(X,1+Y)+b)))p=18,X=i>>6,Y=i%64
+// +2 but red again
+h=(x,y)=>2e4/(x**2+y**2),p=18;for(i=7e3;i--;x.fillRect(p*X,p*Y,p,p))X=i>>6,Y=i%64,b=h(p*C(9*t)+p-X,p*T(7*t)-Y),x.fillStyle=R(8*h(X,1+Y)+b,0,b)
+// Now we can inline the definiton of X if we also inline the definiton of b
+h=(x,y)=>2e4/(x**2+y**2),p=18;for(i=7e3;i--;x.fillRect(p*X,p*Y,p,p))Y=i%64,x.fillStyle=R(8*h(X=i>>6,1+Y)+(b=h(p*C(9*t)+p-X,p*T(7*t)-Y)),0,b)
+// Some styling
+// Published: https://www.dwitter.net/d/13570
+h=(x,y)=>2e4/(x**2+y**2),p=18;for(i=7e3;i--;x.fillRect(p*X,p*Y,p,p))Y=i%64,x.fillStyle=R(p*h(X=i>>6,1+Y)+(b=h(p*C(7*t)+p-X,p*T(5*t)-Y)),0,b)
+// pavel reduced it to 140 but without changing vinca's values https://www.dwitter.net/d/13572
+for(c.width=73,i=3e3;X=i--/41;x.fillRect(X,Y,1,2))h=Math.hypot,x.fillStyle=R(4e3/h(o=X-36,Y=i%41)+(b=2e3/h(o-25*S(5*t),20+9*T(4*t)-Y)),0,b)
+// Continuing mine with some of pavel's tricks
+h=Math.hypot;p=18;for(i=7e3;i--;x.fillRect(p*X,p*Y,p,p))X=i>>6,Y=i%64,x.fillStyle=R(3e2*p/h(X-p,1+Y)+(b=2e3/h(p*C(7*t)+p-X,p*T(5*t)-Y)),0,b)
+h=Math.hypot;p=20;for(i=7e3;X=i-->>6;x.fillRect(p*X,p*Y,p,p))Y=i%64,x.fillStyle=R(3e2*p/h(X-p,1+Y)+(b=2e3/h(p*C(7*t)+p-X,p+p*T(5*t)-Y)),0,b)
+
+// Pavel's columns -> Escher's stairs
+with(x)for(e=n=>n&8?8-n%8:n%8,c.width=i=2176;j=i-->>7;arc(660+e(j+3)*65,340+e(j-1)*45+l+t%2*50-100/(1+9**(j-t%2*9)),50-i%2*20,a=i%4/.64,a))l=i%128,globalAlpha=1-l**.2/2.63,i%4||beginPath(fill())
+with(x)for(e=n=>n&8?8-n%8:n%8,c.width=i=2307;j=i-->>7,i>255;arc(660+e(j+3)*65,340+e(j-1)*45+l+i/23.07,50-i%2*20,a=i%4/.64,a))l=i%128,globalAlpha=1-l**.2/2.63,i%4||beginPath(fill())
+with(x)for(e=n=>n&8?8-n%8:n%8,c.width=i=2176;j=i-->>7,i>127;arc(660+e(j+3)*65,540+e(j-1)*45+l*2-i/22.7,50-i%2*20,a=i%4/.64,a))l=i%128,globalAlpha=1-l**.2/2.63,i%4||beginPath(fill())
+with(x)for(e=n=>n&8?8-n%8:n%8,c.width=i=2176;j=i-->>7,i>127;arc(600+e(j+3)*130,260+e(j-1)*90+l*3-i/11.3,99-i%2*40,a=i%4/.64,a))l=i%128,globalAlpha=1-l**.2/2.63,i%4||beginPath(fill())
+// Softer colours
+with(x)for(e=n=>n&8?8-n%8:n%8,c.width=i=2176;j=i-->>7,i>127;arc(600+e(j+3)*130,260+e(j-1)*90+l*3-i/11.3,99-i%2*40,a=i%4/.64,a))l=i%128,globalAlpha=.5-l**.2/5.3,i%4||beginPath(fill())
+// Fixed stairs (the problem was that the original stairs fell on the right, and rose on the left
+with(x)for(e=n=>n&8?8-n%8:n%8,c.width=i=2176;j=i-->>7,i>127;arc(600+e(j+3)*130,260+e(j-1)*90+l*4-i/11.4,99-i%2*29,a=i%4/.637,a))l=i%128,globalAlpha=.5-l**.2/5.26,i%4||beginPath(fill())
+// Fixed and enlarged (but now the bottom two edges look flatter than the top two)
+with(x)for(e=n=>n&8?8-n%8:n%8,c.width=i=2176;j=i-->>7,i>127;arc(540+e(j+3)*143,260+e(j-1)*99+l*4-i/10.4,99-i%2*31,a=i%4/.637,a))l=i%128,globalAlpha=.5-l**.2/5.26,i%4||beginPath(fill())
+// Trying but failing to accentuate the ascent
+with(x)for(e=n=>n&8?8-n%8:n%8,c.width=i=2176;j=i-->>7,i>127;arc(540+e(j+3)*143,260+e(j-1)*70+l*4-i/14.8,99-i%2*50,a=i%4/.637,a))l=i%128,globalAlpha=.5-l**.2/5.26,i%4||beginPath(fill())
+// Looks quite nice, but I still feel the bottom two are flatter than they should be
+with(x)for(e=n=>n&8?8-n%8:n%8,c.width=i=2176;j=i-->>7,i>127;arc(600+e(j+3)*120,320+e(j-1)*70+l*4-i/14.8,99-i%2*38,a=i%4/.637,a))l=i%128,globalAlpha=.5-l**.2/5.26,i%4||beginPath(fill())
+// I think the problem is that the corners are not perfect, because i and l are pushing them down as we rotate the four corners
+with(x)for(e=n=>n&8?8-n%8:n%8,c.width=i=2176;j=i-->>7,i>127;arc(600+e(j+3)*110,320+e(j-1)*64+((l+3)|3)*4-j*8.1,99-i%2*41,a=i%4/.637,a))l=i%128,globalAlpha=.5-l**.2/5.26,i%4||beginPath(fill())
+with(x)for(e=n=>n&8?8-n%8:n%8,c.width=i=2176;j=i-->>7,i>127;arc(600+e(j+3)*120,320+e(j-1)*70+((l+3)|3)*4-j*8.7,99-i%2*42,a=i%4/.637,a))l=i%128,globalAlpha=.5-l**.2/5.26,i%4||beginPath(fill())
+with(x)for(e=n=>n&8?8-n%8:n%8,c.width=i=2176;j=i-->>7,i>127;arc(600+e(j+3)*140,320+e(j-1)*81+((l+3)|3)*5-j*10.1,110-i%2*42,a=i%4/.637,a))l=i%128,globalAlpha=.5-l**.2/5.26,i%4||beginPath(fill())
+
+// katkip's walker
+r=Math.random;if(!t){q=[];for(i=99;i--;)q.push([r()*1920,r()*1080,(r()-.5)*5,(r()-.5)*5])};for(c of q){x.fillRect(c[0]+=c[2],c[1]+=c[3],5,5);if(c[0]<0||c[0]>1920)c[2]*=-1;if(c[1]<0||c[1]>1080)c[3]*=-1}
+// My golf
+if(!t)for(q=[i=99];i--;q.push({x:r()*1920,y:r()*1080,u:(r()-.5)*5,v:(r()-.5)*5}))r=Math.random;for(c of q)x.fillRect(c.x+=c.u*=c.x<0||c.x>1920?-1:1,c.y+=c.v*=c.y<0||c.y>1080?-1:1,5,5)
+// KilledByAPixel's golf
+f=(s,w,o)=>(m=((((S(i*2/7+s*11/7)*99)*t+o))%w+w)%w,m>w/2?w-m:m);for(i=88;i--;x.fillRect(f(1,3831,S(i*i)*960+960),f(2,2151,i*3e6%1080),5,5));
+
+// Bouncing box / DVD golf https://www.dwitter.net/d/14341
+// metamero
+w=c.width=1920;t?x.fillRect(a+=p,b+=q,z,z):a=b=p=q=z=42;a>=w-z||a<=0?p=-p:0;b>=1038||b<=0?q=-q:0
+// jylikangas
+w=c.width|=0;t?x.fillRect(a+=p,b+=q,z,z):a=b=p=q=z=42;a%w<z?p=-p:0;b%1e3<z?q=-q:0
+// KilledByAPixel
+c.width|=f=w=>(m=(999*t%w+w)%w,m>w/2?w-m:m);x.fillRect(f(3642),f(1962),99,99)
+
+// veubeke's circle packer (178): https://www.dwitter.net/d/11225
+
+// katkip's circle packer "not overlapping circles" http://golf512.dx.am/project.php?64d988d6a
+// NOTE that this code only runs on golf512.dx.am not on dwitter.net
+r=Math.random;if(!f)d=[{X:250,Y:250,S:10}];q=(X,Y,S)=>{x.fillStyle=R(128+C(S)*128,S*5,0),x.beginPath(),x.arc(X,Y,S,0,2*pi),x.fill()};X=r()*500,Y=r()*500,S=r()*5000/f,v=1;for(c of d){if((((c.X-X)**2+(c.Y-Y)**2)**.5)<c.S+S)v=0}if(v)d.push({X:X,Y:Y,S:S}),q(X,Y,S)
+// the original, golfed a bit (232)
+r=Math.random;if(!f)d=[{X:250,Y:250,S:10}];q=(X,Y,S)=>x.beginPath(x.fillStyle=R(128+C(S)*128,S*5,0))|x.arc(X,Y,S,0,2*pi)|x.fill();X=r()*500,Y=r()*500,S=r()*5000/f,d.find(c=>(c.X-X)**2+(c.Y-Y)**2<(c.S+S)**2)||d.push({X,Y,S},q(X,Y,S))
+// variation expand to fit (243)
+r=Math.random;if(!f)d=[{X:250,Y:250,S:10}];q=(X,Y,S)=>x.beginPath(x.fillStyle=R(128+C(S)*128,S*5,0))|x.arc(X,Y,S,0,2*pi)|x.fill();X=r()*500,Y=r()*500,S=Math.min.apply(R,d.map(c=>((c.X-X)**2+(c.Y-Y)**2)**.5-c.S)),S>0&&(d.push({X,Y,S}),q(X,Y,S))
+// further golfing the original, sizes decreasing predictably
+r=Math.random;with(x)f?(X=r()*500,Y=r()*500,S=200/f**.5,d.find(c=>(c.X-X)**2+(c.Y-Y)**2<(c.S+S)**2)||d.push({X,Y,S},beginPath(fillStyle=R(r()*255,S*5,0))|arc(X,Y,S,0,7)|fill())):d=[]
+// Add a loop to make it run faster, and use .4 to shrink the circles more slowly but not too slowly
+// Values 0.35 - 0.4 are nice
+r=Math.random;with(x)for(i=500;i--;)f++?(X=r()*500,Y=r()*500,S=200/f**.4,d.find(c=>(c.X-X)**2+(c.Y-Y)**2<(c.S+S)**2)||d.push({X,Y,S},beginPath(fillStyle=R(r()*255,S*5,0))|arc(X,Y,S,0,7)|fill())):d=[]
+
+// Dwitter version (slow to complete):
+r=Math.random;with(x)t?(X=r()*2e3,Y=r()*1e3,S=200/++t**.5,d.find(c=>(c.X-X)**2+(c.Y-Y)**2<(c.S+S)**2)||d.push({X,Y,S},beginPath(fillStyle=R(r()*255,S*5,0))|arc(X,Y,S,0,7)|fill())):d=[]
+
+// Xen_s plasma: https://www.dwitter.net/d/14731
+// Perhaps I can make a nebula by adding some blackness to it?  `${i%60}%`
+// (Using 60% on iOS because 30% seems about right as an average, but it might be a tad higher on Linux)
+// Also tweaked one of the axis expressions and swapped the axes.
+// But it moves a bit too quickly, and single colours coalesce together.  I get too much RGB and not enough CMY.
+with(x)for(k=i=2e3;i---99;beginPath(fill(arc((i**t+p)%2e3,(i**3+p)%k,k/(i/(9+S(p)*8)),0,7))))fillStyle=`hsla(${i+(p=t*i)},99%,${i%60}%,.01`
+
+// donbright and taupelink_s prime clock
+// Show all factors (127) https://www.dwitter.net/d/14827
+c.width=400
+d=(r,T)=>x.fillText(T,200+r*S(a=i/1.91),115-r*C(a))
+for(i=N=t|0;i>1;i--)
+for(N%i||d(60+i,i),k=50;k--;)N%i||d(k,'*')
+// Prime factors only (166)
+c.width=400
+d=(r,T,i)=>x.fillText(T,200+r*S(a=i/1.91),115-r*C(a))
+h=j=>{for(k=50;k--;)d(k,'*',j);d(60+j,j,j)}
+for(n=t|0,d(60+n,n,n),i=2;i<=n;i++)n%i||(h(i),n/=i,i--)
+// Supposed to be prime factors only, with a new approach, but it's broken and shows all factors, or at least more than it should!
+c.width=400
+d=(r,T)=>x.fillText(T,200+r*S(a=i/1.91),115-r*C(a))
+for(i=n=N=t|0;i>1;n%i||(i<N?n/=i:0,d(60+i,i)),i--)
+for(k=50;k--;)n%i||d(k,'*')
+
+// taupelink's shuffle https://www.dwitter.net/d/14925
+// original (139)
+t||(a=[J=64]);c.width=160
+for(i=64;i--;)t||(a[i]=i),x.fillText(a[i],i%8*20,9+(i>>3)*9)
+J&&(K=Math.random()*(J--)|0,[a[K],a[J]]=[a[J],a[K]])
+// my golf (129)
+a=t?a:[J=64];c.width=160
+for(i=64;i--;x.fillText(a[i],i%8*20,8+i|7))t||(a[i]=i)
+if(J)[a[J],a[K]]=[a[K=Math.random()*J--|0],a[J]]
+// taupelink's golf (122)
+t||(a=[]);c.width=160
+for(i=a.length;i--;)x.fillText(a[i],i%8*20,8+i|7)
+r=Math.random()*64|0;a.lastIndexOf(r)+1||a.push(r)
+
+// KilledByAPixel's Spirograph Generator: https://www.dwitter.net/d/14905
+for(i=144;q=(8+t>>3)*i--;x.fillRect(i%16*120+T(S),(i>>4)*120+T(C),2,2))t%24<1?c.width|=r=n=>S(q**n)*9|0:T=f=>5*r(4)*f(r(3)*t)+9*f(r(2)*t)+60
+// With fading
+x.fillStyle='#ffffff02';x.fillRect(0,0,2e3,1e3);x.fillStyle='#000';for(i=144;q=(8+t>>3)*i--;x.fillRect(i%16*120+T(S),(i>>4)*120+T(C),2,2))r=n=>S(q**n)*9|0,T=f=>5*r(4)*f(r(3)*t)+9*f(r(2)*t)+60
+
+// jylikangas' Octopus Ride https://www.dwitter.net/d/15172
+// Reduxing to 141
+with(x)for(c.width=i=-6;++i<7;stroke())lineTo(R+=90*S(a=i*111+t),Y=99+20*C(a)),arc(R+33*S(i/2+t*5),Y-9*C(a/4)-9,Y/14,0,3),rect(R=150,R,i*7,8)
+
+// Blue sopernova https://www.dwitter.net/d/16424
+x.globalAlpha=.1;for(i=540;--i;x.fillRect(960+S(m**3/9)*q,540+C(m**3/9)*q,s=200*C(t/5),s))m=i+240*t,q=3e4/i,x.fillStyle=R(i*i/90,i*i/90,i*i/44)
+
+// Layl_s funky purple growth: https://www.dwitter.net/d/17674
+// My first remix
+k=frame%2
+r=Math.random
+R=(1e3*k+100*t)%2e3
+x.fillStyle=k?'#fff1':'#2041'
+x.beginPath(),x.lineTo(960,540)
+for(j=5;j--;){
+a=r()*6.28
+v=r()*R
+x.lineTo(960+C(a)*v,540+S(a)*v)
+x.fill()
+}
+// Second remix
+r=Math.random
+R=300*(t%8)
+x.fillStyle=(t%8)<4?'#2041':'#fff1'
+r()<.1&&(x.beginPath(),x.lineTo(960,540))
+a=r()*6.28
+v=r()*R
+x.lineTo(960+C(a)*v,540+S(a)*v)
+x.fill()
+// Third remix
+r=Math.random
+r()<.02&&(x.beginPath(),R=0,x.fillStyle=r()<.5?'#2041':'#fff1')
+R+=9
+a=r()*6.28
+v=r()*R
+x.lineTo(960+C(a)*v,540+S(a)*v)
+x.fill()
+// Fourth remix
+r=Math.random
+t%4<.1&&(R=0,x.beginPath(),x.fillStyle=t&4?'#fff1':'#2041')
+R+=5
+a=r()*6.28
+v=r()*R
+x.lineTo(960+C(a)*v,540+S(a)*v)
+x.fill()
+// Fifth remix
+r=Math.random
+t%1<.1&&(R=0,x.beginPath(),x.fillStyle=t&1?'#fff1':'#2041')
+a=r()*6.28
+v=r()*R
+x.lineTo(960+C(a)*v,540+S(a)*v)
+x.fill()
+R+=50
+// Sixth remix
+r=Math.random
+t%4<.1&&(x.beginPath(R=1),x.fillStyle=t&4?'#fff1':'#2041')
+R+=7
+a=r()*99
+v=r()*R
+x.lineTo(960+1.3*C(a)*v,540+S(a)*v)
+x.fill()
+// Seventh remix
+// === GOOD ===
+r=Math.random
+t%4<.1&&(x.beginPath(R=1),x.fillStyle=t&4?'#fff1':'#2041')
+R*=1.04,v=r()*R
+x.lineTo(960+1.3*C(a=r()*99)*v,540+S(a)*v)
+x.fill()
+//
+r=Math.random
+t%2<.1&&(x.beginPath(R=1),x.fillStyle=t&2?'#fff1':'#2041')
+R*=1.08,v=r()*R
+x.lineTo(960+1.3*C(a=r()*99)*v,540+S(a)*v)
+x.fill()
+// Ninth remix
+// === GOOD ===
+r=Math.random
+t%2<.1&&(x.beginPath(R=1),x.fillStyle=t&2?'#fff1':'#2042')
+R*=1.08,v=r()*R
+x.lineTo(960+1.3*C(a=r()*99)*v,540+S(a)*v)
+x.fill()

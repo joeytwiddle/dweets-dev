@@ -4,6 +4,9 @@
 
 // See also:
 // - magna's "Brute-force dweet" https://www.dwitter.net/d/10548
+// - tomxor and anotherkitten's "60 monkeys per second" https://www.dwitter.net/d/12403
+// - https://www.dwitter.net/h/fuzzing
+//   "Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program."
 
 // There are < 3e277 possible dweets (excluding unicode chars)
 // (128 - 32) ** 140

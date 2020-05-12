@@ -34,10 +34,20 @@ for(i=2;i--;x.fill())x.beginPath(x.fillStyle=`hsla(${R()},99%,${50*!i}%,${i?.03:
 // Using t trick instead of Math.random (nice to see some occasional repetition/patterns)
 // BUG: some dots never fully fade, whilst others do
 // Another fun thing with the t trick is e.g. 33* gives a double-pulsing yellow dot, 55* gives a slower double-pulsing orange dot
-// === TO RELEASE ===
+// === RELEASED === https://www.dwitter.net/d/11857
 R=()=>(97*t++*t%1)*16<<7
 for(i=2;i--;x.fill())x.beginPath(x.fillStyle=`hsla(${R()},99%,${50*!i}%,${i?.03:.5})`)|x.arc(R(),R(),i?3e3:40,0,7)
 // Smaller dots, faster fade
 // Nah, the previous one is nicer
 R=()=>(97*t++*t%1)*16<<7
 for(i=2;i--;x.fill())x.beginPath(x.fillStyle=`hsla(${R()},99%,${50*!i}%,${i?.04:.6})`)|x.arc(R(),R(),i?3e3:35,0,7)
+// Smaller dots, slower fade
+R=()=>(97*t++*t%1)*16<<7
+for(i=2;i--;x.fill())x.beginPath(x.fillStyle=`hsla(${R()},99%,${50*!i}%,${i?.03:1})`)|x.arc(R(),R(),i?3e3:25,0,7)
+// Smaller dots, slower fade (my favourite right now)
+R=()=>(97*t++*t%1)*16<<7
+for(i=2;i--;x.fill())x.beginPath(x.fillStyle=`hsla(${R()},99%,${50*!i}%,${i?.02:1})`)|x.arc(R(),R(),i?3e3:20,0,7)
+// We can get fading to work properly by only doing it occasionally
+// Although a slight flicker can be perceived as a result
+R=()=>(97*t++*t%1)*16<<7
+for(i=2;i--;x.fill())k=t%.1<.01,x.beginPath(x.fillStyle=`hsla(${R()},99%,${50*!k}%,${k?.1:.5})`)|x.arc(R(),R(),k?3e3:40,0,7)

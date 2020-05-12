@@ -1,4 +1,6 @@
+// artfarnaa's original: https://www.dwitter.net/d/3090
 
+// Remixing
 for(c.width|=a=30;--a;
 x.arc(960+a*a*S(3*t+a/9)/2,540+a*a*S(2*t+a/9)*2,a*a*3,0,7))
 x.moveTo(G=a|0,0);x.fill('evenodd')
@@ -38,5 +40,5 @@ for(c.width|=a=25;--a;x.arc(960+(b-999)*S(t+b/220)/2,540+(b+-999)*S(t-b/220)/2,b
 
 c.width|=k=960;for(a=25;--a;x.arc(k+(b-k)*S(t+b/200)/2,540+(b-k)*C(t/3-b/200)/2,b*3,0,7))f=a+7*t%2,b=f*f,x.moveTo(G=b|0,0);x.fill('evenodd')
 
-// --- RELEASED ---
+// --- RELEASED --- https://www.dwitter.net/d/3091
 c.width|=k=960;for(a=25;--a;x.arc(k+(b-k)*S(t+b/210)/2,540+(b-k)*C(t/3-b/210)/2,b*3,0,7))f=a+7*t%2,b=f*f,x.moveTo(G=b|0,0);x.fill('evenodd')
