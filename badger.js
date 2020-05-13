@@ -62,3 +62,7 @@ for(v=t*2.5,c.width|=n=i=1+v%16|0;i--;x.fillText(s?'🐍':n>12?i&1?'':'🍄':'�
 // The original song starts with three pairs of mushrooms before the snake, but after that it has four pairs of mushrooms before the snake
 // b-m b-m b-m b-s snake b-m b-m b-m b-m b-s snake
 // That would be v%96>76
+
+// TODO: How about ' 🦡🍄🐍'[b|m|s]
+//       or perhaps ...' 🦡🍄🐍'[b|m|s]
+// where b=0 or 1, m=0 or 2, s=0 or 3 oh not quite binary

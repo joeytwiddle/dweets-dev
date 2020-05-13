@@ -12,8 +12,23 @@
 //
 // Make it run over multiple cores
 
-const maxDepth = 6;
+// !prettier --write --single-quote --use-tabs --print-width 120 --trailing-comma=all %
+// edit
+// set ts=2 sw=2
 
+const maxDepth = 4;
+
+// This just helps us to put circular references inside an array.  We first create the array, and then fill it.
+function fillArray(array, content) {
+	array.splice(0, 0, ...content);
+}
+
+// Inside the grammar, a simple Array means "or", i.e. you can pick any one of these things.
+//
+// But we also need an "and" to say that these things must all come together (e.g. a binary operation requires two parameters and one operator).
+//
+// For the "and" clauses we use concat() which defines itself as an object, so it can be distinguished from an array.
+//
 const concat = (content) => ({ type: 'concat', content: content });
 
 function isConcat(grammarBit) {
@@ -27,29 +42,31 @@ function getGrammar() {
 
 	const Digit = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-	const Number = [Digit, concat([Digit, () => Number])];
+	const Number = [];
+	fillArray(Number, [Digit, concat([Digit, Number])]);
 
-	const Value = [Variable, Number];
+	const Value = [Number, Variable];
 
 	const UnaryOp = ['!', '~'];
 
-	const BinaryOp = ['^', '&', '|', '+', '-', '*', '/', /* '>', '<', '==', '!=', '&&', '||' */];
+	const BinaryOp = ['^', '&', '|', '+', '-', '*', '/', '>', '<' /* '==', '!=', '&&', '||' */];
 
-	const ExpressionNoCycle = () => Expression;
-
-	const Expression = [
+	const Expression = [];
+	fillArray(Expression, [
 		Value,
-		concat([ExpressionNoCycle, BinaryOp, ExpressionNoCycle]),
-		concat([UnaryOp, ExpressionNoCycle]),
-		concat([ExpressionNoCycle, '?', ExpressionNoCycle, ':', ExpressionNoCycle]),
-		concat(["(", ExpressionNoCycle, ")"]),
-	];
+		concat([Expression, BinaryOp, Expression]),
+		concat([UnaryOp, Expression]),
+		concat([Expression, '?', Expression, ':', Expression]),
+		concat(['(', Expression, ')']),
+	]);
+
+	console.log("Grammar: %o", Expression);
 
 	return Expression;
 }
 
 function findShortestExpression(inputsAndOutputs) {
-	console.log("Searching for an expression that will output:", inputsAndOutputs);
+	console.log('Searching for an expression that will output:', inputsAndOutputs);
 
 	//const dictionary = "i><!&|^~%+-*/=0123456789()";
 	//const dictionary = "i^0123456789&><!|%+-()";
@@ -79,11 +96,11 @@ function findShortestExpression(inputsAndOutputs) {
 			console.log(`Problem with expression: ${expression} - ${error}`);
 		}
 	}
-
 }
 
 function buildRandomExpressionBit(grammarBit, depth = 0) {
-	const resolvedGrammarBit = typeof grammarBit === 'function' ? grammarBit() : grammarBit;
+	//const resolvedGrammarBit = typeof grammarBit === 'function' ? grammarBit() : grammarBit;
+	const resolvedGrammarBit = grammarBit;
 	if (Array.isArray(resolvedGrammarBit)) {
 		// This would sometimes result in: RangeError: Maximum call stack size exceeded
 		//const choices = resolvedGrammarBit;
@@ -91,7 +108,7 @@ function buildRandomExpressionBit(grammarBit, depth = 0) {
 		if (depth >= maxDepth - 1) {
 			// If we are getting to deep, then prefer to select a simple choice at this stage
 			// (Concats are usually less simple, because they are often recursive)
-			const filteredChoices = resolvedGrammarBit.filter(choice => !isConcat(choice));
+			const filteredChoices = resolvedGrammarBit.filter((choice) => !isConcat(choice));
 			// However that isn't always possible.  If we can't do it now, we will try again in the next layer.
 			if (filteredChoices.length > 0) {
 				choices = filteredChoices;
@@ -100,35 +117,35 @@ function buildRandomExpressionBit(grammarBit, depth = 0) {
 		const choice = chooseRandomItemFromArray(choices, depth);
 		//console.log("[find_shortest_expression.js] choice:", choice);
 		const choiceArray = isConcat(choice) ? choice.content : [choice];
-		const bits = choiceArray.map(bit => buildRandomExpressionBit(bit, depth + 1));
+		const bits = choiceArray.map((bit) => buildRandomExpressionBit(bit, depth + 1));
 		return bits.join('');
 	}
 	return resolvedGrammarBit;
 }
 
 function chooseRandomItemFromArray(array, depth) {
-	//return array[Math.random() * array.length | 0];
+	return array[(Math.random() * array.length) | 0];
 	// Repeated random choice tends to generate really long expressions, but we are more interested in short expressions
 	// How can we get it to generate smaller expressions?
 	// Lean towards the left of the array
 	//return array[(Math.random() ** 1.5) * array.length | 0];
-	return array[(Math.random() ** 2) * array.length | 0];
+	//return array[(Math.random() ** 2) * array.length | 0];
 	//return array[(Math.random() ** (1 + depth / 4)) * array.length | 0];
 }
 
 // @ts function testString(str: string): boolean;
 function testString(str, entries) {
-	if (Math.random() < 0.0001) process.stdout.write("\rTesting: " + str + "                                \r");
-	if (!str.includes("i")) return;
+	if (Math.random() < 0.00003) process.stdout.write(`${Array(120).fill(' ').join('')}\rTesting: ${str}\r`);
+	if (!str.includes('i')) return;
 	for (const [input, output] of entries) {
 		// For better performance, we moved the try outside the function
 		//try {
 		const i = input;
 		const result = eval(str);
 		//console.log(`${i} => ${result}`);
-		const match = typeof output === 'function' ? output(result) : output === result;
+		//const match = typeof output === 'function' ? output(result) : output === result;
 		// For performance, LOOK_FOR_EXACT_MATCH
-		//const match = output === result;
+		const match = output === result;
 		// For performance, CHECK_TRUTHY_FALSY
 		//const match = !!output === result;
 		if (!match) {
@@ -145,9 +162,21 @@ const truthy = (val) => !!val;
 const falsy = (val) => !val;
 
 const inputsAndOutputs = {
+	// A human might write `1+2*i` but the miner discovered `i-~i`
+	/*
+	0: 1,
+	1: 3,
+	2: 5,
+	3: 7,
+	*/
+
+	// This one has been very difficult to generate
+	// `i<2?5+2*i:5*i-6`
 	0: 5,
 	1: 7,
 	2: 4,
+	3: 9,
+
 	/*
 	60: truthy,
 	61: falsy,
