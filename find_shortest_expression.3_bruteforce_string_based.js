@@ -1,67 +1,51 @@
 // Generates expressions by bruteforce breadth-first search and tests to see if they match the desired output
 
-// This is slightly less performant than the version which generates a list, but it can go much deeper because it doesn't use increasing amounts of memory
-
-// TODO
-//
-// pavel's method skips some impossible parts of the tree, by marking which chars are impossible to come after another char.  Doing that could greatly increase speed.
-//
-// For Dwitter, we may also be able to use S(e) C(e) T(e) to help us
-//
-// Use multiple cores
-//
-// Skip redundant subpaths, if they are equivalent to another that has already been checked
-// E.g. If we have already done `i%2?...` then there is no point doing `i&1?...` (except perhaps for negative `i`!)
-
 // !prettier --write --single-quote --use-tabs --print-width 120 --trailing-comma=all %
 // edit
 // set ts=2 sw=2
 
-const maxLength = 15;
+const maxLength = 5;
 
 function findShortestExpression(inputsAndOutputs) {
 	console.log('Searching for an expression that will output:', inputsAndOutputs);
 
-	const dictionary = 'i^0123456789&|~><%+-*/=!?:()';
-	//const dictionary = "i^0123456789&|><%+-!()";
+	const dictionary = "i><!&|^~%+-*/=0123456789()";
+	//const dictionary = "i^0123456789&><!|%+-()";
 
 	// For performance
 	const entries = Object.entries(inputsAndOutputs);
 
 	let bestSoFar = null;
 
+	let list = [''];
+
 	for (let len = 1; len <= maxLength; len++) {
-		console.log(`${shortDate()} Testing all expressions of length ${len}...`);
-		generateAndTest(len);
-	}
-
-	function generateAndTest(targetLen, sofar = '', len = 0) {
-		const testNow = len + 1 === targetLen;
-
-		for (const char of dictionary) {
-			const expression = sofar + char;
-			if (testNow) {
-				tryTestString(expression, entries);
-			} else {
-				generateAndTest(targetLen, expression, len + 1);
+		const newList = [];
+		for (const expression of list) {
+			for (const char of dictionary) {
+				newList.push(expression + char);
 			}
 		}
-	}
+		list = newList;
 
-	function tryTestString(expression, entries) {
-		try {
-			const worked = testString(expression, entries);
-			if (worked) {
-				// Found a working expression!
-				console.log(`Found a working expression: ${expression}`);
-				if (!bestSoFar || expression.length <= bestSoFar.length) {
-					bestSoFar = expression;
+		console.log(`Testing ${list.length} strings of length ${len}...`);
+
+		for (const expression of list) {
+			//console.log("[find_shortest_expression.js] expression:", expression);
+			try {
+				const worked = testString(expression, entries);
+				if (worked) {
+					// Found a working expression!
+					console.log(`Found a working expression: ${expression}`);
+					if (!bestSoFar || expression.length <= bestSoFar.length) {
+						bestSoFar = expression;
+					}
+					console.log(`Best so far: ${bestSoFar}`);
+					//process.exit(0);
 				}
-				console.log(`Best so far: ${bestSoFar}`);
-				process.exit(0);
+			} catch (error) {
+				//console.log(`Problem with expression: ${expression} - ${error}`);
 			}
-		} catch (error) {
-			//console.log(`Problem with expression: ${expression} - ${error}`);
 		}
 	}
 }
@@ -91,8 +75,6 @@ function testString(str, entries) {
 	return true;
 }
 
-const shortDate = () => new Date().toString().replace(/ GMT.*/, '');
-
 const truthy = (val) => !!val;
 const falsy = (val) => !val;
 
@@ -110,7 +92,7 @@ const inputsAndOutputs = {
 	0: 5,
 	1: 7,
 	2: 4,
-	3: 9,
+	//3: 9,
 
 	/*
 	60: truthy,

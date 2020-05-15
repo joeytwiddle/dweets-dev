@@ -6,8 +6,6 @@
 //
 // pavel's method skips some impossible parts of the tree, by marking which chars are impossible to come after another char.  Doing that could greatly increase speed.
 //
-// For Dwitter, we may also be able to use S(e) C(e) T(e) to help us
-//
 // Use multiple cores
 //
 // Skip redundant subpaths, if they are equivalent to another that has already been checked
