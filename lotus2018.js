@@ -211,20 +211,23 @@ for(c.width=k=1e3;k--;x.fillRect(500-W-15*j*C(a=t+i*8),360-j*(p=8*S(a)-2*(k>>7?-
 for(c.width=k=768;k--;x.fillRect(384-W-9*j*C(a=t+i*8),300-j*(i*(2*l-1)+4*S(a)),2*W,6))i=k>>4&7,j=k%16,l=k<512,x.fillStyle=l?'#f9f':'#fef',W=30*S(j/5)
 
 // 2020 release with more petals, and no longer raise the first petal
-for(c.width=k=2e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),880-j*3*S(a)+j/2*(k>>8?-i:i),2*W,9))i=k/16&15,j=k%16,x.fillStyle='#f8a1',W=30*S(j/5)
-// Lighter version (less flooding)
-for(c.width=k=2e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),880-j*3*S(a)+j/2*(k>>8?-i:i),2*W,6))i=k/16&15,j=k%16,x.fillStyle='#fab1',W=30*S(j/5)
-// === FAVOURITE FOR 2021 === But I actually recommend a compromise between the two
+// "Dark" and thick
+for(c.width=k=2e3;k--;x.fillRect(1400-W-9*j*C(a=t-i*8),820-j*3*S(a)+j/2*(k>>8?-i:i),2*W,9))i=k/16&15,j=k%16,x.fillStyle='#f8a1',W=30*S(j/5)
+// Light and thick
 for(c.width=k=2e3;k--;x.fillRect(1400-W-9*j*C(a=i*8-t),820-j*3*S(a)+j/2*(k>>8?-i:i),2*W,9))i=k/16&15,j=k%16,x.fillStyle='#fab1',W=30*S(j/5)
+// Lighter version (less flooding)
+for(c.width=k=2e3;k--;x.fillRect(1400-W-9*j*C(a=i*8-t),820-j*3*S(a)+j/2*(k>>8?-i:i),2*W,7))i=k/16&15,j=k%16,x.fillStyle='#fab1',W=30*S(j/5)
+// === FAVOURITE FOR 2021 === Darker but finer
+for(c.width=k=2e3;k--;x.fillRect(1400-W-9*j*C(a=i*8-t),820-j*3*S(a)+j/2*(k>>8?-i:i),2*W,7))i=k/16&15,j=k%16,x.fillStyle='#f8a1',W=30*S(j/5)
 // Just for fun, let the petals rise and fall (the flower opens and closes)
-for(c.width=k=2e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8)*C(o),880-j*3*S(a)+6*j*S(o)*(k>>8?-1:1),2*W,7))i=k/16&15,j=k%16,o=.2+i*(1-C(t))/25,x.fillStyle='#fab1',W=30*S(j/5)
+for(c.width=k=2e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8)*C(o),820-j*3*S(a)+6*j*S(o)*(k>>8?-1:1),2*W,7))i=k/16&15,j=k%16,o=.2+i*(1-C(t))/25,x.fillStyle='#fab1',W=30*S(j/5)
 // === ALTERNATIVE FOR 2021 === Solid version
-for(c.width=k=2e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),880-j*(p=3*S(a)-(k>>8?-i:i)/2),2*W,p))i=k/16&15,j=k%16,x.fillStyle='#f8a2',W=30*S(j/5)
+for(c.width=k=2e3;k--;x.fillRect(500-W-9*j*C(a=t-i*8),820-j*(p=3*S(a)-(k>>8?-i:i)/2),2*W,p))i=k/16&15,j=k%16,x.fillStyle='#f8a2',W=30*S(j/5)
 // === ALTERNATIVE FOR 2021 === Larger (try 1500 instead of 500 if you like)  But perhaps smaller is prettier than larger?
-for(c.width=k=2e3;k--;x.fillRect(500-W-18*j*C(a=t-i*8),880-j*6*S(a)+j*(k>>8?-i:i),2*W,12))i=k/16&15,j=k%16,x.fillStyle='#f8a1',W=60*S(j/5)
+for(c.width=k=2e3;k--;x.fillRect(500-W-18*j*C(a=t-i*8),820-j*6*S(a)+j*(k>>8?-i:i),2*W,12))i=k/16&15,j=k%16,x.fillStyle='#f8a1',W=60*S(j/5)
 // Solid version
-for(c.width=k=2e3;k--;x.fillRect(500-W-18*j*C(a=t-i*8),880-j*(p=6*S(a)-(k>>8?-i:i)),2*W,p))i=k/16&15,j=k%16,x.fillStyle='#f9b2',W=60*S(j/5)
+for(c.width=k=2e3;k--;x.fillRect(500-W-18*j*C(a=t-i*8),820-j*(p=6*S(a)-(k>>8?-i:i)),2*W,p))i=k/16&15,j=k%16,x.fillStyle='#f9b2',W=60*S(j/5)
 // Same thing, but with 4x iterations, to make smoother petal edges
-for(c.width=2e3,k=8e3;k--;x.fillRect(500-W-18*j/4*C(a=t-i*8),880-j*(p=6/4*S(a)-(k>>10?-i:i)/4),2*W,p))i=k/64&15,j=k%64,x.fillStyle='#f9b2',W=60*S(j/20)
+for(c.width=2e3,k=8e3;k--;x.fillRect(500-W-18*j/4*C(a=t-i*8),820-j*(p=6/4*S(a)-(k>>10?-i:i)/4),2*W,p))i=k/64&15,j=k%64,x.fillStyle='#f9b2',W=60*S(j/20)
 // BAD Petals pink to yellow
-for(c.width=k=2e3;k--;x.fillRect(1500-W-9*j*C(a=t-i*8),880-j*3*S(a)+j/2*(k>>8?-i:i),2*W,9))i=k/16&15,j=k%16,x.fillStyle=`hsl(${-40+6*i},90%,${50+i*2}%,.1)`,W=30*S(j/5)
+for(c.width=k=2e3;k--;x.fillRect(1500-W-9*j*C(a=t-i*8),820-j*3*S(a)+j/2*(k>>8?-i:i),2*W,9))i=k/16&15,j=k%16,x.fillStyle=`hsl(${-40+6*i},90%,${50+i*2}%,.1)`,W=30*S(j/5)
