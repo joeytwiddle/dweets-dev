@@ -57,12 +57,31 @@ for(v=t*2.5,c.width|=i=1+v%16|0;i--;x.fillText(s?'🐍':i>11?i&1?'':'🍄':'🦡
 for(v=t*2.5,c.width|=n=i=1+v%16|0;i--;x.fillText(s?'🐍':n>12?i&1?'':'🍄':'🦡',800+C(i+s*t)*700,920-i*40+C(t*15)*99))s=v%80>64,x.font=`19em'`
 // Introduce snake instead of mushroom (more like the original song, but too many snakes at the introduction)
 for(v=t*2.5,c.width|=n=i=1+v%16|0;i--;x.fillText(s?'🐍':n>12?i&1?'':'🍄':'🦡',800+C(i+s*t)*700,920-!s*i*40+C(t*15)*99))s=v%80>60,x.font=`19em'`
-// Snakes don't jump, but do appear at different levels
+// === FAVOURITE === Snakes don't jump, but do slide, and appear at different levels
 for(v=t*2.5,c.width|=n=i=1+v%16|0;i--;x.fillText(s?'🐍':n>12?i&1?'':'🍄':'🦡',800+C(i+s*t)*700,920-i*40+!s*C(t*15)*99))s=v%80>60,x.font=`19em'`
+// Minor golf, loses some height span (139)
+for(v=t*2.5,c.width|=n=i=1+v%16|0;i--;x.fillText(s?'🐍':n>12?i&1?'':'🍄':'🦡',800+C(i+s*t)*700,99*(9-i/2+!s*C(t*15))))s=v%80>60,x.font=`19em'`
+// === FAVOURITE === Better golf, using fixed timing (136)
+for(v=t*2.5,c.width|=n=i=v&15;i--+1;x.fillText(s?'🐍':n>11?i&1?'🍄':'':'🦡',800+C(i+s*t)*700,880-i*40+!s*C(t*15)*99))s=v%80>59,x.font=`19em'`
+// Golfed but lower resolution (137)
+for(v=t*2.5,c.width=190,n=i=1+v%16|0;i--;x.fillText(s?'🐍':n>12?i&1?'':'🍄':'🦡',75+C(i+s*t)*70,90-i*4+!s*C(t*15)*9))s=v%80>60,x.font=`2em'`
+// Golfed but lower resolution and each verse starts blank (timing is off by one) (134)
+for(v=t*2.5,c.width=250,n=i=v&15;i--;x.fillText(s?'🐍':n>12?i&1?'':'🍄':'🦡',99+C(i+s*t)*90,120-i*6+!s*C(t*15)*9))s=v%80>60,x.font=`2em'`
+// Fixed timing, we need the loop condition to be i+1 if we want to iterate i=0 (136)
+for(v=t*2.5,c.width=250,n=i=v&15;i--+1;x.fillText(s?'🐍':n>11?i&1?'🍄':'':'🦡',99+C(i+s*t)*90,120-i*6+!s*C(t*15)*9))s=v%64>48,x.font=`2em'`
 // The original song starts with three pairs of mushrooms before the snake, but after that it has four pairs of mushrooms before the snake
 // b-m b-m b-m b-s snake b-m b-m b-m b-m b-s snake
-// That would be v%96>76
+// The final layout would be v%96>76
+// But I don't think we need to follow that pattern, because it is rather odd anyway
+// Make the badgers disappear when we are showing mushrooms
+for(v=t*2.5,c.width=190,n=i=1+v%16|0;i--;x.fillText(s?'🐍':n>12?i<12|i&1?'':'🍄':'🦡',75+C(i+s*t)*70,90-i*4+!s*C(t*15)*9))s=v%80>60,x.font=`2em'`
+// Stop the mushrooms from bouncing (but now the later snakes bounce!)
+for(v=t*2.5,c.width=190,n=i=1+v%16|0;i--;x.fillText(s?'🐍':n>12?b|i&1?'':'🍄':'🦡',75+C(i+s*t)*70,90-i*4+(b^s)*C(t*15)*9))s=v%80>60,x.font=`2em'`,b=i<12
 
-// TODO: How about ' 🦡🍄🐍'[b|m|s]
-//       or perhaps ...' 🦡🍄🐍'[b|m|s]
-// where b=0 or 1, m=0 or 2, s=0 or 3 oh not quite binary
+// How about [...' 🦡🍄🐍'][b|m|s]
+// where b=0 or 1, m=0 or 2, s=0 or 3
+// BROKEN
+for(v=t*2.5,c.width|=n=i=1+v%16|0;i--;x.fillText([...'🦡🍄🐍'][m+s],800+C(i+s*t)*700,920-i*40+!s*C(t*15)*99))s=v%80>60,m=n>12&&(i&1)<1,x.font=`19em'`
+
+// BROKEN large static-ish mushroom and snake
+for(v=t*2.5,c.width=250,n=i=v&15;i--;x.fillText(s?'🐍':m?i&1?'':'🍄':'🦡',99-C(s|m||i)*90,120-i*6+!s*C(t*15)*9))s=v%80>60,m=n>12,x.font=m*1+`2em'`
