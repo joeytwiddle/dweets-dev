@@ -209,3 +209,41 @@ c.style.filter='invert(1)';for(c.width=k=316;k--;x.fillRect(157+1.5*X*C(t)+d*S(t
 c.width|=0
 t=1+t%2
 for(I=2e3;I--;)X=(I-960)/100,x.fillRect(I,480-300*C(X/t**3)-100*(t-1)*3/2*(C(X*9/t**2)-t),5,5)
+
+// Spinning display from TV show "Origin"
+c.width|=k=0
+r=()=>i*i*k++
+x.fillStyle='#fb02'
+for(i=15;i--;)x.lineTo(960+400*C(r()+t)+400*S(r()+t),540+300*C(r())),i%5||x.fill()
+// Random triangles
+c.width|=k=0
+r=()=>i*i*k++
+x.fillStyle='#fb02'
+for(i=15;i--;)x.lineTo(960+400*C(r()+t)+400*S(r()+t),540+300*C(r())),
+i%3||x.beginPath(x.fill())
+// 3D
+c.width|=k=0
+r=()=>i*i*k++
+x.fillStyle='#fb04'
+for(i=30;i--;)x.lineTo(960+500*(C(a=r()+t)+S(b=r()+t)),540+300*C(r())/(1-.3*S(a)+.3*C(b))),i%3||x.fill()
+// Golfing === RELEASED === https://www.dwitter.net/d/18813
+r=_=>i*i*k++
+for(c.width|=k=i=30;i--;x.fill())x.lineTo(960+500*(C(a=r()+t)+S(b=r()+t)),540-3e3*C(r(x.fillStyle='#fa01'))/(9-3*S(a)+3*C(b)))
+// Do we even need the 'b' angle?  This plots all points on a cylinder
+r=_=>i*i*k++
+for(c.width|=k=i=30;i--;x.fill())x.lineTo(960+500*(C(a=r()+t)+S(a)),540-999*C(r(x.fillStyle='#fa01'))/(3-S(a)+C(a)))
+// Simplified but dull
+r=_=>i*i*k++
+for(c.width|=k=i=30;i--;x.fill())x.lineTo(960+500*(C(a=i/3+t)+S(a)),540-999*C(r(x.fillStyle='#fa01'))/(3-S(a)+C(a)))
+// Debugging
+r=_=>j*j*k++
+for(c.width|=k=i=30,x.fillStyle='#fa08';i--;i%3||x.beginPath(x.fill()))j=i-2*(i/3|0),x.lineTo(960-500*(S(a=j/3-t)),540-999*S(r())/(3+C(a))),x.font=`3em'`,x.fillText(j,960-500*(S(a=j/3-t)),540-999*S(r())/(3+C(a)))
+// Debugging: ribbon achieved
+r=_=>j*j
+for(c.width|=k=i=40,x.fillStyle='#fa08';i--;i%3||x.beginPath(x.fill()))j=i-2*(i/3|0),x.lineTo(960+500*(S(a=j/3+t)),540-999*S(r())/(3+C(a))),x.font=`3em'`,x.fillText(i,70*(2-i%3)+960+500*(S(a=j/3+t)),540-999*S(r())/(3+C(a)))
+// Ribbon, but now back to random positioning
+r=_=>j*j++*j++
+for(c.width|=0,i=9+2*t|0,x.fillStyle='#fa08';i--;i%3||x.beginPath(x.fill()))j=81+i-2*(i/3|0),x.lineTo(960+500*(C(a=r()+t)+S(b=r()+t)),540-3e3*C(r(x.fillStyle='#fa04'))/(9-3*S(a)+3*C(b)))
+// Cylindrical positioning
+r=_=>j*j++*j++
+for(c.width|=0,i=9+5*t|0,x.fillStyle='#fa08';i--;i%3||x.beginPath(x.fill()))j=81+i-2*(i/3|0),x.lineTo(960+500*(C(a=j/2+t)+S(b=a)),540-3e3*C(r(x.fillStyle='#fa04'))/(9-3*S(a)+3*C(b)))

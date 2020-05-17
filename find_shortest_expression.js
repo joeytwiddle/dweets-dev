@@ -2,9 +2,13 @@
 
 // This is slightly less performant than the version which generates a list, but it can go much deeper because it doesn't use increasing amounts of memory
 
-// TODO
+// DONE
 //
 // pavel's method skips some impossible parts of the tree, by marking which chars are impossible to come after another char.  Doing that could greatly increase speed.
+//
+// TODO
+//
+// Check if my invalidFollowers match pavel's!
 //
 // For Dwitter, we may also be able to use S(e) C(e) T(e) to help us
 //
