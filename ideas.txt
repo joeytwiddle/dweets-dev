@@ -80,6 +80,10 @@ Can we sample 3 overlaid sine waves in jumps?
     // An experiment using sin() and cos() for reproducability, but varying with t.  May experience some chaos.
     r=Math.random;p=(X,Y,R,D,k)=>D&&(x.globalAlpha=.01,x.fillRect(X,Y,R,R),k=(U,V)=>p(X+2*R*S(U),Y+R*C(V)/4,R*.8,D-1),k(Y+t/9913,X-t/9911),k(Y+t/9997,X+t/9917));c.width|=0;p(900,500,500,15)
 
+## Windows crash
+Could do BSOD, or better do infinite alert windows, like the I.T. Crowd intro
+This has been done by jellyedwards: https://www.dwitter.net/d/19355
+
 ## Random showcase
 For the revision logo I used a lot of % to produce pseudo-random results.
 But of course if we use %3 and %6 then the results do not appear so random.
@@ -192,3 +196,7 @@ Although someone did audio for emojis, didn't they?  Perhaps we could too?!
 ```
 for(p of'🦡🍄🐍')console.log(p)
 ```
+See badger.js
+
+# Kurzgesagt logo
+E.g. like this animated Earth: https://c10.patreonusercontent.com/3/eyJ3IjoyMDB9/patreon-media/p/campaign/73401/a290f30a993d4c52b21f551a2639ddf0/1.jpeg?token-time=2145916800&token-hash=xWbKjrB8D0a4CnaLTjbz_jM2kIJMWfA9wtxYqbSoeLw%3D

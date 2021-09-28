@@ -195,6 +195,9 @@ w=1e3,r=Math.random;for(i=5e3;i--;x.fillRect(700+D,T+r()*(w-D*k/4-T),l=1/(4+t),l
 // Just putting H into a variable, for use in future experimentation
 w=1e3,r=Math.random;for(i=5e3;i--;x.fillRect(700+D,T+r()*H,l=1/(5+t),l))s=r()<.6,k=s?-1:.4,D=(s?-350:650)*r(),T=9+D*k,H=w-D*k/4-T
 
+// All a plane, ungolfed, just to see how it looks
+w=1e3,r=Math.random;for(i=4e3;i--;x.fillRect(p?1920*r():700+D,p?730+500*r()**2:T+r()*(w-D*k/4-T),1,1))p=r()<.2,s=r()<.6,k=s?-1:.4,D=(s?-350:650)*r(),T=9+D*k
+
 // Add the cone
 w=1e3,r=Math.random,s=r()<.6,k=s?-1:.4,d=r(),D=(s?-.7:1.3)*w/2*d,T=9+D*k,Y=T+r()*(w-D*k/4-T),x.fillRect(r()<.2?99+S(D)*Y/3:w+D,Y,.2,.2),t<w&&u(t+1)
 w=1e3,r=Math.random,s=r()<.6,k=s?-1:.4,D=(s?-.7:1.3)*w/2*r(),T=9+D*k,Y=T+r()*(w-D*k/4-T),x.fillRect(r()<.2?99+S(D)*Y/3:w+D,Y,.2,.2),t<w&&u(t+1)

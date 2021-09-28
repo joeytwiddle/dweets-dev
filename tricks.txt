@@ -109,12 +109,17 @@ if(frame%N)c.width*=1
 ~t%N+1?Z:c.width|=0
 ```
 
+
 # Using `arc` to draw squares which can rotate
+
 https://www.dwitter.net/d/14471
+
 Or triangles:
+
 ```js
 c.width*=1;x.beginPath();x.lineWidth=9;for(i=4;i--;)x.arc(960,540,300,i*6.28/3+t,i*6.28/3+t+C(C(t/9)*1.5)*2),x.stroke()
 ```
+
 How does it work?  Well arc can be used to draw all or part of a circle, but we only use it to draw single points.  We can draw all 4 points of a square, without having to do `W*S(a)` and `W*C(a)` separately for each axis.  We just pass `W` as the radius argument, and `a` twice as the arc positions.
 
 
@@ -128,5 +133,20 @@ font="9em'";restore();save();beginPath() // before
 beginPath(save(restore(font="9em'"))),   // after
 ```
 
+# Returning the result of a for loop
 
-vim: ft=markdown
+katkip:
+```
+a=>{for(o='',i=9;i--;)o+=i;return o} // before
+
+a=>eval('for(o='',i=9;i--;)o+=i') // after
+
+a=>(o='','0123456789'.map(i=>o+=i),o)
+```
+
+# Use `u` instead of `T` as a hashtable
+
+> <pavel> Use `u` instead of `T` to store the data. `u` does not persist between edits.
+
+
+<!-- vim:set ft=markdown: -->

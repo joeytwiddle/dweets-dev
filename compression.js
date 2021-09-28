@@ -63,3 +63,5 @@ console.log('eval(unescape(escape`' + out + '`.replace(/u(..)/g,"$1%")))');
 
 // Recently people have been working on new compression methods, like this one: https://www.dwitter.net/d/15796
 
+// KBAP's 240-char compressor (limited to 32 unique chars)
+// https://www.dwitter.net/d/15787

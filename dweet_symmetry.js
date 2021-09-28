@@ -1,0 +1,1 @@
+d=document;d.body.innerHTML=`<pre style="background:#000;color:gray;transform:scale(1,-1)"><code>function u(t) {</code><code id="x" style="color:#fff"></code><p style="float:right">Nov 9, 2020 8:34 PM</p>// 140/140`,d.getElementById('x').textContent=`${u}`.slice(15);

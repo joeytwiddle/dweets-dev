@@ -1,5 +1,9 @@
 // Expression miner: Generates random Expressions of length L, and when it finds an expression that produces the Desired outputs, it stores it in T
 
+// Inspired by: https://github.com/pavelb/pavelb.github.io/blob/master/bruteforcer.html
+//
+// See ungolfed version: find_shortest_expression.js
+
 D=[5,3,9,7]
 for(e='',j=30;j--;)e+=String.fromCharCode(Math.random()*128)
 if(D.every((o,i)=>{try{eval(e);return 1}catch(e){}}))E=e;

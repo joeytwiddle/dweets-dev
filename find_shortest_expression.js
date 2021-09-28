@@ -1,6 +1,8 @@
 // Generates expressions by bruteforce breadth-first search and tests to see if they match the desired output
 
-// This is slightly less performant than the version which generates a list, but it can go much deeper because it doesn't use increasing amounts of memory
+// Inspired by: https://github.com/pavelb/pavelb.github.io/blob/master/bruteforcer.html
+//
+// See dwitter version: expression_miner.js
 
 // DONE
 //
@@ -17,9 +19,7 @@
 // Skip redundant subpaths, if they are equivalent to another that has already been checked
 // E.g. If we have already done `i%2?...` then there is no point doing `i&1?...` (except perhaps for negative `i`!)
 
-// !prettier --write --use-tabs --print-width 120 --single-quote --trailing-comma=all --quote-props=consistent %
-// edit
-// set ts=2 sw=2
+// exec "!prettier --write --use-tabs --print-width 120 --single-quote --trailing-comma=all --quote-props=consistent %" | edit | set ts=2 sw=2
 
 //
 
@@ -30,7 +30,7 @@ const maxLength = 15;
 //const target = (i) => 1 + 2 * i;
 
 // 2-i%3
-const target = [2, 1, 0, 2, 1, 0];
+//const target = [2, 1, 0, 2, 1, 0];
 //const target = (i) => 2 - (i % 3);
 
 // How about this?  Is it possible to simplify?  Apparently not!
@@ -40,10 +40,15 @@ const target = [2, 1, 0, 2, 1, 0];
 // Here is my human attempt: `i<2?5+2*i:5*i-6`
 //const target = [5, 7, 4, 9];
 
+// It finds: i+i&6^5
 //const target = [5, 7, 3, 5];
 
 // Can this be simplified?
 //const target = (i) => i - 2 * ((i / 3) | 0);
+
+//const target = [0, 1, 2, 3, 1, 2, 3, 4, 2, 3, 4, 5, 3, 4, 5, 6];
+
+const target = (i) => i<5|i>10
 
 //
 
@@ -68,6 +73,7 @@ function getInvalidFollowers() {
 	// I leave out '=' because it is special, it can sort of be combined with the others, e.g.`i*=3`.
 	// TODO: Actually `*` and `&` and `|` and `!` can be combined into `**` and `&&` and `||` and `!!`, so we should really allow these.
 	// TODO: '+-' could be excluded
+	// TODO: '+0' and '-0' and '*0' and '/0' could be excluded (unless we want to generate hex numbers like `0xffff` which need to be very large to make any saving)
 	// I also exclude '-' from the binaryOperators, because it isn't always a binary operator, sometimes it defines a negative number,and that might be useful.
 	// Plus can do the same, but that is redundant, so we include it.
 	const unaryOperators = '~!';
@@ -214,6 +220,7 @@ for (const key in inputsAndOutputs) {
 }
 */
 
+// @ts function generateInputsFromArray<O>(): Array<O> -> Record<number, O>;
 function generateInputsFromArray(array) {
 	const inputsAndOutputs = {};
 	array.forEach((val, i) => {
@@ -224,7 +231,7 @@ function generateInputsFromArray(array) {
 
 function generateInputsFromFunction(fn) {
 	const array = [];
-	for (let i = 0; i < 99; i++) {
+	for (let i = 0; i < 16; i++) {
 		array.push(fn(i));
 	}
 	return generateInputsFromArray(array);

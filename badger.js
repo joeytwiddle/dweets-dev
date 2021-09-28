@@ -1,5 +1,5 @@
 // My version of the badger song
-// (Millenials probably won't get it)
+// (Not everyone will know the original)
 i=2.7*t&15,s=9+i,x.font=s+'em"'
 x.fillText(i<11?'🦡':i<14&&i%2?'🍄':'',960-s*9,540+s*5)
 //
@@ -68,6 +68,7 @@ for(v=t*2.5,c.width=190,n=i=1+v%16|0;i--;x.fillText(s?'🐍':n>12?i&1?'':'🍄':
 // Golfed but lower resolution and each verse starts blank (timing is off by one) (134)
 for(v=t*2.5,c.width=250,n=i=v&15;i--;x.fillText(s?'🐍':n>12?i&1?'':'🍄':'🦡',99+C(i+s*t)*90,120-i*6+!s*C(t*15)*9))s=v%80>60,x.font=`2em'`
 // Fixed timing, we need the loop condition to be i+1 if we want to iterate i=0 (136)
+// === BEST SO FAR ===
 for(v=t*2.5,c.width=250,n=i=v&15;i--+1;x.fillText(s?'🐍':n>11?i&1?'🍄':'':'🦡',99+C(i+s*t)*90,120-i*6+!s*C(t*15)*9))s=v%64>48,x.font=`2em'`
 // The original song starts with three pairs of mushrooms before the snake, but after that it has four pairs of mushrooms before the snake
 // b-m b-m b-m b-s snake b-m b-m b-m b-m b-s snake
@@ -85,3 +86,5 @@ for(v=t*2.5,c.width|=n=i=1+v%16|0;i--;x.fillText([...'🦡🍄🐍'][m+s],800+C(
 
 // BROKEN large static-ish mushroom and snake
 for(v=t*2.5,c.width=250,n=i=v&15;i--;x.fillText(s?'🐍':m?i&1?'':'🍄':'🦡',99-C(s|m||i)*90,120-i*6+!s*C(t*15)*9))s=v%80>60,m=n>12,x.font=m*1+`2em'`
+
+// TODO: Release the need for exact timing of the snake.  Most viewers won't appreciate this, if they aren't listening to the original audio.  Let the snake have the entire 4th verse.  With this simplification, can we make the snake and mushroom larger and/or lone?

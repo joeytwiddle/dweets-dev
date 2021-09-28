@@ -1,0 +1,11 @@
+// Trying to replicate https://twitter.com/beesandbombs/status/1400816068252291073
+for(c.width|=i=999;i--;)j=1+C(t+i/9999),k=2*(i%2)-1,r=250*(2-j),x.lineTo(960-250*k*(j-1)+r*S(i),540+r*C(i));x.stroke()
+for(c.width|=i=999;i--;)j=1+C(t+i/t),k=2*(i%2)-1,r=250*(2-j),x.lineTo(960-250*k*(j-1)+r*S(i),540+r*C(i));x.stroke()
+// relatable
+for(c.width|=i=999;i--;)j=1+C(t+i/999999),k=2*(i%2)-1,r=250*(2-j/2),x.lineTo(960-250*k*(j)+r*S(i),540+r*C(i));x.stroke()
+// boring
+for(c.width|=i=999;i--;)j=1+C(t+i/999999),k=2*(i%2)-1,k=2*(i<500)-1,r=250*(2-j/2),x.lineTo(960-250*k*(j)+r*S(i),540+r*C(i));x.stroke()
+// interpolate
+R=500,r=250;for(c.width|=i=999;i--;)j=1+C(t+i/999999),k=2*(i%2)-1,x1=960+R*S(i),x2=960-r*k+r*S(i),y1=540+R*C(i),y2=540+r*C(i),p=j/2,P=1-p,x.lineTo(p*x1+P*x2,p*y1+P*y2);x.stroke()
+// curious lol
+R=500,r=250;for(c.width|=i=999;i--;)j=1+C(t+i/r),a=i/80/j,k=2*(i<R)-1,x1=960+R*S(a),x2=960-r*k+r*S(a),y1=540+R*C(a),y2=540+r*C(a),p=j/2,P=1-p,x.lineTo(p*x1+P*x2,p*y1+P*y2);x.stroke()
