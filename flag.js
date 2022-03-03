@@ -205,3 +205,6 @@ c.width=400;a=29;for(i=240;α=C(T=i**.4-t*6),i--;)for(j=6;j--;x.fillRect(i,50+j*
 c.width=200;a=15;for(i=120;α=C(T=i**.4-t*7),i--;)for(j=6;j--;x.fillRect(i,j*a+k/3-5,1,16))x.fillStyle=`hsl(${29*j**1.4} 80%${k=45+S(T)*i/5}%`
 // Wait a minute, we don't need a anymore!
 c.width=200;for(i=120;α=C(T=i**.4-t*7),i--;)for(j=6;j--;x.fillRect(i,j*15+k/2-11,1,16))x.fillStyle=`hsl(${29*j**1.4} 80%${k=45+S(T)*i/8}%`
+
+// 2020 adapted using NewCore's rect width approach (looks bad until you go fullscreen)
+c.width|=0;for(j=702;j-=9;)for(i=p=0;i++<252;p=o)o=(S(i**1.3/180-t*11+j/150)+C(i**1.4/600-t*8))*i**.6,w=4+o-p,x.fillRect(370+i*5,70+j+i/2+o,w,w)

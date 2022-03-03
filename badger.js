@@ -86,6 +86,8 @@ for(v=t*2.67,c.width=190,n=i=1+v%16|0;i--;x.fillText(s?'🐍':n>12?i<12|i&1?'':'
 for(v=t*2.67,c.width=190,n=i=1+v%16|0;i--;x.fillText(s?'🐍':n>12?i<12|i&1?'':'🍄':'🦡',75+C(i+s*t)*70,90-i*4+C(v*6)*9))s=v%80>60,x.font=`2em'`
 // === PUBLISHED at https://www.dwitter.net/d/24856 === The two most popular badger videos on YouTube have either 3 or 4 badger verses, then a snake verse, THEN 5 badger verses before each snake verse.  So we had better have a 6-verse loop, and forget about matching the start of the video.
 for(v=t*2.67,c.width=190,n=i=1+v%16|0;i--;x.fillText(s?'🐍':n>12?i<12|i&1?'':'🍄':'🦡',75+C(i+s*t)*70,90-i*4+C(v*6)*9))s=v%96>76,x.font=`2em'`
+// Only one snake (+5) and he doesn_t bounce (+3)
+for(v=t*2.67,c.width=190,n=i=1+v%16|0;i--;x.fillText(s?i?'':'🐍':n>12?i<12|i&1?'':'🍄':'🦡',75+C(i+s*t)*70,90-i*4+C(v*6)*9*!s))s=v%96>76,x.font=`2em'`
 
 // How about [...' 🦡🍄🐍'][b|m|s]
 // where b=0 or 1, m=0 or 2, s=0 or 3

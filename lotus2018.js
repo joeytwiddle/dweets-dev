@@ -62,7 +62,9 @@ c.width|=0;for(i=8192;i-=2;)T=i>>8,y=i%256,p=((T-16)**2)**.5,E=p/11,a=(4*p+t)%3.
 c.width|=0;for(i=8192;i-=8;)T=i>>8,y=i%256,p=((T-16)**2)**.5,E=p/11,a=(4*p+t)%3.14+(T>16)*3.14,W=99*S(b=y/81)*S(a)*(1+S(E)),x.fillStyle=`hsl(${p*7},99%,70%`,x.fillRect(960-600*C(a)*y/256*S(E)-W,860-y*(2-(1+S(b)+2*S(a))*S(E)+C(E))/2,2*W,20)
 // --- RELEASED --- https://codegolf.tk/a/270
 c.width|=0;for(i=8192;i-=8;)T=i>>8,y=i%256,p=((T-16)**2)**.5,E=p/11,a=(4*p+t)%3.14+(T>16)*3.14,W=8+99*S(b=y/83)*S(a)*(1+S(E)),x.fillStyle=`hsl(${p*7},99%,70%`,x.fillRect(960-600*C(a)*y/256*S(E)-W,860-y*(2-(1+S(b)+2*S(a))*S(E)+C(E))/2,2*W,20)
+// NOTE: Use 8448 instead of 8192 to avoid one petal glitching out
 // Shades of pink: `hsl(300,99%,${40+y/5}%`
+// Forked into rose.js
 
 // Trying for 140 again
 c.width|=0;for(i=20;x.fillStyle=i<9?'#f7f2':'#ff75',i--;)for(j=99;j--;)W=120*S(j/31)*S(a=t+i*17),x.fillRect(960-W-500*S(j/71)*C(a),960-j*(1+i/5+S(a)),2*W,9)
