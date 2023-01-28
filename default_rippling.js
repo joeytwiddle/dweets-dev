@@ -34,16 +34,35 @@ for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(425+j*100+S(t)*300+i/3*S
 // Mixing the last two
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(425+j*100+S(t)*300+i*i/250*S((5+j)*i**5-t*8)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
 // Improved?
-for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(425+j*100+S(t)*300+i/3*S((5+j)*i**5-t*4)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
-// Improved? === GOOD ===
-for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(425+j*100+S(t)*300+i*i/250*S((5+j)*i**5-t*4)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
+for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(425+j*100+S(t)*300+i/3*S((5+j)*i**5-t*3)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
+// Improved? === GREAT ===
+for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(425+j*100+S(t)*300+i*i/250*S((5+j)*i**5-t*3)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
+
+// TODO: The !!i*i is not neededi, it can be simplified to just i
+
+// Simplified === GOOD ===
+for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(425+j*100+S(t)*300+i/4*S((5+j)*i**5-t*3)-W/2,610-!i*210+i*2,W,i?1:200)
 
 // Inverted version === GOOD ===
 c.style.filter='invert(100%)'
-for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(425+j*100+S(t)*300+i*i/250*S((5+j)*i**5-t*4)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
+for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(425+j*100+S(t)*300+i*i/250*S((5+j)*i**5-t*3)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
 // or
 x.fillRect(0,0,2e3,2e3)
-for(j=9;j--;)for(i=99;i--;)W=50-i/3,x.clearRect(425+j*100+S(t)*300+i*i/250*S((5+j)*i**5-t*4)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
+for(j=9;j--;)for(i=99;i--;)W=50-i/3,x.clearRect(425+j*100+S(t)*300+i*i/250*S((5+j)*i**5-t*3)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
+
+// Inverted, splified and golfed (145)
+c.style.filter='invert(100%)'
+for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(550+j*99+i/4*S((5+j)*i*i-t*3)-W/2,610-!i*210+i*2,W,i?1:200)
+// 144
+c.style.filter='invert(100%)'
+for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(550+j*99+i/4*S((5+j)*i*i-t*3)-W/2,i?610+2*i:400,W,i?1:200)
+
+// Inverted using fillRect() Smaller but inefficient (in Firefox)
+x.fillRect(0,0,2e3,1080)
+for(j=9;j--;)for(i=99;i--;)W=50-i/3,x.clearRect(550+j*99+i/4*S((5+j)*i*i-t*3)-W/2,i?610+2*i:400,W,i?1:200)
+// Restore the default swing === GREAT ===
+x.fillRect(0,0,2e3,1080)
+for(j=9;j--;)for(i=99;i--;)W=50-i/3,x.clearRect(550+j*99+S(t)*300+i/4*S((5+j)*i*i-t*3)-W/2,i?610+2*i:400,W,i?1:200)
 
 // Experimenting with some vertical rippling
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(425+j*100+S(t)*300+i*i/150*S(3e3/(i+1)-t+j**7)-W/2,610-!i*210+!!i*i*2-i/9*C(t+i**7+j**5),W,i?1:200)
