@@ -1,0 +1,11 @@
+See: https://www.dwitter.net/d/16644 (if no dweet shows on that page, then you may need to disable your adblocker!)
+
+In UBlock I added these rules:
+
+```
+www.dwitter.net##.dweet-wrapper:has(:contains(eval):contains(unescape))
+
+beta.dwitter.net##.card:has(:contains(eval):contains(unescape))
+```
+
+Note: If you add rules using the element picker, then you don't need the domain name at the front.
