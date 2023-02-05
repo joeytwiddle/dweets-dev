@@ -12,14 +12,14 @@ for(c.width|=j=9;j--;)for(i=50;i--;)W=50-i,x.fillRect(425+j*100+S(t)*300+i*i/50*
 for(c.width|=j=9;j--;)for(i=200;i--;)W=50-i/4,x.fillRect(425+j*100+S(t)*300+i*i/400*S(2e3/(i+1)-t*8+j**7)-W/2,610-!i*210+!!i*i,W,i?3:200)
 // Getting there
 for(c.width|=j=9;j--;)for(i=200;i--;)W=50-i/4,x.fillRect(425+j*100+S(t)*300+i*i/500*S(4e3/(i+1)-t*8+j**7)-W/2,610-!i*210+!!i*i,W,i?1:200)
-// Gaps to make it gentler  === BEST ===
+// Gaps to make it gentler  --- OK ---
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(425+j*100+S(t)*300+i*i/250*S(3e3/(i+1)-t*8+j**7)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
 // Nice but reipples DISAPPEAR at 90% browser zoom!
 // (Actually that was when we used 620, but with 610 they appear again!)
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(425+j*100+S(t)*300+i*i/150*S(3e3/(i+1)-t*8+j**7)-W/2,610-!i*210+!!i*i*3,W,i?1:200)
 // Not bad, until you zoom in
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(425+j*100+S(t)*300+i*i/150*S(2e3/(i+1)-t*8+j**7)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
-// === GOOD ===
+// --- GOOD ---
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(425+j*100+S(t)*300+i*i/150*S(3e3/(i+1)-t*3+j**7)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
 // Make ripples go up/down, depending on which block
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(425+j*100+S(t)*300+i*i/150*S(3e3/(i+1)-t*3*C(j)+j**7)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
@@ -27,7 +27,7 @@ for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(425+j*100+S(t)*300+i*i/1
 
 // Not ideal but cute
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(425+j*100+S(t)*300+i*i/250*S(i*25-t*8+j)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
-// A bit of randomnity, === GOOD ===
+// A bit of randomnity, --- GOOD ---
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(425+j*100+S(t)*300+i*i/250*S(i**5-t*8+j)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
 // Improved
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(425+j*100+S(t)*300+i/3*S((5+j)*i**5-t*8)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
@@ -35,15 +35,18 @@ for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(425+j*100+S(t)*300+i/3*S
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(425+j*100+S(t)*300+i*i/250*S((5+j)*i**5-t*8)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
 // Improved?
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(425+j*100+S(t)*300+i/3*S((5+j)*i**5-t*3)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
-// Improved? === GREAT ===
+// Improved? --- RELEASED: --- https://beta.dwitter.net/d/26971
+// #default reflected in rippling #water (day)
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(425+j*100+S(t)*300+i*i/250*S((5+j)*i**5-t*3)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
+// Golf: The ripples are not so random, but acceptable, considering 4 chars are saved!
+for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(425+j*100+S(t)*300+i*i/250*S(j+i**5-t*3)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
 
 // TODO: The !!i*i is not neededi, it can be simplified to just i
 
-// Simplified === GOOD ===
+// Simplified --- GOOD ---
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(425+j*100+S(t)*300+i/4*S((5+j)*i**5-t*3)-W/2,610-!i*210+i*2,W,i?1:200)
 
-// Inverted version === GOOD ===
+// Inverted version --- GOOD ---
 c.style.filter='invert(100%)'
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(425+j*100+S(t)*300+i*i/250*S((5+j)*i**5-t*3)-W/2,610-!i*210+!!i*i*2,W,i?1:200)
 // or
@@ -56,13 +59,24 @@ for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(550+j*99+i/4*S((5+j)*i*i
 // 144
 c.style.filter='invert(100%)'
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(550+j*99+i/4*S((5+j)*i*i-t*3)-W/2,i?610+2*i:400,W,i?1:200)
+// Magna suggests this trick (139)
+c.style.filter='invert('
+for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/3,x.fillRect(550+j*99+i/4*S((5+j)*i*i-t*3)-W/2,i?610+2*i:400,W,i?1:200)
 
 // Inverted using fillRect() Smaller but inefficient (in Firefox)
 x.fillRect(0,0,2e3,1080)
-for(j=9;j--;)for(i=99;i--;)W=50-i/3,x.clearRect(550+j*99+i/4*S((5+j)*i*i-t*3)-W/2,i?610+2*i:400,W,i?1:200)
-// Restore the default swing === GREAT ===
+for(j=9;j--;)for(i=99;i--;)W=50-i/2,x.clearRect(550+j*99+i/4*S((5+j)*i*i-t*3)-W/2,i?610+2*i:400,W,i?1:200)
+// Restore the default swing --- RELEASED --- https://beta.dwitter.net/d/26972
+// #default reflected in rippling #water (night)
 x.fillRect(0,0,2e3,1080)
-for(j=9;j--;)for(i=99;i--;)W=50-i/3,x.clearRect(550+j*99+S(t)*300+i/4*S((5+j)*i*i-t*3)-W/2,i?610+2*i:400,W,i?1:200)
+for(j=9;j--;)for(i=99;i--;)W=50-i/2,x.clearRect(550+j*99+S(t)*300+i/4*S((5+j)*i*i-t*3)-W/2,i?610+2*i:400,W,i?1:200)
 
 // Experimenting with some vertical rippling
 for(c.width|=j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(425+j*100+S(t)*300+i*i/150*S(3e3/(i+1)-t+j**7)-W/2,610-!i*210+!!i*i*2-i/9*C(t+i**7+j**5),W,i?1:200)
+
+// We can give each ripple a different oscillation frequency
+c.width|=c.style.filter='invert(100%)'
+for(j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(550+j*99+S(t)*00+i/4*S((5+j)*i*i-t*(2+(i%7)/3))-W/2,i?610+2*i:400,W,i?1:200)
+// And even make the oscillation non-sinusoidal
+c.width|=c.style.filter='invert(100%)'
+for(j=9;j--;)for(i=99;i--;)W=50-i/2,x.fillRect(550+j*99+S(t)*00+i/4*S((5+j)*i*i-t*(2+(i%7)/3)+S(t*((i/j)%7)))-W/2,i?610+2*i:400,W,i?1:200)

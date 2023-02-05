@@ -1,1 +1,1 @@
-SEP=1 gvim *.txt *.js
+SEP=1 gvim ideas.txt *.txt *.js

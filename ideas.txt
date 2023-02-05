@@ -9,6 +9,8 @@ ALEDisable
 au BufEnter * set noswapfile nowrap nolinebreak colorcolumn=141 indentkeys= formatoptions-=ro
 syn sync minlines=1 maxlines=1
 set iskeyword-=-
+set breakat=
+set columns=145
 -->
 OLD: BufDo set noswapfile nowrap colorcolumn=141 indentkeys= formatoptions-=ro
 

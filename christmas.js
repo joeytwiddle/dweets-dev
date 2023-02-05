@@ -63,3 +63,29 @@ for(i=700;i--;x.fillRect(960+r*C(a=++t),80+y+r/9*S(a),T?.1:.4,.1))y=896*Math.ran
 for(i=700;i--;x.fillRect(960+r*C(a=++t),80+y+r/9*S(a),T?.1:.4,.1))y=(i*t*++t%1)**.4*896,T=y>768,r=T?30:(y|127)*(y*S(y/300-.1)-2*y%128)/1313
 
 // TODO: Inlining a= can be done for all the above too
+
+// 2022 Twinkling tree
+c.style.filter=`invert(1)`
+c.width=1920
+for(i=99;i--;)
+Y=70*i**.5,W=9+7*S(4*t*C(i**5)),
+x.fillRect(960+Y*S(i-t/11)/2-W/2,170+Y-W/2,W,W)
+// Only show the front
+c.style.filter=`invert(1)`,c.width=1920
+for(i=99;i--;)Y=70*i**.5,W=9+7*S(4*t*C(i**5)),C(a=i-t/3)>0&&x.fillRect(960+Y*S(a)/2-W/2,170+Y-W/2,W,W)
+// Only show the front (soft edges)
+c.style.filter=`invert(1)`,c.width=1920
+for(i=99;i--;)Y=70*i**.5,W=(5+4*S(4*t*C(i**5)))*(1+C(a=i-t/3)),x.fillRect(960+Y*S(a)/2-W/2,170+Y-W/2,W,W)
+// Shorter
+x.fillRect(0,0,1920,1080)
+for(i=99;i--;)Y=70*i**.5,W=(5+4*S(4*t*C(i**5)))*(1+C(a=i-t/3)),x.clearRect(960+Y*S(a)/2-W/2,170+Y-W/2,W,W)
+// With a little bit of 3D
+// === PUBLISHED === https://www.dwitter.net/d/26618
+x.fillRect(0,0,1920,1080)
+for(i=99;i--;)Y=70*i**.5,W=(5+4*S(4*t*C(i**5)))*(1+C(a=i+t/3)),x.clearRect(960+Y*S(a)/2-W/2,140+Y+Y*C(a)/9-W/2,W,W)
+// Long: Twinkling red and white
+c.width|=0;x.fillRect(0,0,1920,1080)
+for(i=200;i--;x.fillRect(960+Y*S(a)/2-W/2,140+Y+Y*C(a)/9-W/2,W,W))Y=50*i**.5,W=(5+4*S(4*t*C(i**5)))*(1+C(a=i+t/3)),x.fillStyle=i&2?'#ddd':'#f22'
+// Does it look better when we make the pulsation speed range between 2 and 4 (instead of -4 to 4)?  I think it does.
+c.width|=0;x.fillRect(0,0,1920,1080)
+for(i=200;i--;x.fillRect(960+Y*S(a)/2-W/2,140+Y+Y*C(a)/9-W/2,W,W))Y=50*i**.5,W=(5+4*S(t*(3+C(i**5))))*(1+C(a=i+t/3)),x.fillStyle=i&2?'#ddd':'#f22'
