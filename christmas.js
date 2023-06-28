@@ -80,12 +80,23 @@ for(i=99;i--;)Y=70*i**.5,W=(5+4*S(4*t*C(i**5)))*(1+C(a=i-t/3)),x.fillRect(960+Y*
 x.fillRect(0,0,1920,1080)
 for(i=99;i--;)Y=70*i**.5,W=(5+4*S(4*t*C(i**5)))*(1+C(a=i-t/3)),x.clearRect(960+Y*S(a)/2-W/2,170+Y-W/2,W,W)
 // With a little bit of 3D
-// === PUBLISHED === https://www.dwitter.net/d/26618
+// === PUBLISHED === https://www.dwitter.net/d/26619
 x.fillRect(0,0,1920,1080)
-for(i=99;i--;)Y=70*i**.5,W=(5+4*S(4*t*C(i**5)))*(1+C(a=i+t/3)),x.clearRect(960+Y*S(a)/2-W/2,140+Y+Y*C(a)/9-W/2,W,W)
+for(i=99;i--;x.clearRect(960+Y*S(a)/2-W/2,140+Y+Y*C(a)/9-W/2,W,W))Y=70*i**.5,W=(5+4*S(4*t*C(i**5)))*(1+C(a=i+t/3))
 // Long: Twinkling red and white
 c.width|=0;x.fillRect(0,0,1920,1080)
 for(i=200;i--;x.fillRect(960+Y*S(a)/2-W/2,140+Y+Y*C(a)/9-W/2,W,W))Y=50*i**.5,W=(5+4*S(4*t*C(i**5)))*(1+C(a=i+t/3)),x.fillStyle=i&2?'#ddd':'#f22'
 // Does it look better when we make the pulsation speed range between 2 and 4 (instead of -4 to 4)?  I think it does.
 c.width|=0;x.fillRect(0,0,1920,1080)
 for(i=200;i--;x.fillRect(960+Y*S(a)/2-W/2,140+Y+Y*C(a)/9-W/2,W,W))Y=50*i**.5,W=(5+4*S(t*(3+C(i**5))))*(1+C(a=i+t/3)),x.fillStyle=i&2?'#ddd':'#f22'
+
+// 2023 Twinkling tree
+// Make twinkling dependent on angle, not time
+x.fillRect(0,0,1920,1080)
+for(i=500;i--;x.clearRect(960+Y*S(a)/2-W/2,140+Y+Y*C(a)/9-W/2,W,W))Y=32*i**.5,a=i+2*S(t),W=(5+4*S(9*a*C(i**5)))*(1+C(a))
+// More performant, but longer
+c.width|=c.style.filter='invert('
+for(i=500;i--;x.fillRect(960+Y*S(a)/2-W/2,140+Y+Y*C(a)/9-W/2,W,W))Y=32*i**.5,a=i+2*S(t),W=(5+4*S(6*a*C(i**5)))*(1+C(a))
+// Smaller alternative
+x.fillRect(0,0,1920,1080)
+for(i=200;i--;x.clearRect(960+Y*S(a)/2-W/2,140+Y+Y*C(a)/9-W/2,W,W))Y=50*i**.5,a=i+2*S(t),W=(5+4*S(5*a+i**5))*(1+C(a))
