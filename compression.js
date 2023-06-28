@@ -65,3 +65,11 @@ console.log('eval(unescape(escape`' + out + '`.replace(/u(..)/g,"$1%")))');
 
 // KBAP's 240-char compressor (limited to 32 unique chars)
 // https://www.dwitter.net/d/15787
+
+// On https://prplz.github.io/dwitpack/ prplz attributes:
+// 2 char unicode method by xem and subzey. https://xem.github.io/golfing/#jstweet_en
+// 3 char unicode method by Román Cortés. http://www.romancortes.com/v2/javascript-code-golf.html
+// That page also has Roman Cortés's "minimal dictionary coder"
+> `0 1, or not 0 1`.replace(/\d/g,i=>`to|be`.split`|`[i])
+"to be, or not to be"
+// It works only for strings that doesn't contain arabic numerals
