@@ -799,7 +799,7 @@ for(a=t,c.width=99,i=16;i--;x.stroke())x.lineTo(50+S(t+=(7-i)%2/.64)*29,12+(i%4>
 s=x=>13*Math.abs(x%6-3)-19
 x.fillText('◕',43+s(a*7),32+s(a*9))
 
-// https://www.dwitter.net/d/7579
+// yonatan's rushing blocks: https://www.dwitter.net/d/7579
 c.width|=0;x.globalAlpha=.2;for(k=9;k--;)for(j=22;j--;)for(i=9;i--;)x.fillRect(540+i*99-40*T(m=3*t+k/540-i/12+j/5e2)**3,400+j*9-99*S(2*m)**4,50,9)
 // We could probably golf this down to size by using one for loop and some %s
 // Or maybe not!
@@ -814,6 +814,12 @@ c.width|=0;x.globalAlpha=.2;for(i=1782;i--;)l=i/22%9|0,x.fillRect(540+l*99-40*T(
 // Experimenting with motion blur
 x.fillStyle='#fff8';x.fillRect(0,0,2e3,2e3);x.fillStyle='#0009';for(i=1782;i--;)l=i/22%9|0,x.fillRect(540+l*99-T(m=t+i/1e5-l/12+i%22/5e2)**15,460+i%22*9-199*S(2*m)**18,50,40)
 x.fillStyle='#fffb';x.fillRect(0,0,2e3,2e3);x.fillStyle='#0009';for(i=1782;i--;)l=i/22%9|0,x.fillRect(540+l*99-T(m=3*t+i/1e5-l/12+i%22/5e2)**7,460+i%22*9-199*S(2*m)**18,50,40)
+
+// Other work on the same blocks
+// Rushing left and low --- RELEASED --- https://www.dwitter.net/d/7584
+c.width|=0;x.globalAlpha=.2;for(i=1782;i--;)l=i/22%9|0,x.fillRect(540+l*99-40*T(m=3*t+i/1e5-l/12+i%22/5e2)**3,460+i%22*9-199*S(2*m)**8,50,9)
+// Rushing right and high
+c.width|=0;x.globalAlpha=.2;for(i=1782;i--;)l=i/22%9|0,x.fillRect(540+l*99+40*T(m=3*t-i/1e5+l/12-i%22/5e2)**5,460+i%22*9-199*S(2*m)**8,50,9)
 
 // I posted this: https://twitter.com/beesandbombs/status/981922654646136832
 // Agnes offered this:
@@ -874,12 +880,6 @@ t||(d=x.createImageData(w=c.width=511,w/2));for(i=1e5;i--;k=4*i,d.data[k]=d.data
 var X,Y,i,d,w=c.width=99
 for(i=6e3;i--;x.fillRect(i%w,i/w|0,1,1))X=i%w-50,Y=i/w-30,d=X*X+Y*Y,x.fillStyle=R(((Y/d-S(t/9))*1e4^(X/d+C(t/7))*1e4)&255)
 
-// yonatan's rushing blocks: https://www.dwitter.net/d/7579
-// Rushing left and low --- RELEASED --- https://www.dwitter.net/d/7584
-c.width|=0;x.globalAlpha=.2;for(i=1782;i--;)l=i/22%9|0,x.fillRect(540+l*99-40*T(m=3*t+i/1e5-l/12+i%22/5e2)**3,460+i%22*9-199*S(2*m)**8,50,9)
-// Rushing right and high
-c.width|=0;x.globalAlpha=.2;for(i=1782;i--;)l=i/22%9|0,x.fillRect(540+l*99+40*T(m=3*t-i/1e5+l/12-i%22/5e2)**5,460+i%22*9-199*S(2*m)**8,50,9)
-
 // prplz swaying blocks: https://www.dwitter.net/d/7839
 with(x)for(c.width|=i=0,translate(S(t)*300+400,600);i++<9;rotate(-k))translate(100,0),rotate(k=C(t-3.8)/3),fillRect(-25,-200,50,200)
 // My remix, swaying from the top
@@ -888,7 +888,15 @@ t*=7;with(x)for(c.width|=i=0,translate(S(t)*300+400,400);i++<9;)translate(100,0)
 t*=7;with(x)for(c.width|=i=0,translate(S(t)*300+400,600);i++<9;)translate(100,0),rotate(k=C(t-2.7)/2),fillRect(-25,-120,50,200),rotate(-k)
 
 // Xen's squidgy worm: https://www.dwitter.net/d/3528
-for(i=2e3;i--;x.fillStyle=`hsla(${t+X},80%,${80+20*S(i)}%,.01)`)x.fillRect(X=i-S(t-i)*1e3,400+400*C(t+i)+400*S(X/400+t),90,90);
+for(i=2e3;i--;x.fillStyle=`hsla(${t+X},80%,${80+20*S(i)}%,.01)`)x.fillRect(X=i-S(t-i)*1e3,400+400*C(t+i)+400*S(X/400+t),90,90)
+// 2023
+for(i=2e3;i--;x.fillStyle=`hsla(${X*C(t)},99%,67%,.01)`)x.fillRect(X=i-S(t-i)*1e3,400+400*C(t+i)+400*S(X/400+t),90,90)
+for(i=2e3;i--;x.fillStyle=`hsla(${X},67%,67%,.01)`)x.fillRect(X=i-S(t-i)*t*9,400+400*C(t+i)+400*S(X/400+t),90,90)
+// Not great, but interesting to see how patterns try to squeeze out
+for(i=2e3;i--;x.fillStyle=`hsla(${X},67%,67%,.01)`)x.fillRect(X=i-S(t-i)*9*t,400+400*C(t+i)+400*S(X/400+t*t),90,90)
+for(i=2e3;i--;x.fillStyle=`hsla(${X},67%,67%,.01)`)x.fillRect(X=i-S(t**2-i)*9*t,400+400*C(t+i)+400*S(X/400+t**3),90,90)
+// "Uncomfortable rainbow"
+t*=7;for(i=2e3;i--;x.fillStyle=`hsla(${X},67%,67%,.01)`)x.fillRect(X=i-S(t**2-i)*9*t,400+400*C(t+i)+400*S(X/400+t**3),99,99)
 
 // Balint's falling bouncing ball: https://www.dwitter.net/d/7980
 c.width=280
@@ -1525,3 +1533,27 @@ t%2<.1&&(x.beginPath(R=1),x.fillStyle=t&2?'#fff1':'#2042')
 R*=1.08,v=r()*R
 x.lineTo(960+1.3*C(a=r()*99)*v,540+S(a)*v)
 x.fill()
+
+// TODO
+// Remix of "happy orbits" (earth, sun and shadow): https://dwitter.net/d/27238
+// Flat-earth version
+with(x)fillRect(0,0,c.width|=0,2e3),X=t=>220-99*t%230,fillStyle=R(scale(9,9),fillText('🌞',X(t),30),fillText('🗺️',96,60),.3),fillRect(X(t+4),0,99,99)
+with(x)fillRect(0,0,c.width|=0,2e3),X=t=>120-15*t%50,fillStyle=R(scale(9,9),fillText('🌞',X(t),30),fillText('🗺️',96,60),.3),fillRect(X(t+2),0,16,99)
+with(x)fillRect(0,0,c.width|=0,2e3),X=t=>73-33*t%73,fillStyle=R(scale(27,27),fillText('🌞',X(t),10),fillText('🗺️',32,20),.3),fillRect(X(t+4),0,33,33)
+// Best so far
+with(x)fillRect(0,0,c.width|=0,2e3),X=t=>55-25*t%65,fillStyle=R(scale(36,36),fillText('🌞',X(t),11),fillText('🗺️',22,25),.3),fillRect(X(t+7),0,25,30)
+with(x)fillRect(0,0,c.width|=X=t=>55-25*t%65,2e3),fillStyle=R(scale(36,36),fillText('🌞',X(t),11),fillText('🗺️',22,25),.3),fillRect(X(t+7),0,25,30)
+// happy "orbits" truther version
+// happy "orbits" nice try FBI
+with(x)fillRect(0,0,c.width|=0,2e3),X=t=>55-25*t%65,fillStyle=R(scale(36,36),fillText('🌞',X(t),11),fillText('\ud83d\uddfa️',22,25),.3),fillRect(X(t+7),0,25,30)
+with(x)fillRect(0,0,c.width|=0,2e3),fillStyle=R(scale(36,36),fillText('🌞',25*t%65,11),fillText('🗺️',22,25),.3),fillRect((25+25*t)%65,0,25,30)
+with(x)fillRect(0,0,c.width|=0,2e3),X=t=>55-25*t%65,scale(36,36),fillText('🌞',X(t),11),fillText('🗺️',22,25),fillRect(X(t+7),0,25,30)
+// I wanted to use yonatan's trick, but I couldn't find it.  My attempt is probably longer than necessary.
+for(p in x)x[p[0]+p[4]]=x[p]
+for(p in x)x[p[0]+p[4]]=x[p];with(x)fR(0,0,c.width|=0,2e3),X=t=>55-25*t%65,fillStyle=R(se(36,36),fT('🌞',X(t),11),fT('🗺️',22,25),.3),fR(X(t+7),0,25,30)
+with(x)fillRect(0,0,2e3,2e3),X=t=>55-25*t%65,fillStyle=R(t||scale(36,36),fillText('🌞',X(t),11),fillText('🗺️',22,25),.3),fillRect(X(t+7),0,25,30)
+// I didn't realise until later that I had mixed up my emojis.  One is a black/white text-like character, the other is a full-colour emoji.
+// I asked ChatGPT to help me, and after a few attempts it did.
+// ChatGPT prompt: "Write some JavaScript to create the following string using fromCharCode(): '🗺 ' Then do it with other functions instead of fromCharCode()"
+// Finally working!  Published: https://www.dwitter.net/d/27245
+with(x)fillRect(0,0,c.width|=X=t=>55-25*t%65,2e3),fillStyle=R(scale(36,36),fillText('🌞',X(t),11),fillText("\ud83d\uddfa\ufe0f",22,25),.3),fillRect(X(t+7),0,25,30)
