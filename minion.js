@@ -56,7 +56,7 @@ m='ŐߴོߴՔનᚥ᪩ȠԔ';for(i=s=70;i--;x.fillRect(s*X,s*Y,s,s,c=(m.charCode
 m='ŐߴོߴՔનᚥ᪩ȠԔ';for(i=s=99;i--;X=i%9,Y=i/9|0,c=(m.charCodeAt(Y)>>2*X-2)&3,r=(c&1)<<8,x.fillStyle=R(r,r,(c&2)<<7),x.fillRect(s*X,s*Y,s,s));
 m='ŐߴོߴՔનᚥ᪩ȠԔ';for(i=s=99;i--;Y=i/9|0,c=(m.charCodeAt(Y)>>2*X-2)&3,r=(c&1)<<8,x.fillStyle=R(r,r,(c&2)<<7),x.fillRect(s*X,s*Y,s,s))X=i%9
 m='ŐߴོߴՔનᚥ᪩ȠԔ';for(i=99;i--;Y=i/9|0,c=(m.charCodeAt(Y)>>2*X-2)&3,r=(c&1)<<8,x.fillStyle=R(r,r,(c&2)<<7),x.fillRect((s=i*S(t))*X,s*Y,s,s))X=i%9
-// --- PUBLISHED ---
+// --- PUBLISHED --- https://www.dwitter.net/d/3063
 m='ŐߴོߴՔનᚥ᪩ȠԔ';for(i=99,s=i*T(t);i--;Y=i/9|0,c=m.charCodeAt(Y)>>2*X-2&3,r=(c&1)<<8,x.fillStyle=R(r,r,(c&2)<<7),x.fillRect(s*X,s*Y,s,s))X=i%9
 
 // Golfing a bit
